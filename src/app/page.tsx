@@ -51,7 +51,7 @@ export default function Page() {
               {" "}
               WhatsApp{" "}
             </a>{" "}
-            <a className="btn btnPrimary" href="https://app.jasodatos.com">
+            <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">
               {" "}
               Probar gratis{" "}
             </a>{" "}
@@ -79,7 +79,7 @@ export default function Page() {
               {" "}
               <a
                 className="btn btnPrimary btnLg"
-                href="https://app.jasodatos.com"
+                href="https://app.jasodatos.com/registro"
               >
                 {" "}
                 Entrar al dashboard{" "}
@@ -231,7 +231,7 @@ export default function Page() {
               </p>{" "}
               <div className="ctaRow" style={{ marginTop: 12 }}>
                 {" "}
-                <a className="btn btnPrimary" href="https://app.jasodatos.com">
+                <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">
                   {" "}
                   Probar gratis{" "}
                 </a>{" "}
@@ -339,7 +339,7 @@ export default function Page() {
               </ul>{" "}
               <a
                 className="btn btnPrimary w100"
-                href="https://app.jasodatos.com"
+                href="https://app.jasodatos.com/registro"
               >
                 {" "}
                 Probar gratis{" "}
@@ -474,7 +474,7 @@ export default function Page() {
               {" "}
               <a
                 className="btn btnPrimary btnLg"
-                href="https://app.jasodatos.com"
+                href="https://app.jasodatos.com/registro"
               >
                 {" "}
                 Probar gratis{" "}
