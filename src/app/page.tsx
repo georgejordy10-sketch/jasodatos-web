@@ -185,7 +185,7 @@ main{min-height:100vh;overflow-x:hidden;}
 .muted{color:var(--muted);}
 .small{font-size:.92rem;color:var(--muted);}
 
-.hero{padding:92px 0 52px;}
+.hero{padding:78px 0 38px;}
 .heroGrid{
   display:grid;
   grid-template-columns:1.02fr .98fr;
@@ -304,10 +304,10 @@ main{min-height:100vh;overflow-x:hidden;}
 }
 .floatingLabel.green{background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.2);color:#dcfce7;}
 
-.section{padding:76px 0;}
+.section{padding:58px 0;}
 .sectionAlt{padding-top:76px;}
-.signalBand{padding:34px 0 24px;}
-.signalBandInner{padding:34px 0 10px;}
+.signalBand{padding:24px 0 12px;}
+.signalBandInner{padding:22px 0 4px;}
 .signalBandHeader{margin-bottom:24px;}
 .signalGrid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px;}
 .signalCard{
@@ -415,7 +415,7 @@ main{min-height:100vh;overflow-x:hidden;}
 }
 @media (max-width:720px){
   .container{width:min(100% - 24px,1180px);}
-  .hero{padding:56px 0 32px;}
+  .hero{padding:44px 0 24px;}
   .h1{font-size:2.6rem;}
   .sectionTitleLarge{font-size:2.15rem;}
   .btn{width:100%;}
@@ -430,11 +430,10 @@ main{min-height:100vh;overflow-x:hidden;}
 }
 .intelligenceSection{
   position:relative;
-  padding-top:84px;
-  padding-bottom:70px;
+  padding-top:56px;
+  padding-bottom:48px;
   overflow:hidden;
 }
-
 .intelligenceSection::before{
   content:"";
   position:absolute;
@@ -950,6 +949,192 @@ main{min-height:100vh;overflow-x:hidden;}
 
   .intelligenceCard{
     min-height:250px;
+  }
+}
+.hero{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+}
+
+.heroDataGrid{
+  position:absolute;
+  inset:0;
+  z-index:-3;
+  background-image:
+    linear-gradient(rgba(127,178,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127,178,255,.08) 1px, transparent 1px);
+  background-size:54px 54px;
+  mask-image:linear-gradient(to bottom, rgba(0,0,0,.95), transparent 92%);
+  opacity:.5;
+}
+
+.heroOrb{
+  position:absolute;
+  z-index:-2;
+  width:420px;
+  height:420px;
+  border-radius:999px;
+  filter:blur(54px);
+  opacity:.55;
+  animation:floatOrb 8s ease-in-out infinite alternate;
+}
+
+.heroOrbA{
+  top:80px;
+  right:8%;
+  background:rgba(127,178,255,.36);
+}
+
+.heroOrbB{
+  left:4%;
+  bottom:4%;
+  background:rgba(139,92,246,.28);
+  animation-delay:1.5s;
+}
+
+@keyframes floatOrb{
+  from{
+    transform:translate3d(0,0,0) scale(1);
+  }
+  to{
+    transform:translate3d(18px,-22px,0) scale(1.08);
+  }
+}
+
+.productShowcase{
+  perspective:1200px;
+}
+
+.mainMockup{
+  transform:rotateX(2deg) rotateY(-4deg);
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+
+.mainMockup:hover{
+  transform:rotateX(0deg) rotateY(0deg) translateY(-6px);
+  box-shadow:
+    0 34px 110px rgba(0,0,0,.46),
+    0 0 0 1px rgba(127,178,255,.16),
+    inset 0 1px 0 rgba(255,255,255,.1);
+}
+
+.trendPanel{
+  margin:0 0 16px;
+  padding:18px;
+  border-radius:20px;
+  background:rgba(8,14,48,.34);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.trendPanelTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:14px;
+  color:#eaf0ff;
+  font-weight:800;
+}
+
+.trendPanelTop strong{
+  color:#86efac;
+  font-size:1.15rem;
+  letter-spacing:-.02em;
+}
+.trendChartLine{
+  padding:14px 14px 10px;
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(127,178,255,.06), rgba(139,92,246,.04));
+  border:1px solid rgba(255,255,255,.06);
+}
+
+.trendSvg{
+  width:100%;
+  height:180px;
+  display:block;
+}
+
+.trendAxis{
+  stroke:rgba(255,255,255,.14);
+  stroke-width:1.5;
+}
+
+.trendGuide{
+  stroke:rgba(255,255,255,.08);
+  stroke-width:1;
+  stroke-dasharray:4 6;
+}
+
+.trendPoint{
+  fill:#7FB2FF;
+  stroke:#0f153d;
+  stroke-width:3;
+}
+
+.trendPointActive{
+  fill:#86efac;
+  filter:drop-shadow(0 0 8px rgba(134,239,172,.35));
+}
+
+.trendXAxis{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  margin-top:8px;
+  padding:0 2px;
+  color:var(--muted);
+  font-size:.82rem;
+  font-weight:700;
+}
+
+.floatingCard{
+  animation:floatCard 5.5s ease-in-out infinite alternate;
+}
+
+.floatingCardB{
+  animation-delay:1.2s;
+}
+
+@keyframes floatCard{
+  from{
+    transform:translateY(0) rotate(-1.5deg);
+  }
+  to{
+    transform:translateY(-10px) rotate(1deg);
+  }
+}
+
+.btnPrimary{
+  position:relative;
+  overflow:hidden;
+}
+
+.btnPrimary::after{
+  content:"";
+  position:absolute;
+  inset:-40% -80%;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+  transform:translateX(-60%);
+  transition:transform .6s ease;
+}
+
+.btnPrimary:hover::after{
+  transform:translateX(60%);
+}
+
+@media (max-width:720px){
+  .heroOrb{
+    width:280px;
+    height:280px;
+  }
+
+  .mainMockup{
+    transform:none;
+  }
+
+  .trendChart{
+    height:96px;
   }
 }
 `;
@@ -995,6 +1180,9 @@ export default function Page() {
       </header>
 
       <section id="inicio" className="hero">
+        <div className="heroDataGrid" />
+        <div className="heroOrb heroOrbA" />
+        <div className="heroOrb heroOrbB" />
         <div className="container heroGrid">
           <div>
             <p className="pill">Inventario, ventas y stock en una sola vista</p>
@@ -1083,7 +1271,60 @@ export default function Page() {
                     <small>para revisar</small>
                   </div>
                 </div>
+                <div className="trendPanel">
+  <div className="trendPanelTop">
+    <span>Tendencia de ventas</span>
+    <strong>+18%</strong>
+  </div>
 
+  <div className="trendChartLine">
+    <svg viewBox="0 0 520 180" className="trendSvg" aria-hidden="true">
+      <defs>
+        <linearGradient id="trendStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#7FB2FF" />
+          <stop offset="100%" stopColor="#8B5CF6" />
+        </linearGradient>
+
+        <linearGradient id="trendFill" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="rgba(127,178,255,.28)" />
+          <stop offset="100%" stopColor="rgba(139,92,246,.02)" />
+        </linearGradient>
+      </defs>
+
+      <line x1="28" y1="150" x2="500" y2="150" className="trendAxis" />
+      <line x1="28" y1="110" x2="500" y2="110" className="trendGuide" />
+      <line x1="28" y1="70" x2="500" y2="70" className="trendGuide" />
+      <line x1="28" y1="30" x2="500" y2="30" className="trendGuide" />
+
+      <path
+        d="M 28 150 L 28 116 C 62 108, 96 92, 120 98 C 154 104, 188 132, 212 118 C 246 98, 278 66, 304 74 C 336 84, 366 108, 396 92 C 426 76, 454 50, 500 58 L 500 150 Z"
+        fill="url(#trendFill)"
+      />
+
+      <path
+        d="M 28 116 C 62 108, 96 92, 120 98 C 154 104, 188 132, 212 118 C 246 98, 278 66, 304 74 C 336 84, 366 108, 396 92 C 426 76, 454 50, 500 58"
+        fill="none"
+        stroke="url(#trendStroke)"
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+
+      <circle cx="120" cy="98" r="5" className="trendPoint" />
+      <circle cx="212" cy="118" r="5" className="trendPoint" />
+      <circle cx="304" cy="74" r="5" className="trendPoint" />
+      <circle cx="396" cy="92" r="5" className="trendPoint" />
+      <circle cx="500" cy="58" r="6" className="trendPoint trendPointActive" />
+    </svg>
+
+    <div className="trendXAxis">
+      <span>sem 1</span>
+      <span>sem 2</span>
+      <span>sem 3</span>
+      <span>sem 4</span>
+      <span>hoy</span>
+    </div>
+  </div>
+</div>
                 <div className="mockupPanel">
                   <div className="mockupPanelHeader">
                     <span>stock en riesgo</span>
