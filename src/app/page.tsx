@@ -1137,6 +1137,159 @@ main{min-height:100vh;overflow-x:hidden;}
     height:96px;
   }
 }
+.enterpriseFinalCta{
+  position:relative;
+  margin-top:34px;
+  padding:36px;
+  border-radius:32px;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:26px;
+  align-items:center;
+  background:
+    linear-gradient(135deg, rgba(47,58,145,.88), rgba(21,27,77,.92));
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 30px 100px rgba(0,0,0,.32);
+}
+
+.finalCtaGlow{
+  position:absolute;
+  inset:auto -10% -45% 25%;
+  height:260px;
+  background:
+    radial-gradient(circle, rgba(127,178,255,.32), transparent 58%),
+    radial-gradient(circle at 70% 30%, rgba(139,92,246,.28), transparent 50%);
+  filter:blur(34px);
+  opacity:.9;
+  pointer-events:none;
+}
+
+.finalCtaContent{
+  position:relative;
+  z-index:2;
+}
+
+.finalCtaContent h2{
+  max-width:760px;
+  margin:10px 0 14px;
+  font-size:clamp(2rem, 3.6vw, 3.25rem);
+  line-height:1.02;
+  letter-spacing:-.045em;
+}
+
+.finalCtaContent p{
+  max-width:680px;
+  margin:0;
+  color:var(--muted);
+  line-height:1.7;
+  font-size:1.03rem;
+}
+
+.finalCtaPanel{
+  position:relative;
+  z-index:2;
+  display:grid;
+  gap:12px;
+}
+
+.finalCtaMetric{
+  padding:18px;
+  border-radius:20px;
+  background:rgba(8,14,48,.36);
+  border:1px solid rgba(255,255,255,.09);
+}
+
+.finalCtaMetric span{
+  display:block;
+  color:var(--muted);
+  font-size:.78rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-bottom:8px;
+}
+
+.finalCtaMetric strong{
+  display:block;
+  font-size:1.55rem;
+  line-height:1;
+  letter-spacing:-.03em;
+}
+
+.finalCtaMetric small{
+  display:block;
+  margin-top:8px;
+  color:var(--muted);
+}
+
+.enterpriseFooter{
+  margin-top:58px;
+  background:
+    linear-gradient(180deg, rgba(7,10,31,.35), rgba(7,10,31,.85));
+  border-top:1px solid rgba(255,255,255,.1);
+}
+
+.footerText{
+  max-width:440px;
+  margin:12px 0 0;
+  color:var(--muted);
+  line-height:1.65;
+}
+
+.footerColumn{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.footerColumn h4{
+  margin:0 0 6px;
+  font-size:.9rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:#fff;
+}
+
+.footerColumn a{
+  color:var(--muted);
+  font-weight:700;
+  transition:color .2s ease, transform .2s ease;
+}
+
+.footerColumn a:hover{
+  color:#fff;
+  transform:translateX(3px);
+}
+
+.footerBottom{
+  margin-top:28px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.08);
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+  color:var(--muted);
+  font-size:.92rem;
+}
+
+@media (max-width:1100px){
+  .enterpriseFinalCta{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:720px){
+  .enterpriseFinalCta{
+    padding:24px;
+    border-radius:24px;
+  }
+
+  .footerBottom{
+    flex-direction:column;
+  }
+}
 `;
 
 function waLink() {
@@ -1690,39 +1843,106 @@ export default function Page() {
               <p className="p">Porque estabilizamos carga, validación y hábito de uso para que el resultado sea real, no una demo bonita que nadie usa.</p>
             </details>
           </div>
-          <div className="finalCta">
-            <div className="finalCtaTitle">¿Listo para transformar datos en resultados?</div>
-            <div className="ctaRow">
-              <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">Probar gratis</a>
-              <a className="btn btnGhost" href={wa} target="_blank" rel="noreferrer">Agendar demo por WhatsApp</a>
+                     <div className="enterpriseFinalCta">
+            <div className="finalCtaGlow" />
+
+            <div className="finalCtaContent">
+              <span className="eyebrow">empieza con datos reales</span>
+
+              <h2>
+                Convierte tu próximo archivo de ventas en una decisión clara.
+              </h2>
+
+              <p>
+                Prueba JasoDatos con tu propio CSV y valida si el dashboard te
+                ayuda a detectar stock bajo, productos lentos y oportunidades de
+                venta en menos tiempo.
+              </p>
+
+              <div className="ctaRow">
+                <a
+                  className="btn btnPrimary"
+                  href="https://app.jasodatos.com/registro"
+                >
+                  Crear prueba gratis
+                </a>
+
+                <a
+                  className="btn btnGhost"
+                  href={wa}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Hablar por WhatsApp
+                </a>
+              </div>
+            </div>
+
+            <div className="finalCtaPanel">
+              <div className="finalCtaMetric">
+                <span>archivo</span>
+                <strong>CSV</strong>
+                <small>ventas e inventario</small>
+              </div>
+
+              <div className="finalCtaMetric">
+                <span>salida</span>
+                <strong>KPIs</strong>
+                <small>stock, ventas y rotación</small>
+              </div>
+
+              <div className="finalCtaMetric">
+                <span>acción</span>
+                <strong>PDF</strong>
+                <small>reporte para compartir</small>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <footer className="footer">
+      <footer className="footer enterpriseFooter">
         <div className="container footerGrid">
           <div>
             <div className="brand footerBrand">
               <span className="brandMark">JD</span>
               <span className="brandName">JasoDatos</span>
             </div>
-            <p className="p muted">Micro-BI para bodegas y ferreterías. CSV → control → decisiones.</p>
-            <p className="p muted">
-              Soporte: <a href={wa} target="_blank" rel="noreferrer">WhatsApp +593 997 945 350</a>
+
+            <p className="footerText">
+              Plataforma comercial ligera para convertir ventas, inventario y
+              stock en señales claras de decisión.
+            </p>
+
+            <p className="footerText">
+              Pensado para bodegas, ferreterías y negocios que necesitan vender,
+              reponer y controlar mejor.
             </p>
           </div>
-          <div className="footerLinks">
+
+          <div className="footerColumn">
+            <h4>Producto</h4>
             <a href="#beneficios">Beneficios</a>
+            <a href="#que-recibes">Qué recibes</a>
+            <a href="#como-funciona">Cómo funciona</a>
             <a href="#precios">Precios</a>
-            <a href="#faq">FAQ</a>
-            <a href="https://app.jasodatos.com">Entrar</a>
           </div>
-          <div className="footerLegal">
+
+          <div className="footerColumn">
+            <h4>Acceso</h4>
+            <a href="https://app.jasodatos.com/registro">Crear prueba gratis</a>
+            <a href="https://app.jasodatos.com">Entrar a la app</a>
+            <a href={wa} target="_blank" rel="noreferrer">
+              WhatsApp +593 997 945 350
+            </a>
             <a href="/privacidad">Privacidad</a>
             <a href="/terminos">Términos</a>
-            <span className="muted">© {new Date().getFullYear()} JasoDatos</span>
           </div>
+        </div>
+
+        <div className="container footerBottom">
+          <span>© {new Date().getFullYear()} JasoDatos</span>
+          <span>Transformamos datos en resultados.</span>
         </div>
       </footer>
     </main>
