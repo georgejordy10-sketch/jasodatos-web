@@ -915,167 +915,18 @@ main{min-height:100vh;overflow:hidden;}
 .pricingHero{margin-bottom:28px;}.pricingGridPremium{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}.pricingCardPremium{padding:24px;border-radius:26px;}.featuredPricing{border-color:rgba(127,178,255,.25);box-shadow:0 24px 70px rgba(79,70,229,.22);}.pricingCardTop{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;}.pricingCardTop h3{margin:0;}.featuredPill{padding:8px 10px;border-radius:999px;background:rgba(127,178,255,.12);border:1px solid rgba(127,178,255,.18);color:#dbeafe;font-size:.75rem;font-weight:950;text-transform:uppercase;}.pricingValue{display:flex;align-items:flex-end;gap:6px;margin-bottom:8px;}.pricingValue strong{font-size:3rem;line-height:1;letter-spacing:-.04em;}.pricingValue span,.pricingDescription,.pricingSetup,.pricingNotes{color:var(--muted);}.pricingDescription,.pricingSetup{margin:0 0 16px;line-height:1.6;}.pricingList{margin:0;padding-left:18px;color:#e5e7eb;}.pricingList li{margin:10px 0;}.pricingBtnFull{width:100%;margin-top:16px;}.pricingNotes{margin-top:18px;font-size:.94rem;line-height:1.6;}
 .faq{display:grid;gap:14px;}.faqItem{padding:18px 20px;border-radius:18px;}.faqItem summary{cursor:pointer;font-weight:900;list-style:none;}.faqItem summary::-webkit-details-marker{display:none;}.faqItem .p{margin-top:12px;}.enterpriseFinalCta{position:relative;margin-top:34px;padding:36px;border-radius:32px;overflow:hidden;display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center;background:linear-gradient(135deg,rgba(47,58,145,.88),rgba(21,27,77,.92));border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 100px rgba(0,0,0,.32);}.finalCtaContent h2{max-width:760px;margin:10px 0 14px;font-size:clamp(2rem,3.6vw,3.25rem);line-height:1.02;letter-spacing:-.045em;}.finalCtaContent p{max-width:680px;margin:0;color:var(--muted);line-height:1.7;font-size:1.03rem;}.finalCtaPanel{display:grid;gap:12px;}.finalCtaMetric{padding:18px;border-radius:20px;background:rgba(8,14,48,.36);border:1px solid rgba(255,255,255,.09);}.finalCtaMetric span{display:block;color:var(--muted);font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}.finalCtaMetric strong{display:block;font-size:1.55rem;}.finalCtaMetric small{display:block;margin-top:8px;color:var(--muted);}
 .footer{padding:40px 0;border-top:1px solid var(--line);background:rgba(7,10,31,.4);}.footerGrid{display:grid;grid-template-columns:1.1fr .8fr .8fr;gap:20px;align-items:start;}.footerText{max-width:440px;margin:12px 0 0;color:var(--muted);line-height:1.65;}.footerColumn{display:flex;flex-direction:column;gap:10px;}.footerColumn h4{margin:0 0 6px;font-size:.9rem;text-transform:uppercase;letter-spacing:.12em;color:#fff;}.footerColumn a{color:var(--muted);font-weight:700;transition:color .2s ease,transform .2s ease;}.footerColumn a:hover{color:#fff;transform:translateX(3px);}.footerBottom{margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.92rem;}
+
 @media (max-width:1180px){
-  .container{
-    width:min(100% - 36px,1180px);
-  }
-
-  .headerInner{
-    padding:14px 0;
-    align-items:flex-start;
-    flex-direction:column;
-  }
-
-  .nav,
-  .headerCtas{
-    width:100%;
-  }
-
-  .heroTarget{
-    min-height:auto;
-  }
-
-  .heroTargetGrid{
-    grid-template-columns:1fr;
-    gap:38px;
-  }
-
-  .dashboardShellPremium{
-    max-width:100% !important;
-  }
-
-  .dashboardKpisPremium{
-    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-  }
-
-  .dashboardMainGridPremium{
-    grid-template-columns:1fr !important;
-  }
-
-  .dashboardBotBarPremium{
-    grid-template-columns:1fr !important;
-  }
-
-  .dashboardBotLabel{
-    border-right:0;
-    padding-right:0;
-  }
-
-  .intelligenceGrid,
-  .pricingGridPremium,
-  .footerGrid{
-    grid-template-columns:1fr;
-  }
-
-  .intelligenceSticky{
-    position:relative;
-    top:auto;
-    min-height:auto;
-  }
-
-  .processFlow{
-    grid-template-columns:1fr;
-    gap:14px;
-  }
-
-  .processConnector{
-    width:2px;
-    height:34px;
-    margin:0 auto;
-    background:linear-gradient(180deg,rgba(127,178,255,.2),rgba(139,92,246,.5));
-  }
+  .container{width:min(100% - 36px,1180px);} .headerInner{padding:14px 0;align-items:flex-start;flex-direction:column;} .nav,.headerCtas{width:100%;}
+  .heroTarget{min-height:auto;} .heroTargetGrid{grid-template-columns:1fr;gap:38px;} .dashboardShell{max-width:100%;} .dashboardKpis{grid-template-columns:repeat(2,minmax(0,1fr));} .dashboardMainGrid{grid-template-columns:1fr;} .dashboardBotBar{grid-template-columns:1fr;} .dashboardBotLabel{border-right:0;padding-right:0;}
+  .signalBandGrid,.intelligenceGrid,.metricRail,.dualFeatureGrid,.pricingGridPremium,.footerGrid{grid-template-columns:1fr;} .signalMetricsGrid{grid-template-columns:repeat(2,minmax(0,1fr));} .intelligenceSticky{position:relative;top:auto;min-height:auto;} .processFlow{grid-template-columns:1fr;gap:14px;} .processConnector{width:2px;height:34px;margin:0 auto;background:linear-gradient(180deg,rgba(127,178,255,.2),rgba(139,92,246,.5));} .signalCardPrimary,.signalCardWide{grid-row:auto;grid-column:auto;}
 }
 @media (max-width:720px){
-  .container{
-    width:100%;
-    max-width:100%;
-    padding-left:18px;
-    padding-right:18px;
-  }
-
-  .headerCtas{
-    flex-direction:column;
-    align-items:stretch;
-  }
-
-  .nav{
-    gap:12px;
-  }
-
-  .btn{
-    width:100%;
-    min-width:0;
-    white-space:normal;
-    text-align:center;
-  }
-
-  .heroTarget{
-    padding:34px 0 26px;
-  }
-
-  .heroTargetTitle{
-    font-size:clamp(2.3rem,10.5vw,3.1rem);
-  }
-
-  .heroTargetActions{
-    display:grid;
-  }
-
-  .heroTargetProof{
-    grid-template-columns:1fr;
-  }
-
-  .dashboardShellPremium{
-    padding:18px 16px !important;
-    border-radius:22px !important;
-  }
-
-  .dashboardHeaderPremium{
-    align-items:flex-start;
-    flex-direction:column;
-  }
-
-  .dashboardKpisPremium{
-    grid-template-columns:1fr !important;
-  }
-
-  .dashboardCategoryBody{
-    grid-template-columns:1fr !important;
-  }
-
-  .dashboardDonut{
-    width:142px;
-    height:142px;
-    margin:0 auto;
-  }
-
-  .dashboardBotActionsPremium{
-    width:100%;
-  }
-
-  .dashboardBotActionsPremium span{
-    flex:1;
-  }
-
-  .intelligenceCards{
-    grid-template-columns:1fr;
-  }
-
-  .intelligenceCard{
-    min-height:250px;
-  }
-
-  .enterpriseFinalCta{
-    grid-template-columns:1fr;
-    padding:24px;
-    border-radius:24px;
-  }
-
-  .footerBottom{
-    flex-direction:column;
-  }
+  .container{width:100%;max-width:100%;padding-left:18px;padding-right:18px;} .headerCtas{flex-direction:column;align-items:stretch;} .nav{gap:12px;} .btn{width:100%;min-width:0;white-space:normal;text-align:center;}
+  .heroTarget{padding:34px 0 26px;} .heroTargetTitle{font-size:clamp(2.3rem,10.5vw,3.1rem);} .heroTargetActions{display:grid;} .heroTargetProof{grid-template-columns:1fr;}
+  .dashboardShell{padding:18px 16px;border-radius:22px;} .dashboardHeader{align-items:flex-start;} .dashboardKpis{grid-template-columns:1fr;} .dashboardCategoryBody{grid-template-columns:1fr;} .dashboardDonut{width:142px;height:142px;margin:0 auto;} .dashboardBotActions{width:100%;}.dashboardBotActions span{flex:1;}
+  .signalMetricsGrid{grid-template-columns:1fr;} .signalMetricCard{min-height:auto;} .intelligenceCards{grid-template-columns:1fr;} .intelligenceCard{min-height:250px;} .enterpriseFinalCta{grid-template-columns:1fr;padding:24px;border-radius:24px;} .footerBottom{flex-direction:column;}
 }
-
 /* AJUSTE FINAL SIGNAL BAND - ANCHO + ICONOS */
 .signalBandGrid{
   grid-template-columns:520px minmax(0,1fr) !important;
@@ -4011,7 +3862,7 @@ export default function Page() {
         <details className="faqItem">
           <summary>¿Sirve para bodegas y ferreterías?</summary>
           <p className="p">
-            Es correcto. El núcleo es el inventario, rotación y reposición: exactamente el dolor
+            Sí. El core es inventario, rotación y reposición: exactamente el dolor
             del día a día en negocios comerciales.
           </p>
         </details>
