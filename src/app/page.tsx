@@ -1580,276 +1580,369 @@ main{overflow:hidden}
 
 
 
+
+
 /* ================================
-   PRICING FINAL - PLANES CLAROS
-   Inicio / Crecimiento / Control
+   RESPONSIVE FIX MOBILE/TABLET
+   Reduce espacios vacíos causados por animaciones grandes
 ================================ */
-.pricing{
-  padding:92px 0 108px;
-  background:
-    radial-gradient(780px 360px at 52% 18%, rgba(124,58,237,.18), transparent 64%),
-    linear-gradient(180deg,#080915 0%,#0b0c17 100%);
+@media (max-width: 900px){
+  .container{
+    width:100%;
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .hero{
+    min-height:auto;
+    padding:104px 0 46px;
+  }
+
+  .heroGrid,
+  .decisionsGrid,
+  .purposeGrid,
+  .metricsShell,
+  .benefitShell,
+  .pricingGrid,
+  .bottomGrid{
+    grid-template-columns:1fr !important;
+  }
+
+  .heroGrid{gap:32px}
+
+  .hero h1{
+    font-size:clamp(2.45rem,12vw,3.35rem);
+    line-height:1.08;
+    letter-spacing:-.055em;
+  }
+
+  .heroLead{
+    font-size:.98rem;
+    line-height:1.58;
+    margin:20px 0 22px;
+  }
+
+  .heroActions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .dashboard{
+    grid-template-columns:1fr;
+    min-height:auto;
+    border-radius:18px;
+  }
+
+  .dashSide{display:none}
+  .dashMain{padding:18px}
+  .dashHeader{align-items:flex-start;gap:12px}
+  .kpiGrid,
+  .dashBody,
+  .donutWrap{
+    grid-template-columns:1fr !important;
+  }
+
+  .panel{min-height:auto}
+  .lineBox{height:130px}
+  .donutWrap{height:auto}
+
+  .heroWaveImage{
+    height:280px;
+    background-size:150% auto;
+    opacity:.78;
+    animation:none !important;
+  }
+
+  .decisions,
+  .purpose,
+  .metrics,
+  .benefits,
+  .receive,
+  .howWorks,
+  .solutions,
+  .pricing,
+  .faq{
+    padding-top:58px !important;
+    padding-bottom:64px !important;
+  }
+
+  .sectionTitle,
+  .metricsIntro h2,
+  .benefitIntro h2,
+  .receiveHead h2,
+  .howHead h2,
+  .faqHead h2{
+    font-size:clamp(2rem,9vw,2.7rem);
+    line-height:1.08;
+  }
+
+  .cardGrid,
+  .metricsGrid,
+  .benefitGrid,
+  .receiveGrid,
+  .solutionGrid{
+    grid-template-columns:1fr !important;
+    gap:18px;
+  }
+
+  .actionCard,
+  .metric,
+  .benefitCard,
+  .stepCard,
+  .solutionCard,
+  .price,
+  .faqItem{
+    min-height:auto;
+  }
+
+  .actionCard{padding:28px 24px}
+
+  .purposeGrid{gap:28px}
+  .videoPanel{
+    min-height:320px;
+    border-radius:22px;
+  }
+
+  .demoFrame{
+    width:90%;
+    min-height:230px;
+    padding:22px;
+  }
+
+  .metricsShell,
+  .benefitShell,
+  .receivePanel,
+  .howPanel,
+  .faqPanel{
+    padding:22px !important;
+    border-radius:24px;
+  }
+
+  .metricsIntro{
+    padding:0 0 22px;
+    border-right:0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+
+  .benefitIntro{
+    min-height:auto;
+    padding:22px;
+  }
+
+  .stepGrid{
+    grid-template-columns:1fr !important;
+    gap:18px;
+  }
+
+  .stepArrow{display:none !important}
+
+  .solutionCard{
+    grid-template-columns:72px 1fr;
+    width:100%;
+  }
+
+  .pricingGrid{
+    max-width:520px;
+    gap:22px;
+  }
+
+  .price{
+    min-height:auto;
+    padding:34px 26px;
+    border-radius:24px;
+  }
+
+  .amount{font-size:3.1rem}
+
+  .bottomGrid{text-align:left}
+
+  .bottomActions,
+  .navActions{
+    display:grid;
+    grid-template-columns:1fr;
+    width:100%;
+  }
+
+  .footerGrid{grid-template-columns:1fr !important}
+
+  /* Animación móvil: visible, pero sin dejar huecos gigantes */
+  .motion-fade,
+  .motion-up,
+  .motion-left,
+  .motion-right,
+  .motion-scale{
+    transition-duration:1.15s !important;
+    filter:none !important;
+  }
+
+  .motion-up:not(.is-in-view){
+    transform:translate3d(0,44px,0) scale(.98) !important;
+  }
+
+  .motion-left:not(.is-in-view){
+    transform:translate3d(-44px,0,0) scale(.98) !important;
+  }
+
+  .motion-right:not(.is-in-view){
+    transform:translate3d(44px,0,0) scale(.98) !important;
+  }
+
+  .motion-scale:not(.is-in-view){
+    transform:scale(.96) !important;
+  }
+
+  .motion-delay-1{transition-delay:.06s !important}
+  .motion-delay-2{transition-delay:.12s !important}
+  .motion-delay-3{transition-delay:.18s !important}
+  .motion-delay-4{transition-delay:.24s !important}
+
+  .dashboard.motion-right.is-in-view{
+    animation:none !important;
+  }
+
+  .actionCard:hover,
+  .solutionCard:hover,
+  .price:hover,
+  .benefitCard:hover,
+  .stepCard:hover,
+  .receiveItem:hover,
+  .metric:hover{
+    transform:translateY(-6px) scale(1.01) !important;
+  }
+
+  /* FAQ mantiene entrada lateral, pero corta y sin hover */
+  .faq .faqList .faqItem.motion-left:not(.is-in-view){
+    transform:translate3d(-44px,0,0) !important;
+  }
+
+  .faq .faqList .faqItem.motion-right:not(.is-in-view){
+    transform:translate3d(44px,0,0) !important;
+  }
+
+  .faq .faqList .faqItem.motion-left,
+  .faq .faqList .faqItem.motion-right{
+    transition-duration:1.15s !important;
+  }
 }
 
-.pricingHead{
-  text-align:center;
-  margin-bottom:34px;
+@media (max-width: 430px){
+  .container{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .navInner{
+    height:auto;
+    padding:14px 0;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .navLinks,
+  .modeDot{display:none}
+
+  .hero{padding-top:118px}
+  .dashMain{padding:14px}
+  .dateBadge{font-size:.62rem}
+  .kpi{padding:14px}
+
+  .sectionKicker,
+  .metricsTitle,
+  .solutionsTitle{
+    letter-spacing:.12em;
+  }
+
+  .solutionCard{
+    grid-template-columns:1fr;
+    text-align:left;
+  }
+
+  .solutionIcon{
+    width:74px;
+    height:74px;
+  }
+
+  .receiveItem{align-items:flex-start}
+  .faqItem{padding:18px 18px}
 }
 
-.pricingGrid{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(0,1fr));
-  gap:30px;
-  align-items:stretch;
-  max-width:1220px;
-  margin:0 auto;
+/* ================================
+   PRICING FINAL AJUSTADO
+   3 planes + contenedor dudas a la derecha
+   Sin choque con el título al hacer hover
+================================ */
+.pricing{padding:104px 0 112px !important;background:radial-gradient(760px 360px at 50% 12%, rgba(124,58,237,.14), transparent 64%),linear-gradient(180deg,#080915 0%,#0b0c17 100%) !important}
+.pricingHead{text-align:center !important;margin-bottom:64px !important}
+.pricingGridFinal{display:grid !important;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr) minmax(0,1fr) minmax(260px,.82fr) !important;gap:26px !important;align-items:stretch !important;max-width:1480px !important;margin:0 auto !important}
+.pricePlan{position:relative !important;min-height:560px !important;padding:46px 42px !important;border-radius:28px !important;display:flex !important;flex-direction:column !important;overflow:visible !important}
+.priceLight{color:#160c2f !important;background:radial-gradient(520px 220px at 50% -8%, rgba(124,58,237,.08), transparent 62%),linear-gradient(180deg,#ffffff 0%,#f8f5ff 100%) !important;border:1px solid rgba(46,13,79,.12) !important;box-shadow:0 34px 90px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.95) !important}
+.priceFeatured{color:#ffffff !important;background:radial-gradient(540px 260px at 50% -12%, rgba(167,139,250,.28), transparent 62%),linear-gradient(180deg,#3b1672 0%,#302a91 100%) !important;border:1px solid rgba(196,181,253,.34) !important;box-shadow:0 42px 110px rgba(61,44,141,.42), 0 0 0 1px rgba(255,255,255,.08) inset !important}
+.planBadge{position:absolute;top:-18px;left:50%;transform:translateX(-50%);min-height:34px;padding:0 28px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;color:#2e0d4f;background:#ffc928;box-shadow:0 16px 34px rgba(255,201,40,.28);font-size:.78rem;font-weight:950;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;z-index:2}
+.priceIcon{width:68px !important;height:68px !important;border-radius:20px !important;display:grid !important;place-items:center !important;margin-bottom:28px !important;color:#2e0d4f !important;background:rgba(124,58,237,.08) !important;border:1px solid rgba(124,58,237,.10) !important;box-shadow:0 18px 40px rgba(46,13,79,.08) !important}
+.priceIcon svg{width:32px;height:32px;stroke-width:1.9}.priceFeatured .priceIcon{color:#fff !important;background:rgba(255,255,255,.12) !important;border-color:rgba(255,255,255,.18) !important;box-shadow:0 0 42px rgba(167,139,250,.28) !important}
+.pricePlan h3{margin:0 0 12px !important;color:inherit !important;font-size:1.58rem !important;font-weight:950 !important;letter-spacing:.08em !important;text-transform:uppercase !important}.pricePlan .amount{margin:0 0 14px !important;color:inherit !important;font-size:3.9rem !important;line-height:.95 !important;font-weight:950 !important;letter-spacing:-.07em !important}.pricePlan .amount small{font-size:1.08rem !important;color:rgba(46,13,79,.82) !important;letter-spacing:0 !important}.priceFeatured .amount small{color:rgba(255,255,255,.72) !important}
+.pricePlan p{margin:0 0 28px !important;color:rgba(46,13,79,.72) !important;font-size:1.02rem !important;line-height:1.45 !important}.priceFeatured p{color:rgba(255,255,255,.74) !important}.priceDivider{height:1px;width:100%;margin:0 0 26px;background:rgba(46,13,79,.12)}.priceFeatured .priceDivider{background:rgba(255,255,255,.18)}
+.pricePlan ul{list-style:none !important;padding:0 !important;margin:0 0 32px !important;display:grid !important;gap:15px !important}.pricePlan li{position:relative !important;padding-left:28px !important;color:#160c2f !important;font-size:1.02rem !important;line-height:1.35 !important}.pricePlan li::before{content:"✓";position:absolute;left:0;top:0;color:#2e0d4f;font-weight:950}.priceFeatured li{color:rgba(255,255,255,.86) !important}.priceFeatured li::before{color:#86efac}
+.pricePlan .btn{width:100%;min-height:56px;margin-top:auto;border-radius:10px;font-size:1rem}.priceLight .btnPrimary{color:#fff !important;background:linear-gradient(135deg,#2e0d4f,#3d2c8d) !important;box-shadow:0 18px 44px rgba(46,13,79,.18) !important}.priceFeatured .btnPrimary{color:#2e0d4f !important;background:#fff !important;box-shadow:0 20px 48px rgba(0,0,0,.18) !important}
+.priceHelp{min-height:560px;padding:38px 34px;border-radius:28px;display:flex;flex-direction:column;justify-content:center;color:#ffffff;background:radial-gradient(280px 180px at 40% 18%, rgba(167,139,250,.22), transparent 62%), linear-gradient(145deg,#2e0d4f 0%,#3d2c8d 100%);border:1px solid rgba(196,181,253,.22);box-shadow:0 36px 92px rgba(46,13,79,.36)}
+.priceHelpIcon{width:66px;height:66px;border-radius:20px;display:grid;place-items:center;margin-bottom:28px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);box-shadow:0 0 40px rgba(167,139,250,.22)}.priceHelpIcon svg{width:32px;height:32px}.priceHelp h3{margin:0 0 16px;font-size:1.35rem;letter-spacing:-.02em}.priceHelp p{margin:0 0 26px;color:rgba(255,255,255,.78);line-height:1.58}.priceHelp .btn{width:100%;min-height:52px;border-radius:10px;color:#fff;background:rgba(127,178,255,.12);border-color:rgba(127,178,255,.30)}
+/* Hover visible sin chocar con el título */
+.pricePlan:hover,
+.pricePlan.motion-up:hover,
+.priceHelp:hover{
+  transform:translateY(-14px) scale(1.025) !important;
+  filter:saturate(1.14) brightness(1.045) !important;
 }
 
-.price{
-  position:relative;
-  min-height:560px;
-  padding:46px 42px;
-  border-radius:28px;
-  display:flex;
-  flex-direction:column;
-  color:#160c2f;
-  background:
-    radial-gradient(520px 220px at 50% -8%, rgba(124,58,237,.08), transparent 62%),
-    linear-gradient(180deg,#ffffff 0%,#f7f4ff 100%);
-  border:1px solid rgba(46,13,79,.12);
+.pricePlan:hover{
+  border-color:rgba(124,58,237,.42) !important;
   box-shadow:
-    0 34px 90px rgba(0,0,0,.18),
-    inset 0 1px 0 rgba(255,255,255,.95);
-  overflow:visible;
+    0 34px 70px rgba(46,13,79,.28),
+    0 0 0 2px rgba(124,58,237,.16),
+    0 0 58px rgba(124,58,237,.20),
+    inset 0 1px 0 rgba(255,255,255,.95) !important;
 }
 
-.price.featured{
-  color:#ffffff;
-  background:
-    radial-gradient(540px 260px at 50% -12%, rgba(167,139,250,.28), transparent 62%),
-    linear-gradient(180deg,#3b1672 0%,#302a91 100%);
-  border:1px solid rgba(196,181,253,.34);
+.priceFeatured:hover{
+  border-color:rgba(255,255,255,.46) !important;
   box-shadow:
-    0 42px 110px rgba(61,44,141,.42),
-    0 0 0 1px rgba(255,255,255,.08) inset;
+    0 40px 92px rgba(61,44,141,.48),
+    0 0 0 2px rgba(255,255,255,.18),
+    0 0 70px rgba(167,139,250,.32),
+    inset 0 1px 0 rgba(255,255,255,.12) !important;
 }
 
-.planBadge{
-  position:absolute;
-  top:-18px;
-  left:50%;
-  transform:translateX(-50%);
-  min-height:34px;
-  padding:0 26px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:999px;
-  color:#2e0d4f;
-  background:#ffc928;
-  box-shadow:0 16px 34px rgba(255,201,40,.28);
-  font-size:.78rem;
-  font-weight:950;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  white-space:nowrap;
+.priceHelp:hover{
+  border-color:rgba(196,181,253,.52) !important;
+  box-shadow:
+    0 38px 88px rgba(46,13,79,.42),
+    0 0 0 2px rgba(167,139,250,.18),
+    0 0 70px rgba(124,58,237,.28) !important;
 }
 
-.priceIcon{
-  width:68px;
-  height:68px;
-  border-radius:20px;
-  display:grid;
-  place-items:center;
-  margin-bottom:28px;
-  color:#2e0d4f;
-  background:rgba(124,58,237,.08);
-  border:1px solid rgba(124,58,237,.10);
-  box-shadow:0 18px 40px rgba(46,13,79,.08);
+.pricePlan:hover .priceIcon,
+.priceHelp:hover .priceHelpIcon{
+  transform:translateY(-4px) scale(1.08);
+  box-shadow:
+    0 20px 48px rgba(124,58,237,.25),
+    0 0 38px rgba(124,58,237,.28) !important;
 }
 
-.priceIcon svg{
-  width:32px;
-  height:32px;
-  stroke-width:1.9;
+.pricePlan:hover .btn,
+.priceHelp:hover .btn{
+  transform:translateY(-2px);
+  box-shadow:0 22px 52px rgba(46,13,79,.28) !important;
 }
 
-.price.featured .priceIcon{
-  color:#ffffff;
-  background:rgba(255,255,255,.12);
-  border-color:rgba(255,255,255,.18);
-  box-shadow:0 0 42px rgba(167,139,250,.28);
+.priceFeatured:hover .planBadge{
+  box-shadow:
+    0 18px 38px rgba(255,201,40,.34),
+    0 0 0 2px rgba(255,255,255,.22);
 }
 
-.price h3{
-  margin:0 0 12px;
-  color:inherit;
-  font-size:1.58rem;
-  font-weight:950;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
-
-.amount{
-  margin:0 0 14px;
-  color:inherit;
-  font-size:3.9rem;
-  line-height:.95;
-  font-weight:950;
-  letter-spacing:-.07em;
-}
-
-.amount small{
-  font-size:1.08rem;
-  color:rgba(46,13,79,.82);
-  letter-spacing:0;
-}
-
-.price.featured .amount small{
-  color:rgba(255,255,255,.72);
-}
-
-.price p{
-  margin:0 0 28px;
-  color:rgba(46,13,79,.72);
-  font-size:1.02rem;
-  line-height:1.45;
-}
-
-.price.featured p{
-  color:rgba(255,255,255,.72);
-}
-
-.priceDivider{
-  height:1px;
-  width:100%;
-  margin:0 0 26px;
-  background:rgba(46,13,79,.12);
-}
-
-.price.featured .priceDivider{
-  background:rgba(255,255,255,.18);
-}
-
-.price ul{
-  list-style:none;
-  padding:0;
-  margin:0 0 32px;
-  display:grid;
-  gap:15px;
-}
-
-.price li{
-  position:relative;
-  padding-left:28px;
-  color:#160c2f;
-  font-size:1.02rem;
-  line-height:1.35;
-}
-
-.price li::before{
-  content:"✓";
-  position:absolute;
-  left:0;
-  top:0;
-  color:#2e0d4f;
-  font-weight:950;
-}
-
-.price.featured li{
-  color:rgba(255,255,255,.86);
-}
-
-.price.featured li::before{
-  color:#86efac;
-}
-
-.price .btn{
-  width:100%;
-  min-height:56px;
-  margin-top:auto;
-  border-radius:10px;
-  font-size:1rem;
-}
-
-.price:not(.featured) .btnPrimary{
-  color:#ffffff;
-  background:linear-gradient(135deg,#2e0d4f,#3d2c8d);
-  box-shadow:0 18px 44px rgba(46,13,79,.18);
-}
-
-.price.featured .btnPrimary{
-  color:#2e0d4f;
-  background:#ffffff;
-  box-shadow:0 20px 48px rgba(0,0,0,.18);
-}
-
-.price:hover,
-.price.motion-up:hover{
-  transform:translateY(-18px) scale(1.025) !important;
-  filter:saturate(1.08) brightness(1.02);
-}
-
-/* FAQ alternada por scroll, sin hover de elevación.
-   Este bloque va después del sistema global para que no lo anule. */
-.faq .faqList .faqItem.motion-left,
-.faq .faqList .faqItem.motion-right{
-  opacity:0 !important;
-  filter:none !important;
-  transition:
-    opacity 3.1s cubic-bezier(.13,.72,.08,1),
-    transform 3.1s cubic-bezier(.13,.72,.08,1),
-    background .22s ease,
-    border-color .22s ease !important;
-}
-
-.faq .faqList .faqItem.motion-left:not(.is-in-view){
-  transform:translate3d(-340px,0,0) !important;
-}
-
-.faq .faqList .faqItem.motion-right:not(.is-in-view){
-  transform:translate3d(340px,0,0) !important;
-}
-
-.faq .faqList .faqItem.motion-left.is-in-view,
-.faq .faqList .faqItem.motion-right.is-in-view{
-  opacity:1 !important;
-  transform:translate3d(0,0,0) !important;
-  filter:none !important;
-}
-
-.faq .faqList .faqItem:hover,
-.faq .faqList .faqItem.motion-left:hover,
-.faq .faqList .faqItem.motion-right:hover,
-.faq .faqList .faqItem.motion-left.is-in-view:hover,
-.faq .faqList .faqItem.motion-right.is-in-view:hover,
-.faq .faqList .faqItem[open]:hover{
-  transform:translate3d(0,0,0) !important;
-  translate:0 0 !important;
-  filter:none !important;
-  box-shadow:none !important;
-  border-color:rgba(255,255,255,.08) !important;
-  background:rgba(40,53,147,.24) !important;
-}
-
-.faq .faqList .faqItem summary:hover,
-.faq .faqList .faqItem summary:focus{
-  transform:none !important;
-  filter:none !important;
-  box-shadow:none !important;
-}
-
-@media (max-width:1120px){
-  .pricingGrid{grid-template-columns:1fr;max-width:620px}
-  .price{min-height:auto}
-}
-
-@media (max-width:760px){
-  .pricing{padding:72px 0 84px}
-  .price{padding:34px 26px;border-radius:24px}
-  .amount{font-size:3.2rem}
-}
-
+@media (max-width:1280px){.pricingGridFinal{grid-template-columns:repeat(2,minmax(0,1fr)) !important;max-width:900px !important}}
+@media (max-width:760px){.pricing{padding:68px 0 82px !important}.pricingHead{margin-bottom:52px !important}.pricingGridFinal{grid-template-columns:1fr !important;max-width:620px !important}.pricePlan,.priceHelp{min-height:auto !important;padding:34px 26px !important;border-radius:24px !important}.pricePlan .amount{font-size:3.2rem !important}}
 
 `;
 
@@ -1880,13 +1973,17 @@ const motionScript = `
     '.motion-scale'
   ].join(',');
 
-  const run = () => {
+  const runMotion = () => {
     const items = Array.from(document.querySelectorAll(motionSelector));
+
+    if (!items.length) return;
 
     if (!('IntersectionObserver' in window)) {
       items.forEach((el) => el.classList.add('is-in-view'));
       return;
     }
+
+    const isCompact = window.matchMedia('(max-width: 900px)').matches;
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -1899,17 +1996,25 @@ const motionScript = `
         }
       });
     }, {
-      threshold: 0.06,
-      rootMargin: '-2% 0px -4% 0px'
+      threshold: isCompact ? 0.03 : 0.08,
+      rootMargin: isCompact ? '18% 0px 18% 0px' : '-4% 0px -6% 0px'
     });
 
     items.forEach((el) => observer.observe(el));
   };
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', run, { once: true });
+  const startAfterHydration = () => {
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        window.setTimeout(runMotion, 250);
+      });
+    });
+  };
+
+  if (document.readyState === 'complete') {
+    startAfterHydration();
   } else {
-    run();
+    window.addEventListener('load', startAfterHydration, { once: true });
   }
 })();
 `;
@@ -2395,14 +2500,14 @@ export default function Page() {
             <p className="sectionKicker motion-fade">Planes para cada etapa de tu negocio</p>
           </div>
 
-          <div className="pricingGrid">
-            <article className="price motion-up motion-delay-1">
+          <div className="pricingGrid pricingGridFinal">
+            <article className="price pricePlan priceLight motion-up motion-delay-1">
               <div className="priceIcon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M4 12H20" stroke="currentColor" strokeLinecap="round" />
-                  <path d="M14 6L20 12L14 18" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M5 19C6.8 16.8 9 15.7 12 15.7" stroke="currentColor" strokeLinecap="round" />
-                  <path d="M9.2 8.6C9.2 10.15 10.45 11.4 12 11.4C13.55 11.4 14.8 10.15 14.8 8.6C14.8 7.05 13.55 5.8 12 5.8C10.45 5.8 9.2 7.05 9.2 8.6Z" stroke="currentColor" />
+                  <path d="M4 19V8.5C4 7.1 5.1 6 6.5 6H17.5C18.9 6 20 7.1 20 8.5V19" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M8 6V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6" stroke="currentColor" strokeLinecap="round" />
+                  <path d="M8 12H16" stroke="currentColor" strokeLinecap="round" />
+                  <path d="M9 16H15" stroke="currentColor" strokeLinecap="round" />
                 </svg>
               </div>
               <h3>Inicio</h3>
@@ -2418,7 +2523,7 @@ export default function Page() {
               <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">Probar gratis</a>
             </article>
 
-            <article className="price featured motion-up motion-delay-2">
+            <article className="price pricePlan priceFeatured motion-up motion-delay-2">
               <span className="planBadge">Más usado</span>
               <div className="priceIcon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -2440,7 +2545,7 @@ export default function Page() {
               <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">Empezar ahora</a>
             </article>
 
-            <article className="price motion-up motion-delay-3">
+            <article className="price pricePlan priceLight motion-up motion-delay-3">
               <div className="priceIcon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M12 3.5L19.5 7.5V12C19.5 16.4 16.6 19.6 12 20.5C7.4 19.6 4.5 16.4 4.5 12V7.5L12 3.5Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
@@ -2459,6 +2564,21 @@ export default function Page() {
               </ul>
               <a className="btn btnPrimary" href={wa} target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
             </article>
+
+            <aside className="priceHelp motion-right motion-delay-4">
+              <div className="priceHelpIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M8 10.5C8 8.3 9.8 6.5 12 6.5C14.2 6.5 16 8.1 16 10.2C16 13.2 12.6 12.9 12.6 15" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M12.6 18H12.61" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+                  <path d="M4.5 19.5C3.2 18.1 2.5 16.1 2.5 14C2.5 8.8 6.8 4.5 12 4.5C17.2 4.5 21.5 8.8 21.5 14C21.5 19.2 17.2 23.5 12 23.5C10.1 23.5 8.4 23 6.9 22.1L3.5 22.5L4.5 19.5Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h3>¿Tienes dudas?</h3>
+              <p>Hablemos por WhatsApp y te ayudamos a elegir el plan ideal para tu negocio.</p>
+              <a className="btn btnWhats" href={wa} target="_blank" rel="noreferrer">
+                Hablar por WhatsApp
+              </a>
+            </aside>
           </div>
         </div>
       </section>
