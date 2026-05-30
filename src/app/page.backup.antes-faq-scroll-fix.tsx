@@ -722,7 +722,7 @@ main{overflow:hidden}
   display:grid;
   grid-template-columns:.72fr 1.28fr;
   gap:34px;
-  align-items:flex-start;
+  align-items:stretch;
   padding:34px;
   border-radius:30px;
   background:linear-gradient(180deg,rgba(15,18,37,.86),rgba(8,9,21,.84));
@@ -730,18 +730,15 @@ main{overflow:hidden}
   box-shadow:0 32px 96px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.05);
 }
 .metricsIntro{
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  padding:4px 12px 18px 0;
+  padding:18px 12px 18px 0;
   border-right:1px solid rgba(255,255,255,.08);
 }
 .metricsTitle{
-  margin:-14px 0 14px;
-  color:#a78bfa;
+  margin:0 0 18px;
+  color:#7fb2ff;
   text-transform:uppercase;
-  letter-spacing:.22em;
-  font-size:.78rem;
+  letter-spacing:.18em;
+  font-size:.75rem;
   font-weight:950;
 }
 .metricsIntro h2{
@@ -1173,29 +1170,10 @@ main{overflow:hidden}
 }
 
 @media (max-width:1120px){
-  .purposeGrid,
-  .metricsShell,
-  .benefitShell,
-  .stepGrid{
-    grid-template-columns:1fr;
-  }
-
-.metricsIntro{
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  padding:0 12px 18px 0;
-  border-right:1px solid rgba(255,255,255,.08);
-}
-
-  .metricsGrid,
-  .solutionGrid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .stepArrow{
-    display:none;
-  }
+  .purposeGrid,.metricsShell,.benefitShell,.stepGrid{grid-template-columns:1fr}
+  .metricsIntro{border-right:0;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:24px}
+  .metricsGrid,.solutionGrid{grid-template-columns:repeat(2,1fr)}
+  .stepArrow{display:none}
 }
 @media (max-width:760px){
   .videoPanel{min-height:320px;border-radius:22px}
@@ -1602,1371 +1580,277 @@ main{overflow:hidden}
 
 
 
-
-
 /* ================================
-   RESPONSIVE FIX MOBILE/TABLET
-   Reduce espacios vacíos causados por animaciones grandes
+   PRICING FINAL - PLANES CLAROS
+   Inicio / Crecimiento / Control
 ================================ */
-@media (max-width: 900px){
-  .container{
-    width:100%;
-    padding-left:20px;
-    padding-right:20px;
-  }
-
-  .hero{
-    min-height:auto;
-    padding:104px 0 46px;
-  }
-
-  .heroGrid,
-  .decisionsGrid,
-  .purposeGrid,
-  .metricsShell,
-  .benefitShell,
-  .pricingGrid,
-  .bottomGrid{
-    grid-template-columns:1fr !important;
-  }
-
-  .heroGrid{gap:32px}
-
-  .hero h1{
-    font-size:clamp(2.45rem,12vw,3.35rem);
-    line-height:1.08;
-    letter-spacing:-.055em;
-  }
-
-  .heroLead{
-    font-size:.98rem;
-    line-height:1.58;
-    margin:20px 0 22px;
-  }
-
-  .heroActions{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:12px;
-  }
-
-  .dashboard{
-    grid-template-columns:1fr;
-    min-height:auto;
-    border-radius:18px;
-  }
-
-  .dashSide{display:none}
-  .dashMain{padding:18px}
-  .dashHeader{align-items:flex-start;gap:12px}
-  .kpiGrid,
-  .dashBody,
-  .donutWrap{
-    grid-template-columns:1fr !important;
-  }
-
-  .panel{min-height:auto}
-  .lineBox{height:130px}
-  .donutWrap{height:auto}
-
-  .heroWaveImage{
-    height:280px;
-    background-size:150% auto;
-    opacity:.78;
-    animation:none !important;
-  }
-
-  .decisions,
-  .purpose,
-  .metrics,
-  .benefits,
-  .receive,
-  .howWorks,
-  .solutions,
-  .pricing,
-  .faq{
-    padding-top:58px !important;
-    padding-bottom:64px !important;
-  }
-
-  .sectionTitle,
-  .metricsIntro h2,
-  .benefitIntro h2,
-  .receiveHead h2,
-  .howHead h2,
-  .faqHead h2{
-    font-size:clamp(2rem,9vw,2.7rem);
-    line-height:1.08;
-  }
-
-  .cardGrid,
-  .metricsGrid,
-  .benefitGrid,
-  .receiveGrid,
-  .solutionGrid{
-    grid-template-columns:1fr !important;
-    gap:18px;
-  }
-
-  .actionCard,
-  .metric,
-  .benefitCard,
-  .stepCard,
-  .solutionCard,
-  .price,
-  .faqItem{
-    min-height:auto;
-  }
-
-  .actionCard{padding:28px 24px}
-
-  .purposeGrid{gap:28px}
-  .videoPanel{
-    min-height:320px;
-    border-radius:22px;
-  }
-
-  .demoFrame{
-    width:90%;
-    min-height:230px;
-    padding:22px;
-  }
-
-  .metricsShell,
-  .benefitShell,
-  .receivePanel,
-  .howPanel,
-  .faqPanel{
-    padding:22px !important;
-    border-radius:24px;
-  }
-
-  .metricsIntro{
-    padding:0 0 22px;
-    border-right:0;
-    border-bottom:1px solid rgba(255,255,255,.08);
-  }
-
-  .benefitIntro{
-    min-height:auto;
-    padding:22px;
-  }
-
-  .stepGrid{
-    grid-template-columns:1fr !important;
-    gap:18px;
-  }
-
-  .stepArrow{display:none !important}
-
-  .solutionCard{
-    grid-template-columns:72px 1fr;
-    width:100%;
-  }
-
-  .pricingGrid{
-    max-width:520px;
-    gap:22px;
-  }
-
-  .price{
-    min-height:auto;
-    padding:34px 26px;
-    border-radius:24px;
-  }
-
-  .amount{font-size:3.1rem}
-
-  .bottomGrid{text-align:left}
-
-  .bottomActions,
-  .navActions{
-    display:grid;
-    grid-template-columns:1fr;
-    width:100%;
-  }
-
-  .footerGrid{grid-template-columns:1fr !important}
-
-  /* Animación móvil: visible, pero sin dejar huecos gigantes */
-  .motion-fade,
-  .motion-up,
-  .motion-left,
-  .motion-right,
-  .motion-scale{
-    transition-duration:1.15s !important;
-    filter:none !important;
-  }
-
-  .motion-up:not(.is-in-view){
-    transform:translate3d(0,44px,0) scale(.98) !important;
-  }
-
-  .motion-left:not(.is-in-view){
-    transform:translate3d(-44px,0,0) scale(.98) !important;
-  }
-
-  .motion-right:not(.is-in-view){
-    transform:translate3d(44px,0,0) scale(.98) !important;
-  }
-
-  .motion-scale:not(.is-in-view){
-    transform:scale(.96) !important;
-  }
-
-  .motion-delay-1{transition-delay:.06s !important}
-  .motion-delay-2{transition-delay:.12s !important}
-  .motion-delay-3{transition-delay:.18s !important}
-  .motion-delay-4{transition-delay:.24s !important}
-
-  .dashboard.motion-right.is-in-view{
-    animation:none !important;
-  }
-
-  .actionCard:hover,
-  .solutionCard:hover,
-  .price:hover,
-  .benefitCard:hover,
-  .stepCard:hover,
-  .receiveItem:hover,
-  .metric:hover{
-    transform:translateY(-6px) scale(1.01) !important;
-  }
-
-  /* FAQ mantiene entrada lateral, pero corta y sin hover */
-  .faq .faqList .faqItem.motion-left:not(.is-in-view){
-    transform:translate3d(-44px,0,0) !important;
-  }
-
-  .faq .faqList .faqItem.motion-right:not(.is-in-view){
-    transform:translate3d(44px,0,0) !important;
-  }
-
-  .faq .faqList .faqItem.motion-left,
-  .faq .faqList .faqItem.motion-right{
-    transition-duration:1.15s !important;
-  }
-}
-
-@media (max-width: 430px){
-  .container{
-    padding-left:16px;
-    padding-right:16px;
-  }
-
-  .navInner{
-    height:auto;
-    padding:14px 0;
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .navLinks,
-  .modeDot{display:none}
-
-  .hero{padding-top:118px}
-  .dashMain{padding:14px}
-  .dateBadge{font-size:.62rem}
-  .kpi{padding:14px}
-
-  .sectionKicker,
-  .metricsTitle,
-  .solutionsTitle{
-    letter-spacing:.12em;
-  }
-
-  .solutionCard{
-    grid-template-columns:1fr;
-    text-align:left;
-  }
-
-  .solutionIcon{
-    width:74px;
-    height:74px;
-  }
-
-  .receiveItem{align-items:flex-start}
-  .faqItem{padding:18px 18px}
-}
-
-/* ================================
-   PRICING FINAL AJUSTADO
-   3 planes + contenedor dudas a la derecha
-   Sin choque con el título al hacer hover
-================================ */
-.pricing{padding:104px 0 112px !important;background:radial-gradient(760px 360px at 50% 12%, rgba(124,58,237,.14), transparent 64%),linear-gradient(180deg,#080915 0%,#0b0c17 100%) !important}
-.pricingHead{text-align:center !important;margin-bottom:64px !important}
-.pricingGridFinal{display:grid !important;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr) minmax(0,1fr) minmax(260px,.82fr) !important;gap:26px !important;align-items:stretch !important;max-width:1480px !important;margin:0 auto !important}
-.pricePlan{position:relative !important;min-height:560px !important;padding:46px 42px !important;border-radius:28px !important;display:flex !important;flex-direction:column !important;overflow:visible !important}
-.priceLight{color:#160c2f !important;background:radial-gradient(520px 220px at 50% -8%, rgba(124,58,237,.08), transparent 62%),linear-gradient(180deg,#ffffff 0%,#f8f5ff 100%) !important;border:1px solid rgba(46,13,79,.12) !important;box-shadow:0 34px 90px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.95) !important}
-.priceFeatured{color:#ffffff !important;background:radial-gradient(540px 260px at 50% -12%, rgba(167,139,250,.28), transparent 62%),linear-gradient(180deg,#3b1672 0%,#302a91 100%) !important;border:1px solid rgba(196,181,253,.34) !important;box-shadow:0 42px 110px rgba(61,44,141,.42), 0 0 0 1px rgba(255,255,255,.08) inset !important}
-.planBadge{position:absolute;top:-18px;left:50%;transform:translateX(-50%);min-height:34px;padding:0 28px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;color:#2e0d4f;background:#ffc928;box-shadow:0 16px 34px rgba(255,201,40,.28);font-size:.78rem;font-weight:950;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;z-index:2}
-.priceIcon{width:68px !important;height:68px !important;border-radius:20px !important;display:grid !important;place-items:center !important;margin-bottom:28px !important;color:#2e0d4f !important;background:rgba(124,58,237,.08) !important;border:1px solid rgba(124,58,237,.10) !important;box-shadow:0 18px 40px rgba(46,13,79,.08) !important}
-.priceIcon svg{width:32px;height:32px;stroke-width:1.9}.priceFeatured .priceIcon{color:#fff !important;background:rgba(255,255,255,.12) !important;border-color:rgba(255,255,255,.18) !important;box-shadow:0 0 42px rgba(167,139,250,.28) !important}
-.pricePlan h3{margin:0 0 12px !important;color:inherit !important;font-size:1.58rem !important;font-weight:950 !important;letter-spacing:.08em !important;text-transform:uppercase !important}.pricePlan .amount{margin:0 0 14px !important;color:inherit !important;font-size:3.9rem !important;line-height:.95 !important;font-weight:950 !important;letter-spacing:-.07em !important}.pricePlan .amount small{font-size:1.08rem !important;color:rgba(46,13,79,.82) !important;letter-spacing:0 !important}.priceFeatured .amount small{color:rgba(255,255,255,.72) !important}
-.pricePlan p{margin:0 0 28px !important;color:rgba(46,13,79,.72) !important;font-size:1.02rem !important;line-height:1.45 !important}.priceFeatured p{color:rgba(255,255,255,.74) !important}.priceDivider{height:1px;width:100%;margin:0 0 26px;background:rgba(46,13,79,.12)}.priceFeatured .priceDivider{background:rgba(255,255,255,.18)}
-.pricePlan ul{list-style:none !important;padding:0 !important;margin:0 0 32px !important;display:grid !important;gap:15px !important}.pricePlan li{position:relative !important;padding-left:28px !important;color:#160c2f !important;font-size:1.02rem !important;line-height:1.35 !important}.pricePlan li::before{content:"✓";position:absolute;left:0;top:0;color:#2e0d4f;font-weight:950}.priceFeatured li{color:rgba(255,255,255,.86) !important}.priceFeatured li::before{color:#86efac}
-.pricePlan .btn{width:100%;min-height:56px;margin-top:auto;border-radius:10px;font-size:1rem}.priceLight .btnPrimary{color:#fff !important;background:linear-gradient(135deg,#2e0d4f,#3d2c8d) !important;box-shadow:0 18px 44px rgba(46,13,79,.18) !important}.priceFeatured .btnPrimary{color:#2e0d4f !important;background:#fff !important;box-shadow:0 20px 48px rgba(0,0,0,.18) !important}
-.priceHelp{min-height:560px;padding:38px 34px;border-radius:28px;display:flex;flex-direction:column;justify-content:center;color:#ffffff;background:radial-gradient(280px 180px at 40% 18%, rgba(167,139,250,.22), transparent 62%), linear-gradient(145deg,#2e0d4f 0%,#3d2c8d 100%);border:1px solid rgba(196,181,253,.22);box-shadow:0 36px 92px rgba(46,13,79,.36)}
-.priceHelpIcon{width:66px;height:66px;border-radius:20px;display:grid;place-items:center;margin-bottom:28px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);box-shadow:0 0 40px rgba(167,139,250,.22)}.priceHelpIcon svg{width:32px;height:32px}.priceHelp h3{margin:0 0 16px;font-size:1.35rem;letter-spacing:-.02em}.priceHelp p{margin:0 0 26px;color:rgba(255,255,255,.78);line-height:1.58}.priceHelp .btn{width:100%;min-height:52px;border-radius:10px;color:#fff;background:rgba(127,178,255,.12);border-color:rgba(127,178,255,.30)}
-/* Hover visible sin chocar con el título */
-.pricePlan:hover,
-.pricePlan.motion-up:hover,
-.priceHelp:hover{
-  transform:translateY(-14px) scale(1.025) !important;
-  filter:saturate(1.14) brightness(1.045) !important;
-}
-
-.pricePlan:hover{
-  border-color:rgba(124,58,237,.42) !important;
-  box-shadow:
-    0 34px 70px rgba(46,13,79,.28),
-    0 0 0 2px rgba(124,58,237,.16),
-    0 0 58px rgba(124,58,237,.20),
-    inset 0 1px 0 rgba(255,255,255,.95) !important;
-}
-
-.priceFeatured:hover{
-  border-color:rgba(255,255,255,.46) !important;
-  box-shadow:
-    0 40px 92px rgba(61,44,141,.48),
-    0 0 0 2px rgba(255,255,255,.18),
-    0 0 70px rgba(167,139,250,.32),
-    inset 0 1px 0 rgba(255,255,255,.12) !important;
-}
-
-.priceHelp:hover{
-  border-color:rgba(196,181,253,.52) !important;
-  box-shadow:
-    0 38px 88px rgba(46,13,79,.42),
-    0 0 0 2px rgba(167,139,250,.18),
-    0 0 70px rgba(124,58,237,.28) !important;
-}
-
-.pricePlan:hover .priceIcon,
-.priceHelp:hover .priceHelpIcon{
-  transform:translateY(-4px) scale(1.08);
-  box-shadow:
-    0 20px 48px rgba(124,58,237,.25),
-    0 0 38px rgba(124,58,237,.28) !important;
-}
-
-.pricePlan:hover .btn,
-.priceHelp:hover .btn{
-  transform:translateY(-2px);
-  box-shadow:0 22px 52px rgba(46,13,79,.28) !important;
-}
-
-.priceFeatured:hover .planBadge{
-  box-shadow:
-    0 18px 38px rgba(255,201,40,.34),
-    0 0 0 2px rgba(255,255,255,.22);
-}
-
-@media (max-width:1280px){.pricingGridFinal{grid-template-columns:repeat(2,minmax(0,1fr)) !important;max-width:900px !important}}
-@media (max-width:760px){.pricing{padding:68px 0 82px !important}.pricingHead{margin-bottom:52px !important}.pricingGridFinal{grid-template-columns:1fr !important;max-width:620px !important}.pricePlan,.priceHelp{min-height:auto !important;padding:34px 26px !important;border-radius:24px !important}.pricePlan .amount{font-size:3.2rem !important}}
-/* ================================
-   AJUSTE FINAL JASODATOS EN NÚMEROS
-================================ */
-
-.metrics .metricsIntro{
-  padding-top:0 !important;
-}
-
-.metrics .metricsTitle{
-  margin:-22px 0 12px !important;
-  color:#8b5cf6 !important;
-  text-transform:uppercase !important;
-  letter-spacing:.24em !important;
-  font-size:.78rem !important;
-  font-weight:950 !important;
-  text-shadow:
-    0 0 18px rgba(139,92,246,.55),
-    0 0 34px rgba(167,139,250,.22) !important;
-}
-/* ================================
-   AJUSTE FINAL BENEFICIOS VISIBLES
-================================ */
-
-.benefits .sectionKicker{
-  margin:-22px 0 14px !important;
-  color:#8b5cf6 !important;
-  text-transform:uppercase !important;
-  letter-spacing:.24em !important;
-  font-size:.78rem !important;
-  font-weight:950 !important;
-  text-shadow:
-    0 0 18px rgba(139,92,246,.55),
-    0 0 34px rgba(167,139,250,.22) !important;
-}
-
-.benefits .benefitIntro{
-  justify-content:flex-start !important;
-  padding-top:44px !important;
-}    
-
-/* ================================
-   AJUSTE FINAL QUÉ RECIBES
-================================ */
-
-.receive .sectionKicker{
-  margin:-22px 0 14px !important;
-  color:#8b5cf6 !important;
-  text-transform:uppercase !important;
-  letter-spacing:.24em !important;
-  font-size:.78rem !important;
-  font-weight:950 !important;
-  text-shadow:
-    0 0 18px rgba(139,92,246,.55),
-    0 0 34px rgba(167,139,250,.22) !important;
-}
-
-.receive .receiveHead{
-  margin-bottom:32px !important;
-}
-
-.receive .receivePanel{
-  padding-top:52px !important;
-}
-
-/* ================================
-   AJUSTE FINAL CÓMO FUNCIONA
-================================ */
-
-.howWorks .sectionKicker{
-  margin:-22px 0 14px !important;
-  color:#8b5cf6 !important;
-  text-transform:uppercase !important;
-  letter-spacing:.24em !important;
-  font-size:.78rem !important;
-  font-weight:950 !important;
-  text-shadow:
-    0 0 18px rgba(139,92,246,.55),
-    0 0 34px rgba(167,139,250,.22) !important;
-}
-
-.howWorks .howHead{
-  margin-bottom:34px !important;
-  padding-top:0 !important;
-}
-
-/* ================================
-   AJUSTE FINAL NUESTRAS SOLUCIONES
-================================ */
-
-.solutions .solutionsTitle{
-  margin:-22px 0 28px !important;
-  color:#8b5cf6 !important;
-  text-transform:uppercase !important;
-  letter-spacing:.24em !important;
-  font-size:.78rem !important;
-  font-weight:950 !important;
-  text-shadow:
-    0 0 18px rgba(139,92,246,.55),
-    0 0 34px rgba(167,139,250,.22) !important;
-}
-
-/* ================================
-   AJUSTE FINAL ICONOS PLANES TOP
-================================ */
-
-.pricing .priceIcon,
-.pricing .priceHelpIcon{
-  position: relative !important;
-  isolation: isolate !important;
-  overflow: hidden !important;
-  width: 104px !important;
-  height: 104px !important;
-  border-radius: 28px !important;
-  margin: 0 auto 30px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  transition:
-    transform .45s cubic-bezier(.13,.72,.08,1),
-    box-shadow .45s ease,
-    border-color .45s ease,
-    filter .45s ease !important;
-}
-
-.pricing .priceIcon svg,
-.pricing .priceHelpIcon svg{
-  width: 50px !important;
-  height: 50px !important;
-  stroke-width: 2.1 !important;
-  filter: drop-shadow(0 0 14px rgba(139,92,246,.55));
-}
-
-.pricing .priceIcon::before,
-.pricing .priceHelpIcon::before{
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border-radius: 22px;
-  background: linear-gradient(
-    135deg,
-    rgba(255,255,255,.32),
-    transparent 42%,
-    rgba(167,139,250,.24)
-  );
-  opacity: .9;
-  z-index: -1;
-}
-
-.pricing .priceIcon::after,
-.pricing .priceHelpIcon::after{
-  content: "";
-  position: absolute;
-  inset: -42%;
-  border-radius: inherit;
-  background: conic-gradient(
-    from 180deg,
-    transparent,
-    rgba(167,139,250,.42),
-    transparent,
-    rgba(127,178,255,.34),
-    transparent
-  );
-  opacity: .42;
-  z-index: -2;
-  animation: priceIconSpin 10s linear infinite;
-}
-
-.pricePlan.priceFeatured .priceIcon{
-  width: 112px !important;
-  height: 112px !important;
-}
-
-.pricePlan.priceFeatured .priceIcon svg{
-  width: 54px !important;
-  height: 54px !important;
-}
-
-@keyframes priceIconSpin{
-  to{transform:rotate(360deg)}
-}
-
-.pricing .priceIcon svg,
-.pricing .priceHelpIcon svg{
-  width:40px !important;
-  height:40px !important;
-  stroke-width:1.9 !important;
-  filter:drop-shadow(0 0 14px rgba(139,92,246,.56));
-}
-
-.pricing .priceIconStart{
-  color:#6d28d9 !important;
+.pricing{
+  padding:92px 0 108px;
   background:
-    radial-gradient(circle at 34% 26%, rgba(255,255,255,.96), transparent 20%),
-    radial-gradient(circle at 50% 52%, rgba(167,139,250,.26), rgba(255,255,255,.86) 68%) !important;
-  border:1px solid rgba(124,58,237,.20) !important;
-  box-shadow:
-    0 22px 52px rgba(46,13,79,.12),
-    0 0 34px rgba(124,58,237,.20),
-    inset 0 1px 0 rgba(255,255,255,.98) !important;
+    radial-gradient(780px 360px at 52% 18%, rgba(124,58,237,.18), transparent 64%),
+    linear-gradient(180deg,#080915 0%,#0b0c17 100%);
 }
 
-.pricing .priceIconGrowth{
-  color:#ffffff !important;
+.pricingHead{
+  text-align:center;
+  margin-bottom:34px;
+}
+
+.pricingGrid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:30px;
+  align-items:stretch;
+  max-width:1220px;
+  margin:0 auto;
+}
+
+.price{
+  position:relative;
+  min-height:560px;
+  padding:46px 42px;
+  border-radius:28px;
+  display:flex;
+  flex-direction:column;
+  color:#160c2f;
   background:
-    radial-gradient(circle at 34% 26%, rgba(255,255,255,.22), transparent 22%),
-    radial-gradient(circle at 50% 52%, rgba(167,139,250,.40), rgba(46,13,79,.82) 68%) !important;
-  border:1px solid rgba(255,255,255,.24) !important;
+    radial-gradient(520px 220px at 50% -8%, rgba(124,58,237,.08), transparent 62%),
+    linear-gradient(180deg,#ffffff 0%,#f7f4ff 100%);
+  border:1px solid rgba(46,13,79,.12);
   box-shadow:
-    0 0 0 1px rgba(255,255,255,.06),
-    0 0 44px rgba(167,139,250,.34),
-    inset 0 1px 0 rgba(255,255,255,.16) !important;
+    0 34px 90px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.95);
+  overflow:visible;
 }
 
-.pricing .priceIconControl{
-  color:#3d2c8d !important;
+.price.featured{
+  color:#ffffff;
   background:
-    radial-gradient(circle at 34% 26%, rgba(255,255,255,.96), transparent 20%),
-    radial-gradient(circle at 50% 52%, rgba(127,178,255,.22), rgba(255,255,255,.88) 68%) !important;
-  border:1px solid rgba(61,44,141,.20) !important;
+    radial-gradient(540px 260px at 50% -12%, rgba(167,139,250,.28), transparent 62%),
+    linear-gradient(180deg,#3b1672 0%,#302a91 100%);
+  border:1px solid rgba(196,181,253,.34);
   box-shadow:
-    0 22px 52px rgba(46,13,79,.12),
-    0 0 34px rgba(127,178,255,.18),
-    inset 0 1px 0 rgba(255,255,255,.98) !important;
+    0 42px 110px rgba(61,44,141,.42),
+    0 0 0 1px rgba(255,255,255,.08) inset;
 }
 
-.pricing .priceHelpIcon{
-  color:#ffffff !important;
-  background:
-    radial-gradient(circle at 34% 26%, rgba(255,255,255,.18), transparent 20%),
-    radial-gradient(circle at 50% 52%, rgba(34,197,94,.18), rgba(61,44,141,.92) 70%) !important;
-  border:1px solid rgba(134,239,172,.26) !important;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.08),
-    0 0 46px rgba(134,239,172,.16),
-    0 0 58px rgba(167,139,250,.20),
-    inset 0 1px 0 rgba(255,255,255,.16) !important;
-}
-
-.pricePlan:hover .priceIcon,
-.priceHelp:hover .priceHelpIcon{
-  transform:translateY(-7px) scale(1.12) !important;
-  filter:saturate(1.22) brightness(1.08) !important;
-}
-/* ================================
-   AJUSTE FINAL PREGUNTAS FRECUENTES
-================================ */
-
-.faq .sectionKicker{
-  margin:-22px 0 14px !important;
-  color:#8b5cf6 !important;
-  text-transform:uppercase !important;
-  letter-spacing:.24em !important;
-  font-size:.78rem !important;
-  font-weight:950 !important;
-  text-shadow:
-    0 0 18px rgba(139,92,246,.55),
-    0 0 34px rgba(167,139,250,.22) !important;
-}
-
-.faq .faqHead{
-  margin-bottom:34px !important;
-  padding-top:0 !important;
-}
-
-/* ================================
-   CTA FINAL - ICONOS PREMIUM
-================================ */
-
-.bottomCta .cloud{
-  width:72px !important;
-  height:72px !important;
-  border-radius:22px !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  color:#8b5cf6 !important;
-  background:
-    radial-gradient(circle at 34% 26%, rgba(255,255,255,.12), transparent 24%),
-    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)) !important;
-  border:1px solid rgba(167,139,250,.34) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.10),
-    0 0 0 1px rgba(124,58,237,.12),
-    0 18px 40px rgba(46,13,79,.22),
-    0 0 34px rgba(139,92,246,.22) !important;
-}
-
-.bottomCta .cloud svg{
-  width:36px !important;
-  height:36px !important;
-  stroke-width:2.1 !important;
-  filter:
-    drop-shadow(0 0 8px rgba(139,92,246,.46))
-    drop-shadow(0 0 18px rgba(139,92,246,.22));
-}
-
-.bottomCta .btn{
-  gap:10px !important;
-}
-
-.bottomCta .btnIcon{
-  width:22px;
-  height:22px;
+.planBadge{
+  position:absolute;
+  top:-18px;
+  left:50%;
+  transform:translateX(-50%);
+  min-height:34px;
+  padding:0 26px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
+  border-radius:999px;
+  color:#2e0d4f;
+  background:#ffc928;
+  box-shadow:0 16px 34px rgba(255,201,40,.28);
+  font-size:.78rem;
+  font-weight:950;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  white-space:nowrap;
+}
+
+.priceIcon{
+  width:68px;
+  height:68px;
+  border-radius:20px;
+  display:grid;
+  place-items:center;
+  margin-bottom:28px;
+  color:#2e0d4f;
+  background:rgba(124,58,237,.08);
+  border:1px solid rgba(124,58,237,.10);
+  box-shadow:0 18px 40px rgba(46,13,79,.08);
+}
+
+.priceIcon svg{
+  width:32px;
+  height:32px;
+  stroke-width:1.9;
+}
+
+.price.featured .priceIcon{
   color:#ffffff;
+  background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.18);
+  box-shadow:0 0 42px rgba(167,139,250,.28);
 }
 
-.bottomCta .btnIcon svg{
-  width:21px;
-  height:21px;
-  stroke-width:2.2;
-  filter:drop-shadow(0 0 8px rgba(255,255,255,.20));
+.price h3{
+  margin:0 0 12px;
+  color:inherit;
+  font-size:1.58rem;
+  font-weight:950;
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
 
-.bottomCta .whatsappIcon{
-  color:#22c55e;
+.amount{
+  margin:0 0 14px;
+  color:inherit;
+  font-size:3.9rem;
+  line-height:.95;
+  font-weight:950;
+  letter-spacing:-.07em;
 }
 
-.bottomCta .whatsappIcon svg{
-  filter:
-    drop-shadow(0 0 8px rgba(34,197,94,.48))
-    drop-shadow(0 0 16px rgba(34,197,94,.22));
-}
-   /* Ajuste final icono WhatsApp CTA */
-.bottomCta .btnWhats{
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  gap:10px !important;
+.amount small{
+  font-size:1.08rem;
+  color:rgba(46,13,79,.82);
+  letter-spacing:0;
 }
 
-.bottomCta .btnIcon{
-  width:22px !important;
-  height:22px !important;
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  flex:0 0 22px !important;
+.price.featured .amount small{
+  color:rgba(255,255,255,.72);
 }
 
-.bottomCta .btnIcon svg{
-  width:22px !important;
-  height:22px !important;
-  display:block !important;
+.price p{
+  margin:0 0 28px;
+  color:rgba(46,13,79,.72);
+  font-size:1.02rem;
+  line-height:1.45;
 }
 
-.bottomCta .whatsappIcon{
-  color:#22c55e !important;
+.price.featured p{
+  color:rgba(255,255,255,.72);
 }
 
-.bottomCta .whatsappIcon svg{
-  filter:
-    drop-shadow(0 0 7px rgba(34,197,94,.55))
-    drop-shadow(0 0 14px rgba(34,197,94,.25)) !important;
-} 
-/* ================================
-   FOOTER LOGO JASODATOS
-================================ */
-
-.footerBrandLogo{
-  display:inline-flex;
-  align-items:center;
-  margin-bottom:16px;
+.priceDivider{
+  height:1px;
+  width:100%;
+  margin:0 0 26px;
+  background:rgba(46,13,79,.12);
 }
 
-.footerBrandLogo img{
-  width:220px;
-  max-width:100%;
-  height:auto;
-  display:block;
-  filter:
-    drop-shadow(0 0 16px rgba(139,92,246,.24))
-    drop-shadow(0 0 28px rgba(167,139,250,.14));
+.price.featured .priceDivider{
+  background:rgba(255,255,255,.18);
 }
 
-.footerTagline{
-  max-width:360px;
-  color:#e5e7eb !important;
-  font-size:.92rem !important;
-  line-height:1.65 !important;
-  font-weight:700 !important;
+.price ul{
+  list-style:none;
+  padding:0;
+  margin:0 0 32px;
+  display:grid;
+  gap:15px;
 }
 
-/* ================================
-   HEADER LOGO Y NAV PREMIUM
-================================ */
-
-.navBrandLogo{
-  display:inline-flex;
-  align-items:center;
-  height:44px;
+.price li{
+  position:relative;
+  padding-left:28px;
+  color:#160c2f;
+  font-size:1.02rem;
+  line-height:1.35;
 }
 
-.navBrandLogo img{
-  width:178px;
-  max-width:100%;
-  height:auto;
-  display:block;
-  filter:
-    drop-shadow(0 0 12px rgba(139,92,246,.24))
-    drop-shadow(0 0 22px rgba(167,139,250,.12));
+.price li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  top:0;
+  color:#2e0d4f;
+  font-weight:950;
 }
 
-/* ================================
-   HEADER NAV MÁS DELGADO
-================================ */
-
-.siteNav .navLinks a{
-  color:rgba(255,255,255,.86) !important;
-  font-size:.86rem !important;
-  font-weight:400 !important;
-  letter-spacing:.015em !important;
-  opacity:1 !important;
-  text-shadow:none !important;
+.price.featured li{
+  color:rgba(255,255,255,.86);
 }
 
-.siteNav .navLinks a:hover{
-  color:#ffffff !important;
-  font-weight:500 !important;
-  text-shadow:
-    0 0 10px rgba(167,139,250,.32),
-    0 0 18px rgba(124,58,237,.18);
+.price.featured li::before{
+  color:#86efac;
 }
 
-.siteNav .btnPrimary{
-  font-weight:500 !important;
-  letter-spacing:.01em !important;
-  font-size:.86rem !important;
+.price .btn{
+  width:100%;
+  min-height:56px;
+  margin-top:auto;
+  border-radius:10px;
+  font-size:1rem;
 }
 
-/* ================================
-   FAQ - CLICK EN TODA LA FILA Y SIN BRILLO EXCESIVO
-================================ */
+.price:not(.featured) .btnPrimary{
+  color:#ffffff;
+  background:linear-gradient(135deg,#2e0d4f,#3d2c8d);
+  box-shadow:0 18px 44px rgba(46,13,79,.18);
+}
 
-.faq .faqItem{
-  padding:0 !important;
-  overflow:hidden !important;
-  transform:none !important;
-  box-shadow:none !important;
+.price.featured .btnPrimary{
+  color:#2e0d4f;
+  background:#ffffff;
+  box-shadow:0 20px 48px rgba(0,0,0,.18);
+}
+
+.price:hover,
+.price.motion-up:hover{
+  transform:translateY(-18px) scale(1.025) !important;
+  filter:saturate(1.08) brightness(1.02);
+}
+
+/* FAQ alternada por scroll, sin hover de elevación.
+   Este bloque va después del sistema global para que no lo anule. */
+.faq .faqList .faqItem.motion-left,
+.faq .faqList .faqItem.motion-right{
+  opacity:0 !important;
+  filter:none !important;
   transition:
+    opacity 3.1s cubic-bezier(.13,.72,.08,1),
+    transform 3.1s cubic-bezier(.13,.72,.08,1),
     background .22s ease,
     border-color .22s ease !important;
 }
 
-.faq .faqItem summary{
-  width:100% !important;
-  min-height:66px !important;
-  padding:20px 22px !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:space-between !important;
-  gap:18px !important;
-  cursor:pointer !important;
-  user-select:none !important;
-  outline:none !important;
+.faq .faqList .faqItem.motion-left:not(.is-in-view){
+  transform:translate3d(-340px,0,0) !important;
 }
 
-.faq .faqItem p{
-  padding:0 22px 20px !important;
-  margin:0 !important;
+.faq .faqList .faqItem.motion-right:not(.is-in-view){
+  transform:translate3d(340px,0,0) !important;
 }
 
-/* elimina el efecto de foco/hover que parece parpadeo */
-.faq .faqItem:hover,
-.faq .faqItem:focus,
-.faq .faqItem:focus-within,
-.faq .faqItem[open],
-.faq .faqItem[open]:hover{
-  transform:none !important;
+.faq .faqList .faqItem.motion-left.is-in-view,
+.faq .faqList .faqItem.motion-right.is-in-view{
+  opacity:1 !important;
+  transform:translate3d(0,0,0) !important;
+  filter:none !important;
+}
+
+.faq .faqList .faqItem:hover,
+.faq .faqList .faqItem.motion-left:hover,
+.faq .faqList .faqItem.motion-right:hover,
+.faq .faqList .faqItem.motion-left.is-in-view:hover,
+.faq .faqList .faqItem.motion-right.is-in-view:hover,
+.faq .faqList .faqItem[open]:hover{
+  transform:translate3d(0,0,0) !important;
+  translate:0 0 !important;
   filter:none !important;
   box-shadow:none !important;
-  background:rgba(40,53,147,.24) !important;
   border-color:rgba(255,255,255,.08) !important;
+  background:rgba(40,53,147,.24) !important;
 }
 
-.faq .faqItem summary:hover,
-.faq .faqItem summary:focus,
-.faq .faqItem summary:focus-visible{
-  outline:none !important;
-  box-shadow:none !important;
-  background:transparent !important;
-}
-
-/* mantiene el + y - limpio */
-.faq .faqItem summary::after{
-  flex:0 0 auto !important;
-  color:#a78bfa !important;
-  font-size:1.2rem !important;
-  line-height:1 !important;
-}
-
-/* evita que las animaciones generales vuelvan a levantar FAQ */
-.faq .faqItem.motion-left:hover,
-.faq .faqItem.motion-right:hover,
-.faq .faqItem.motion-up:hover,
-.faq .faqItem.motion-scale:hover{
+.faq .faqList .faqItem summary:hover,
+.faq .faqList .faqItem summary:focus{
   transform:none !important;
-  box-shadow:none !important;
   filter:none !important;
+  box-shadow:none !important;
 }
 
-/* ================================
-   FIX: EVITAR BRILLO DE PRECIOS SOBRE FAQ
-================================ */
-
-.pricing{
-  position:relative !important;
-  overflow:hidden !important;
-  z-index:1 !important;
-}
-
-.pricing::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:90px;
-  pointer-events:none;
-  background:linear-gradient(
-    180deg,
-    rgba(8,9,21,0) 0%,
-    rgba(8,9,21,.72) 64%,
-    #080915 100%
-  );
-  z-index:2;
-}
-
-.pricingGridFinal{
-  position:relative !important;
-  z-index:1 !important;
-}
-
-.faq{
-  position:relative !important;
-  z-index:3 !important;
-  background:#080915 !important;
-}
-
-/* reduce solo el glow exterior que se fugaba hacia abajo */
-.pricePlan:hover,
-.pricePlan.motion-up:hover,
-.priceHelp:hover{
-  box-shadow:
-    0 26px 58px rgba(46,13,79,.24),
-    0 0 0 2px rgba(124,58,237,.14),
-    0 0 38px rgba(124,58,237,.14) !important;
-}
-
-/* ================================
-   DASHBOARD HERO - LOGO PREMIUM
-================================ */
-
-.dashboard{
-  border:1px solid rgba(167,139,250,.42) !important;
-  background:
-    radial-gradient(680px 260px at 82% 0%, rgba(124,58,237,.22), transparent 62%),
-    radial-gradient(520px 220px at 16% 18%, rgba(127,178,255,.10), transparent 58%),
-    linear-gradient(180deg, rgba(15,18,37,.96), rgba(8,9,21,.98)) !important;
-  box-shadow:
-    0 42px 120px rgba(0,0,0,.58),
-    0 0 0 1px rgba(255,255,255,.04) inset,
-    0 0 90px rgba(124,58,237,.22),
-    0 0 140px rgba(61,44,141,.18) !important;
-}
-
-.dashSide{
-  background:
-    radial-gradient(260px 180px at 50% 0%, rgba(124,58,237,.26), transparent 66%),
-    linear-gradient(180deg, rgba(27,14,59,.96), rgba(11,9,28,.96)) !important;
-  border-right:1px solid rgba(167,139,250,.18) !important;
-}
-
-.dashLogoPremium{
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-  margin-bottom:22px;
-  padding:2px 0 8px;
-}
-
-.dashLogoPremium img{
-  width:116px;
-  max-width:100%;
-  height:auto;
-  display:block;
-  filter:
-    drop-shadow(0 0 12px rgba(139,92,246,.34))
-    drop-shadow(0 0 22px rgba(167,139,250,.18));
-}
-
-.dashNavItem{
-  min-height:34px !important;
-  border-radius:9px !important;
-  color:rgba(226,232,240,.76) !important;
-  font-weight:650 !important;
-  letter-spacing:.01em !important;
-  transition:
-    background .22s ease,
-    color .22s ease,
-    transform .22s ease,
-    box-shadow .22s ease !important;
-}
-
-.dashNavItem.active{
-  color:#ffffff !important;
-  background:
-    linear-gradient(135deg, rgba(124,58,237,.96), rgba(61,44,141,.94)) !important;
-  box-shadow:
-    0 14px 32px rgba(124,58,237,.28),
-    inset 0 1px 0 rgba(255,255,255,.14) !important;
-}
-
-.dashNavItem:not(.active):hover{
-  color:#ffffff !important;
-  background:rgba(167,139,250,.10) !important;
-  transform:translateX(3px);
-}
-
-.dashHeader strong{
-  font-size:1rem !important;
-  letter-spacing:-.01em !important;
-}
-
-.dateBadge{
-  background:rgba(255,255,255,.065) !important;
-  border:1px solid rgba(167,139,250,.18) !important;
-  color:#dbe4ff !important;
-}
-
-.kpi{
-  background:
-    radial-gradient(180px 90px at 50% 0%, rgba(124,58,237,.12), transparent 68%),
-    rgba(17,20,37,.90) !important;
-  border:1px solid rgba(167,139,250,.12) !important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.045);
-}
-
-.panel{
-  background:
-    radial-gradient(320px 140px at 50% 0%, rgba(124,58,237,.09), transparent 68%),
-    rgba(17,20,37,.84) !important;
-  border:1px solid rgba(167,139,250,.12) !important;
-}
-
-/* ================================
-   DASHBOARD HERO - GRÁFICAS PREMIUM
-================================ */
-
-.dashboard .chartPanel,
-.dashboard .donutPanel{
-  min-height:214px !important;
-  padding:18px 18px 16px !important;
-  border-radius:16px !important;
-  background:
-    radial-gradient(320px 150px at 50% 0%, rgba(124,58,237,.12), transparent 70%),
-    rgba(12,16,34,.88) !important;
-  border:1px solid rgba(167,139,250,.16) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.04),
-    0 18px 48px rgba(0,0,0,.28) !important;
-}
-
-.dashboard .panelHead{
-  margin-bottom:12px !important;
-  font-size:.76rem !important;
-  font-weight:950 !important;
-  letter-spacing:-.01em !important;
-}
-
-.dashboard .panelHead span{
-  color:#b7c4e8 !important;
-  font-weight:900 !important;
-}
-
-.premiumLineBox{
-  height:152px !important;
-  border-radius:12px !important;
-  overflow:hidden !important;
-  background:
-    radial-gradient(320px 120px at 80% 10%, rgba(124,58,237,.12), transparent 72%),
-    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px) !important;
-  background-size:auto, 42px 42px, 42px 42px !important;
-}
-
-.heroChart{
-  width:100%;
-  height:100%;
-  display:block;
-}
-
-.chartGrid line{
-  stroke:rgba(255,255,255,.055);
-  stroke-width:1;
-}
-
-.chartLineGlow{
-  fill:none;
-  stroke:rgba(124,58,237,.62);
-  stroke-width:8;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  opacity:.92;
-}
-
-.chartLineMain{
-  fill:none;
-  stroke:url(#salesLineStroke);
-  stroke-width:4.6;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-.chartDotOuter{
-  fill:rgba(124,58,237,.26);
-  stroke:rgba(167,139,250,.38);
-  stroke-width:1;
-}
-
-.chartDotInner{
-  fill:#c4b5fd;
-  filter:drop-shadow(0 0 10px rgba(167,139,250,.75));
-}
-
-.premiumDonutWrap{
-  height:152px !important;
-  display:grid !important;
-  grid-template-columns:132px 1fr !important;
-  gap:16px !important;
-  align-items:center !important;
-}
-
-.heroDonut{
-  width:128px;
-  height:128px;
-  overflow:visible;
-  filter:
-    drop-shadow(0 0 18px rgba(124,58,237,.24))
-    drop-shadow(0 0 34px rgba(37,99,235,.10));
-}
-
-.donutTrack{
-  fill:none;
-  stroke:rgba(255,255,255,.08);
-  stroke-width:16;
-}
-
-.donutSeg{
-  fill:none;
-  stroke-width:16;
-  stroke-linecap:butt;
-  transform:rotate(-90deg);
-  transform-origin:60px 60px;
-}
-
-.donutSeg1{
-  stroke:#2563eb;
-  stroke-dasharray:100 239;
-  stroke-dashoffset:0;
-}
-
-.donutSeg2{
-  stroke:#7c3aed;
-  stroke-dasharray:62 277;
-  stroke-dashoffset:-100;
-}
-
-.donutSeg3{
-  stroke:#a78bfa;
-  stroke-dasharray:43 296;
-  stroke-dashoffset:-162;
-}
-
-.donutSeg4{
-  stroke:rgba(255,255,255,.28);
-  stroke-dasharray:34 305;
-  stroke-dashoffset:-205;
-}
-
-.donutInner{
-  fill:#0b1022;
-  stroke:rgba(255,255,255,.05);
-  stroke-width:1;
-}
-
-.premiumLegend{
-  gap:10px !important;
-}
-
-.premiumLegend div{
-  grid-template-columns:10px 1fr auto !important;
-  gap:9px !important;
-  font-size:.68rem !important;
-  color:#cbd5e1 !important;
-}
-
-.premiumLegend i{
-  width:10px !important;
-  height:10px !important;
-  box-shadow:0 0 12px currentColor;
-}
-
-.premiumLegend b{
-  color:#ffffff !important;
-  font-weight:950 !important;
-}
-
-@media (max-width:900px){
-  .premiumDonutWrap{
-    grid-template-columns:1fr !important;
-    justify-items:center !important;
-    height:auto !important;
-  }
-
-  .premiumLegend{
-    width:100%;
-  }
-}
-
-/* ================================
-   DASHBOARD HERO - GRÁFICAS ULTRA
-================================ */
-
-.dashboard .dashBodyPremium{
-  grid-template-columns:1.34fr .86fr !important;
-  gap:16px !important;
-}
-
-.dashboard .chartPanelUltra,
-.dashboard .donutPanelUltra{
-  min-height:226px !important;
-  padding:20px !important;
-  border-radius:18px !important;
-  background:
-    radial-gradient(360px 180px at 55% 0%, rgba(124,58,237,.18), transparent 70%),
-    linear-gradient(180deg, rgba(17,20,37,.94), rgba(10,14,30,.92)) !important;
-  border:1px solid rgba(167,139,250,.22) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.06),
-    0 22px 60px rgba(0,0,0,.34),
-    0 0 42px rgba(124,58,237,.12) !important;
-}
-
-.dashboard .chartPanelUltra .panelHead,
-.dashboard .donutPanelUltra .panelHead{
-  font-size:.78rem !important;
-  font-weight:950 !important;
-  margin-bottom:12px !important;
-}
-
-.lineBoxUltra{
-  height:160px !important;
-  border-radius:14px !important;
-  background:
-    radial-gradient(320px 140px at 78% 12%, rgba(127,178,255,.16), transparent 74%),
-    radial-gradient(260px 120px at 34% 28%, rgba(124,58,237,.16), transparent 72%),
-    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px) !important;
-  background-size:auto, auto, 44px 44px, 44px 44px !important;
-}
-
-.heroChartUltra{
-  width:100%;
-  height:100%;
-  display:block;
-}
-
-.ultraGrid line{
-  stroke:rgba(255,255,255,.065);
-  stroke-width:1;
-}
-
-.ultraLineGlow{
-  fill:none;
-  stroke:#8b5cf6;
-  stroke-width:10;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  opacity:.92;
-}
-
-.ultraLineMain{
-  fill:none;
-  stroke:url(#ultraLine);
-  stroke-width:5.4;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  filter:drop-shadow(0 0 10px rgba(167,139,250,.62));
-}
-
-.ultraDotOuter{
-  fill:rgba(167,139,250,.20);
-  stroke:rgba(196,181,253,.58);
-  stroke-width:1.2;
-}
-
-.ultraDotInner{
-  fill:#f5f3ff;
-  filter:drop-shadow(0 0 12px rgba(167,139,250,.85));
-}
-
-.donutWrapUltra{
-  height:160px !important;
-  display:grid !important;
-  grid-template-columns:138px 1fr !important;
-  gap:16px !important;
-  align-items:center !important;
-}
-
-.donutUltra{
-  width:136px;
-  height:136px;
-  overflow:visible;
-  filter:
-    drop-shadow(0 0 20px rgba(124,58,237,.28))
-    drop-shadow(0 0 34px rgba(37,99,235,.14));
-}
-
-.donutUltraTrack{
-  fill:none;
-  stroke:rgba(255,255,255,.075);
-  stroke-width:18;
-}
-
-.donutUltraSeg{
-  fill:none;
-  stroke-width:18;
-  stroke-linecap:round;
-  transform:rotate(-90deg);
-  transform-origin:65px 65px;
-}
-
-.donutUltraSeg1{
-  stroke:#2563eb;
-  stroke-dasharray:94 245;
-  stroke-dashoffset:0;
-}
-
-.donutUltraSeg2{
-  stroke:#7c3aed;
-  stroke-dasharray:58 281;
-  stroke-dashoffset:-104;
-}
-
-.donutUltraSeg3{
-  stroke:#a78bfa;
-  stroke-dasharray:38 301;
-  stroke-dashoffset:-172;
-}
-
-.donutUltraSeg4{
-  stroke:rgba(255,255,255,.34);
-  stroke-dasharray:28 311;
-  stroke-dashoffset:-220;
-}
-
-.donutUltraCenter{
-  fill:#090d1d;
-  stroke:rgba(255,255,255,.05);
-  stroke-width:1;
-}
-
-.legendUltra{
-  gap:11px !important;
-}
-
-.legendUltra div{
-  grid-template-columns:10px 1fr auto !important;
-  gap:9px !important;
-  font-size:.69rem !important;
-  color:#cbd5e1 !important;
-}
-
-.legendUltra i{
-  width:10px !important;
-  height:10px !important;
-  box-shadow:0 0 14px currentColor;
+@media (max-width:1120px){
+  .pricingGrid{grid-template-columns:1fr;max-width:620px}
+  .price{min-height:auto}
 }
 
-.legendUltra b{
-  color:#ffffff !important;
-  font-weight:950 !important;
+@media (max-width:760px){
+  .pricing{padding:72px 0 84px}
+  .price{padding:34px 26px;border-radius:24px}
+  .amount{font-size:3.2rem}
 }
 
-@media (max-width:900px){
-  .dashboard .dashBodyPremium{
-    grid-template-columns:1fr !important;
-  }
 
-  .donutWrapUltra{
-    grid-template-columns:1fr !important;
-    justify-items:center !important;
-    height:auto !important;
-  }
-
-  .legendUltra{
-    width:100%;
-  }
-}
 `;
 
 function waLink() {
@@ -2996,17 +1880,13 @@ const motionScript = `
     '.motion-scale'
   ].join(',');
 
-  const runMotion = () => {
+  const run = () => {
     const items = Array.from(document.querySelectorAll(motionSelector));
-
-    if (!items.length) return;
 
     if (!('IntersectionObserver' in window)) {
       items.forEach((el) => el.classList.add('is-in-view'));
       return;
     }
-
-    const isCompact = window.matchMedia('(max-width: 900px)').matches;
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -3019,25 +1899,17 @@ const motionScript = `
         }
       });
     }, {
-      threshold: isCompact ? 0.03 : 0.08,
-      rootMargin: isCompact ? '18% 0px 18% 0px' : '-4% 0px -6% 0px'
+      threshold: 0.06,
+      rootMargin: '-2% 0px -4% 0px'
     });
 
     items.forEach((el) => observer.observe(el));
   };
 
-  const startAfterHydration = () => {
-    window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(() => {
-        window.setTimeout(runMotion, 250);
-      });
-    });
-  };
-
-  if (document.readyState === 'complete') {
-    startAfterHydration();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run, { once: true });
   } else {
-    window.addEventListener('load', startAfterHydration, { once: true });
+    run();
   }
 })();
 `;
@@ -3051,12 +1923,10 @@ export default function Page() {
 
       <header className="siteNav">
         <div className="container navInner">
-<a className="navBrandLogo" href="#inicio" aria-label="JasoDatos">
-  <img
-    src="/images/jasodatos-logo-negativo-transparente.png"
-    alt="JasoDatos"
-  />
-</a>
+          <a className="logo" href="#inicio" aria-label="JasoDatos">
+            <BarsIcon />
+            <span>JASODATOS</span>
+          </a>
 
           <nav className="navLinks" aria-label="Navegación principal">
             <a href="#soluciones">Soluciones</a>
@@ -3067,9 +1937,9 @@ export default function Page() {
           </nav>
 
           <div className="navActions">
-<a className="btn btnPrimary" href="https://app.jasodatos.com/registro">
-  Probar con mi archivo
-</a>
+            <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">
+              Probar gratis
+            </a>
             <span className="modeDot">◐</span>
           </div>
         </div>
@@ -3085,10 +1955,10 @@ export default function Page() {
               <strong>decisiones claras.</strong>
             </h1>
 
-<p className="heroLead">
-  Sube tu archivo de ventas o inventario y JasoDatos te muestra, en minutos,
-  qué productos se venden más, cuáles están en riesgo y qué acciones debes tomar primero.
-</p>
+            <p className="heroLead">
+              JasoDatos analiza tus datos comerciales y te muestra qué vender,
+              qué reponer y qué corregir para que tu negocio crezca con claridad.
+            </p>
 
             <div className="heroActions">
               <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">
@@ -3102,12 +1972,10 @@ export default function Page() {
 
           <div className="dashboard motion-right motion-delay-1">
             <aside className="dashSide">
-<div className="dashLogoPremium">
-  <img
-    src="/images/jasodatos-logo-negativo-transparente.png"
-    alt="JasoDatos"
-  />
-</div>
+              <div className="dashLogo">
+                <BarsIcon />
+                JASODATOS
+              </div>
               <div className="dashNavItem active">▣ Resumen</div>
               <div className="dashNavItem">◷ Ventas</div>
               <div className="dashNavItem">▤ Inventario</div>
@@ -3145,96 +2013,45 @@ export default function Page() {
                   <small>+3 vs abr</small>
                 </article>
               </div>
-             <div className="dashBody dashBodyPremium">
-  <article className="panel chartPanelUltra">
-    <div className="panelHead">
-      Ventas por día <span>últimos 30 días</span>
-    </div>
 
-    <div className="lineBox lineBoxUltra">
-      <svg className="heroChartUltra" viewBox="0 0 560 230" fill="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="ultraArea" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="rgba(167,139,250,.56)" />
-            <stop offset="52%" stopColor="rgba(124,58,237,.24)" />
-            <stop offset="100%" stopColor="rgba(124,58,237,.03)" />
-          </linearGradient>
+              <div className="dashBody">
+                <article className="panel">
+                  <div className="panelHead">
+                    Ventas por día <span>últimos 30 días</span>
+                  </div>
+                  <div className="lineBox">
+                    <svg viewBox="0 0 460 160" fill="none" aria-hidden="true">
+                      <path
+                        d="M8 122C28 112 38 78 60 84C81 90 89 112 110 101C132 90 134 56 158 64C184 72 187 114 214 96C238 80 244 72 268 84C292 96 288 126 318 106C346 87 347 52 374 64C402 76 406 108 430 94C444 86 451 73 454 66"
+                        stroke="#7c3aed"
+                        strokeWidth="5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="drawLine"
+                      />
+                      <path
+                        d="M8 122C28 112 38 78 60 84C81 90 89 112 110 101C132 90 134 56 158 64C184 72 187 114 214 96C238 80 244 72 268 84C292 96 288 126 318 106C346 87 347 52 374 64C402 76 406 108 430 94C444 86 451 73 454 66V160H8V122Z"
+                        fill="rgba(124,58,237,.18)"
+                      />
+                    </svg>
+                  </div>
+                </article>
 
-          <linearGradient id="ultraLine" x1="0" y1="0" x2="560" y2="0">
-            <stop offset="0%" stopColor="#7c3aed" />
-            <stop offset="42%" stopColor="#a78bfa" />
-            <stop offset="74%" stopColor="#7fb2ff" />
-            <stop offset="100%" stopColor="#c4b5fd" />
-          </linearGradient>
-
-          <filter id="ultraGlow" x="-60%" y="-60%" width="220%" height="220%">
-            <feGaussianBlur stdDeviation="8" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-
-        <g className="ultraGrid">
-          <line x1="0" y1="38" x2="560" y2="38" />
-          <line x1="0" y1="88" x2="560" y2="88" />
-          <line x1="0" y1="138" x2="560" y2="138" />
-          <line x1="0" y1="188" x2="560" y2="188" />
-
-          <line x1="70" y1="0" x2="70" y2="230" />
-          <line x1="160" y1="0" x2="160" y2="230" />
-          <line x1="250" y1="0" x2="250" y2="230" />
-          <line x1="340" y1="0" x2="340" y2="230" />
-          <line x1="430" y1="0" x2="430" y2="230" />
-        </g>
-
-        <path
-          d="M0 166 C32 138 58 95 95 119 C128 141 152 159 188 111 C222 66 255 84 288 124 C320 164 350 145 382 102 C413 60 452 78 485 116 C512 148 538 133 560 104 L560 230 L0 230 Z"
-          fill="url(#ultraArea)"
-        />
-
-        <path
-          d="M0 166 C32 138 58 95 95 119 C128 141 152 159 188 111 C222 66 255 84 288 124 C320 164 350 145 382 102 C413 60 452 78 485 116 C512 148 538 133 560 104"
-          className="ultraLineGlow"
-          filter="url(#ultraGlow)"
-        />
-
-        <path
-          d="M0 166 C32 138 58 95 95 119 C128 141 152 159 188 111 C222 66 255 84 288 124 C320 164 350 145 382 102 C413 60 452 78 485 116 C512 148 538 133 560 104"
-          className="ultraLineMain"
-        />
-
-        <circle cx="560" cy="104" r="10" className="ultraDotOuter" />
-        <circle cx="560" cy="104" r="4.5" className="ultraDotInner" />
-      </svg>
-    </div>
-  </article>
-
-  <article className="panel donutPanelUltra">
-    <div className="panelHead">
-      Ventas por categoría <span>participación</span>
-    </div>
-
-    <div className="donutWrap donutWrapUltra">
-      <svg viewBox="0 0 130 130" className="donutUltra" aria-hidden="true">
-        <circle cx="65" cy="65" r="39" className="donutUltraTrack" />
-        <circle cx="65" cy="65" r="39" className="donutUltraSeg donutUltraSeg1" />
-        <circle cx="65" cy="65" r="39" className="donutUltraSeg donutUltraSeg2" />
-        <circle cx="65" cy="65" r="39" className="donutUltraSeg donutUltraSeg3" />
-        <circle cx="65" cy="65" r="39" className="donutUltraSeg donutUltraSeg4" />
-        <circle cx="65" cy="65" r="21" className="donutUltraCenter" />
-      </svg>
-
-      <div className="legend legendUltra">
-        <div><i /><span>Abarrotes</span><b>42%</b></div>
-        <div><i /><span>Bebidas</span><b>26%</b></div>
-        <div><i /><span>Lácteos</span><b>18%</b></div>
-        <div><i /><span>Limpieza</span><b>14%</b></div>
-      </div>
-    </div>
-  </article>
-</div>
+                <article className="panel">
+                  <div className="panelHead">
+                    Ventas por categoría <span>participación</span>
+                  </div>
+                  <div className="donutWrap">
+                    <div className="donut" />
+                    <div className="legend">
+                      <div><i /><span>Abarrotes</span><b>42%</b></div>
+                      <div><i /><span>Bebidas</span><b>26%</b></div>
+                      <div><i /><span>Lácteos</span><b>18%</b></div>
+                      <div><i /><span>Limpieza</span><b>14%</b></div>
+                    </div>
+                  </div>
+                </article>
+              </div>
             </section>
           </div>
         </div>
@@ -3243,13 +2060,13 @@ export default function Page() {
       <section id="soluciones" className="decisions">
         <div className="container decisionsGrid reveal">
           <div>
-<p className="sectionKicker motion-fade">Todo lo que tu negocio necesita</p>
-<h2 className="sectionTitle motion-up motion-delay-1">
-  Detecta qué vender, qué reponer y qué corregir antes de perder dinero.
-</h2>
-<p className="sectionLead motion-fade motion-delay-2">
-  JasoDatos convierte tus archivos de ventas e inventario en señales claras para priorizar productos, compras y alertas comerciales.
-</p>
+            <p className="sectionKicker motion-fade">Todo lo que tu negocio necesita</p>
+            <h2 className="sectionTitle motion-up motion-delay-1">
+              Toma mejores decisiones con información clara y accionable.
+            </h2>
+            <p className="sectionLead motion-fade motion-delay-2">
+              JasoDatos transforma tus datos en respuestas concretas para que tomes decisiones con confianza.
+            </p>
             <a className="textLink motion-left motion-delay-3" href="#recursos">Conoce nuestras soluciones →</a>
           </div>
 
@@ -3265,7 +2082,7 @@ export default function Page() {
                 </svg>
               </div>
               <h3>Qué vender</h3>
-              <p>Identifica tus productos más vendidos y los que pueden generar más ingresos.</p>
+              <p>Identifica tus productos más vendidos, tendencias y oportunidades.</p>
               <div className="cardLine" />
             </article>
 
@@ -3279,7 +2096,7 @@ export default function Page() {
                 </svg>
               </div>
               <h3>Qué reponer</h3>
-              <p>Detecta productos con stock bajo para reponer antes de perder ventas.</p>
+              <p>Detecta productos con stock bajo y prioriza tus compras.</p>
               <div className="cardLine" />
             </article>
 
@@ -3292,7 +2109,7 @@ export default function Page() {
                 </svg>
               </div>
               <h3>Qué corregir</h3>
-              <p>Encuentra productos lentos, exceso de stock y señales que requieren atención.</p>
+              <p>Encuentra productos lentos, exceso de stock y problemas.</p>
               <div className="cardLine" />
             </article>
 
@@ -3308,7 +2125,7 @@ export default function Page() {
                 </svg>
               </div>
               <h3>Qué revisar</h3>
-              <p>Revisa alertas comerciales y acciones recomendadas para decidir primero lo importante.</p>
+              <p>Recibe alertas y acciones sugeridas todos los días.</p>
               <div className="cardLine" />
             </article>
           </div>
@@ -3332,13 +2149,12 @@ export default function Page() {
           </div>
 
           <div className="purposeText">
-<p className="sectionKicker motion-fade">Nuestro propósito</p>
-<h2 className="sectionTitle motion-up motion-delay-1">
-  Que tus datos de ventas e inventario te digan qué hacer.
-</h2>
-<p className="sectionLead motion-fade motion-delay-2">
-  JasoDatos está pensado para negocios que trabajan con archivos dispersos y necesitan convertirlos en señales simples: qué vender, qué reponer, qué corregir y qué revisar primero.
-</p>
+            <p className="sectionKicker motion-fade">Nuestro propósito</p>
+            <h2 className="sectionTitle motion-up motion-delay-1">Convertimos datos en claridad para tu negocio comercial.</h2>
+            <p className="sectionLead motion-fade motion-delay-2">
+              JasoDatos está pensado para que un negocio comercial pase de archivos dispersos
+              a señales concretas para vender mejor, reponer a tiempo y corregir pérdidas.
+            </p>
 
             <div className="bullets">
               <div className="bullet motion-right motion-delay-1">
@@ -3351,7 +2167,7 @@ export default function Page() {
                   </span>
                 <div>
                   <strong>Entendemos tu negocio</strong>
-                  <span>Pensado para bodegas, ferreterías, distribuidores y negocios comerciales que trabajan con inventario.</span>
+                  <span>Diseñado para negocios comerciales, bodegas, ferreterías y distribuidores.</span>
                 </div>
               </div>
 
@@ -3369,7 +2185,7 @@ export default function Page() {
                   </span>
                 <div>
                   <strong>Análisis inteligente</strong>
-                  <span>Detecta productos vendidos, stock bajo, productos lentos y oportunidades de mejora.</span>
+                  <span>Detecta patrones, riesgos, productos lentos y oportunidades comerciales.</span>
                 </div>
               </div>
 
@@ -3390,16 +2206,16 @@ export default function Page() {
         </div>
       </section>
 
-<section id="indicadores" className="metrics">
-  <div className="container metricsShell">
-    <div className="metricsIntro motion-left">
-      <p className="metricsTitle">JasoDatos en números</p>
-      <h2>Indicadores simples para decidir mejor.</h2>
-      <p>
-        Visualiza señales comerciales clave como ventas recientes, venta promedio por compra,
-        productos en riesgo y productos lentos.
-      </p>
-    </div>
+      <section id="indicadores" className="metrics">
+        <div className="container metricsShell">
+          <div className="metricsIntro motion-left">
+            <p className="metricsTitle">JasoDatos en números</p>
+            <h2>Señales que sí ayudan a decidir.</h2>
+            <p>
+              La página no debe vender solo diseño. Debe mostrar señales comerciales:
+              ventas, ticket, productos en riesgo y productos dormidos.
+            </p>
+          </div>
 
           <div className="metricsGrid">
             <div className="metric motion-up motion-delay-1">
@@ -3415,7 +2231,7 @@ export default function Page() {
                 <svg viewBox="0 0 24 24" fill="none"><path d="M7 5H17C18.1 5 19 5.9 19 7V17C19 18.1 18.1 19 17 19H7C5.9 19 5 18.1 5 17V7C5 5.9 5.9 5 7 5Z" stroke="currentColor"/><path d="M8 10H16" stroke="currentColor" strokeLinecap="round"/><path d="M8 14H13" stroke="currentColor" strokeLinecap="round"/></svg>
               </div>
               <strong>$23,40</strong>
-              <span>Venta promedio por compra</span>
+              <span>Ticket promedio</span>
               <small>+7% vs. período anterior</small>
             </div>
             <div className="metric motion-up motion-delay-3">
@@ -3431,7 +2247,7 @@ export default function Page() {
                 <svg viewBox="0 0 24 24" fill="none"><path d="M19 14.8A7.5 7.5 0 0 1 9.2 5C6.4 6.1 4.5 8.8 4.5 12C4.5 16.1 7.9 19.5 12 19.5C15.2 19.5 17.9 17.6 19 14.8Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </div>
               <strong>14</strong>
-              <span>Productos lentos</span>
+              <span>Productos dormidos</span>
               <small>+3 vs. período anterior</small>
             </div>
           </div>
@@ -3444,8 +2260,8 @@ export default function Page() {
             <p className="sectionKicker">Beneficios visibles</p>
             <h2>Control comercial sin perderte entre hojas de cálculo.</h2>
             <p>
-JasoDatos traduce tus archivos en señales claras para vender mejor,
-reponer a tiempo y reducir productos lentos sin complicarte con herramientas pesadas.
+              JasoDatos traduce tus archivos en señales claras para vender mejor,
+              reponer a tiempo y reducir productos dormidos sin complicarte con herramientas pesadas.
             </p>
           </div>
 
@@ -3453,12 +2269,12 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
             <article className="benefitCard motion-up motion-delay-1">
               <span className="benefitNum">01</span>
               <h3>Evita quiebres y pérdidas</h3>
-              <p>Detecta productos con bajo stock antes de que pierdas ventas.</p>
+              <p>Detecta stock bajo antes de que deje sin ventas a tu negocio.</p>
             </article>
             <article className="benefitCard motion-up motion-delay-2">
               <span className="benefitNum">02</span>
               <h3>Decide en minutos</h3>
-              <p>Reduce la revisión manual y enfócate en productos, alertas y oportunidades.</p>
+              <p>Menos revisión manual y más foco en KPIs, productos lentos y oportunidades.</p>
             </article>
             <article className="benefitCard motion-up motion-delay-3">
               <span className="benefitNum">03</span>
@@ -3468,7 +2284,7 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
             <article className="benefitCard motion-up motion-delay-4">
               <span className="benefitNum">04</span>
               <h3>Comparte y alinea</h3>
-              <p>Reportes claros para revisar con tu equipo y tomar decisiones alineadas.</p>
+              <p>Reportes claros para revisar con tu equipo y conversar decisiones.</p>
             </article>
           </div>
         </div>
@@ -3477,19 +2293,16 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
       <section className="receive">
         <div className="container receivePanel">
           <div className="receiveHead motion-left">
-<p className="sectionKicker">Qué recibes</p>
-<h2>Un tablero claro para decidir qué hacer primero.</h2>
-<p>
-  JasoDatos te entrega una lectura comercial simple para revisar ventas,
-  inventario, productos lentos y alertas de stock.
-</p>
+            <p className="sectionKicker">Qué recibes</p>
+            <h2>Una vista ejecutiva para saber qué hacer después.</h2>
+            <p>Entregables claros para ejecutar, no solo dashboards bonitos.</p>
           </div>
 
           <div className="receiveGrid">
-<div className="receiveItem motion-left motion-delay-1"><span className="check">✓</span>Tablero de ventas e inventario listo para revisar.</div>
-<div className="receiveItem motion-right motion-delay-2"><span className="check">✓</span>Productos más vendidos, productos lentos y alertas de stock bajo.</div>
-<div className="receiveItem motion-left motion-delay-3"><span className="check">✓</span>Reporte claro para compartir con tu equipo.</div>
-<div className="receiveItem motion-right motion-delay-4"><span className="check">✓</span>Lectura simple para decidir qué vender, reponer o corregir primero.</div>
+            <div className="receiveItem motion-left motion-delay-1"><span className="check">✓</span>Tablero base de ventas e inventario.</div>
+            <div className="receiveItem motion-right motion-delay-2"><span className="check">✓</span>Top productos, productos lentos y alertas de stock bajo.</div>
+            <div className="receiveItem motion-left motion-delay-3"><span className="check">✓</span>Reporte listo para compartir y revisar con tu equipo.</div>
+            <div className="receiveItem motion-right motion-delay-4"><span className="check">✓</span>Lectura simple para decidir qué vender, reponer o corregir.</div>
           </div>
         </div>
       </section>
@@ -3497,31 +2310,28 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
       <section className="howWorks">
         <div className="container howPanel">
           <div className="howHead motion-left">
-<p className="sectionKicker">Cómo funciona</p>
-<h2>De tu archivo comercial a un tablero claro en pocos pasos.</h2>
-<p>
-  No necesitas sistemas complejos. Sube tu archivo, revisa la validación
-  y usa el tablero para decidir qué vender, reponer o corregir.
-</p>
+            <p className="sectionKicker">Cómo funciona</p>
+            <h2>Tres pasos para pasar de archivo a decisión.</h2>
+            <p>Sin implementación pesada. Sin complicarte con herramientas complejas.</p>
           </div>
 
           <div className="stepGrid">
             <article className="stepCard motion-left motion-delay-1">
               <span className="stepNum">1</span>
-<h3>Sube tu archivo</h3>
-<p>Carga tu archivo de ventas o inventario en CSV o Excel.</p>
+              <h3>Sube tu archivo</h3>
+              <p>CSV o Excel con ventas, inventario, productos o stock.</p>
             </article>
             <div className="stepArrow motion-fade motion-delay-2">→</div>
             <article className="stepCard motion-up motion-delay-2">
               <span className="stepNum">2</span>
-<h3>JasoDatos ordena la información</h3>
-<p>Reconoce columnas, valida datos clave y prepara el análisis comercial.</p>
+              <h3>JasoDatos valida tus datos</h3>
+              <p>Detecta columnas, revisa reglas y prepara el análisis comercial.</p>
             </article>
             <div className="stepArrow motion-fade motion-delay-3">→</div>
             <article className="stepCard motion-right motion-delay-3">
               <span className="stepNum">3</span>
-<h3>Decide con el tablero</h3>
-<p>Revisa ventas, stock en riesgo, productos lentos y acciones recomendadas.</p>
+              <h3>Recibe señales comerciales</h3>
+              <p>Mira KPIs, stock en riesgo, productos lentos y acciones sugeridas.</p>
             </article>
           </div>
         </div>
@@ -3537,8 +2347,8 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
                 <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5" stroke="currentColor" strokeLinecap="round"/><path d="M4 19H20" stroke="currentColor" strokeLinecap="round"/><path d="M7 15L11 11L14 13.5L19 8" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/><path d="M7 18V15" stroke="currentColor" strokeLinecap="round"/><path d="M12 18V12" stroke="currentColor" strokeLinecap="round"/><path d="M17 18V10" stroke="currentColor" strokeLinecap="round"/></svg>
               </div>
               <div>
-<h3>Análisis de ventas</h3>
-<p>Identifica qué productos venden más, cuándo se mueven mejor y dónde están tus oportunidades.</p>
+                <h3>Análisis de ventas</h3>
+                <p>Conoce tus productos más vendidos, por cliente, categoría, día y más.</p>
                 <span>Ver solución →</span>
               </div>
             </article>
@@ -3548,8 +2358,8 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
                 <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5L20 7.8V16.2L12 20.5L4 16.2V7.8L12 3.5Z" stroke="currentColor" strokeLinejoin="round"/><path d="M4.8 8L12 12L19.2 8" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/><path d="M12 12V20" stroke="currentColor" strokeLinecap="round"/></svg>
               </div>
               <div>
-<h3>Control de inventario</h3>
-<p>Revisa existencias, productos acumulados y niveles de stock para comprar con más criterio.</p>
+                <h3>Control de inventario</h3>
+                <p>Gestiona tu inventario con datos reales. Evita quiebres y exceso de stock.</p>
                 <span>Ver solución →</span>
               </div>
             </article>
@@ -3559,8 +2369,8 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
                 <svg viewBox="0 0 24 24" fill="none"><path d="M6 5H18V19H6V5Z" stroke="currentColor" strokeLinejoin="round"/><path d="M9 9H15" stroke="currentColor" strokeLinecap="round"/><path d="M9 12H15" stroke="currentColor" strokeLinecap="round"/><path d="M9 15H13" stroke="currentColor" strokeLinecap="round"/><path d="M18 5L21 8" stroke="currentColor" strokeLinecap="round"/></svg>
               </div>
               <div>
-<h3>Stock crítico</h3>
-<p>Detecta productos con bajo stock antes de perder ventas por falta de inventario.</p>
+                <h3>Stock crítico</h3>
+                <p>Detecta productos en riesgo de quedarse sin stock y actúa a tiempo.</p>
                 <span>Ver solución →</span>
               </div>
             </article>
@@ -3570,8 +2380,8 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
                 <svg viewBox="0 0 24 24" fill="none"><path d="M12 3L13.8 8.2L19 10L13.8 11.8L12 17L10.2 11.8L5 10L10.2 8.2L12 3Z" stroke="currentColor" strokeLinejoin="round"/><path d="M18 15L18.8 17.2L21 18L18.8 18.8L18 21L17.2 18.8L15 18L17.2 17.2L18 15Z" stroke="currentColor" strokeLinejoin="round"/></svg>
               </div>
               <div>
-<h3>Acciones recomendadas</h3>
-<p>Recibe acciones simples para reponer, revisar productos lentos y priorizar decisiones.</p>
+                <h3>Acciones recomendadas</h3>
+                <p>Prioriza reposición, revisión de margen, productos lentos y oportunidades.</p>
                 <span>Ver solución →</span>
               </div>
             </article>
@@ -3585,96 +2395,70 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
             <p className="sectionKicker motion-fade">Planes para cada etapa de tu negocio</p>
           </div>
 
-          <div className="pricingGrid pricingGridFinal">
-            <article className="price pricePlan priceLight motion-up motion-delay-1">
-<div className="priceIcon priceIconStart" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none">
-    <path d="M12.4 3.2C15.8 4.1 18.4 6.8 19.2 10.2L14.4 15L9 9.6L12.4 3.2Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M9 9.6L6.6 10.1C5.5 10.3 4.7 11.1 4.3 12.1L3.5 14.2L8.1 13.4" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M14.4 15L13.6 19.6L15.7 18.8C16.7 18.4 17.5 17.6 17.7 16.5L18.2 14.1" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M9.2 14.8L6.6 17.4" stroke="currentColor" strokeLinecap="round" />
-    <path d="M7.4 19.2L4.8 21.8" stroke="currentColor" strokeLinecap="round" />
-    <path d="M14.5 7.6H14.51" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-  </svg>
-</div>
+          <div className="pricingGrid">
+            <article className="price motion-up motion-delay-1">
+              <div className="priceIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 12H20" stroke="currentColor" strokeLinecap="round" />
+                  <path d="M14 6L20 12L14 18" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M5 19C6.8 16.8 9 15.7 12 15.7" stroke="currentColor" strokeLinecap="round" />
+                  <path d="M9.2 8.6C9.2 10.15 10.45 11.4 12 11.4C13.55 11.4 14.8 10.15 14.8 8.6C14.8 7.05 13.55 5.8 12 5.8C10.45 5.8 9.2 7.05 9.2 8.6Z" stroke="currentColor" />
+                </svg>
+              </div>
               <h3>Inicio</h3>
               <div className="amount">$29 <small>/mes</small></div>
               <p>Para empezar rápido por cuenta propia.</p>
               <div className="priceDivider" />
               <ul>
-<li>Subida de CSV o Excel + validación</li>
-<li>Indicadores básicos de ventas e inventario</li>
-<li>Plantilla estándar</li>
-<li>Exportables CSV/Excel</li>
+                <li>Subida de CSV o Excel + validación</li>
+                <li>KPIs base y tendencias</li>
+                <li>Plantilla estándar</li>
+                <li>Exportables CSV/Excel</li>
               </ul>
               <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">Probar gratis</a>
             </article>
 
-            <article className="price pricePlan priceFeatured motion-up motion-delay-2">
+            <article className="price featured motion-up motion-delay-2">
               <span className="planBadge">Más usado</span>
-<div className="priceIcon priceIconGrowth" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none">
-    <path d="M4 18.5H20" stroke="currentColor" strokeLinecap="round" />
-    <path d="M5 16L10 11L13.5 14.5L20 8" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M15.4 8H20V12.6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M6.5 20.5V16" stroke="currentColor" strokeLinecap="round" />
-    <path d="M12 20.5V13.5" stroke="currentColor" strokeLinecap="round" />
-    <path d="M17.5 20.5V10.5" stroke="currentColor" strokeLinecap="round" />
-  </svg>
-</div>
+              <div className="priceIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3L14 8.4L20 9L15.4 12.8L16.8 18.8L12 15.6L7.2 18.8L8.6 12.8L4 9L10 8.4L12 3Z" stroke="currentColor" strokeLinejoin="round" />
+                  <path d="M8 21H16" stroke="currentColor" strokeLinecap="round" />
+                </svg>
+              </div>
               <h3>Crecimiento</h3>
               <div className="amount">$89 <small>/mes</small></div>
               <p>Para negocios que quieren acompañamiento real.</p>
               <div className="priceDivider" />
               <ul>
-<li>1 sucursal</li>
-<li>Tablero comercial completo</li>
-<li>Alertas de stock bajo y productos lentos</li>
-<li>Reporte semanal</li>
-<li>1 reunión mensual</li>
+                <li>1 sucursal</li>
+                <li>Tablero base completo</li>
+                <li>Stock bajo + productos lentos</li>
+                <li>Reporte semanal</li>
+                <li>1 reunión mensual</li>
               </ul>
               <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">Empezar ahora</a>
             </article>
 
-            <article className="price pricePlan priceLight motion-up motion-delay-3">
-<div className="priceIcon priceIconControl" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none">
-    <path d="M12 3.5L19.5 7.4V12C19.5 16.5 16.6 19.7 12 20.7C7.4 19.7 4.5 16.5 4.5 12V7.4L12 3.5Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M8.4 12.2L10.8 14.6L15.8 9.6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M8 7.8H16" stroke="currentColor" strokeLinecap="round" opacity=".55" />
-    <path d="M9.2 17H14.8" stroke="currentColor" strokeLinecap="round" opacity=".55" />
-  </svg>
-</div>
+            <article className="price motion-up motion-delay-3">
+              <div className="priceIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3.5L19.5 7.5V12C19.5 16.4 16.6 19.6 12 20.5C7.4 19.6 4.5 16.4 4.5 12V7.5L12 3.5Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M8.8 12.2L11 14.4L15.4 9.8" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
               <h3>Control</h3>
               <div className="amount">$149 <small>/mes</small></div>
               <p>Para equipos que necesitan más control y soporte.</p>
               <div className="priceDivider" />
               <ul>
-<li>Todo lo del plan Crecimiento</li>
-<li>Revisión mensual de resultados</li>
-<li>Soporte WhatsApp directo</li>
-<li>1 ajuste menor de configuración incluido</li>
+                <li>Todo lo del plan Crecimiento</li>
+                <li>Observaciones mensuales</li>
+                <li>Soporte WhatsApp directo</li>
+                <li>1 ajuste menor incluido</li>
               </ul>
               <a className="btn btnPrimary" href={wa} target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
             </article>
-
-            <aside className="priceHelp motion-right motion-delay-4">
-<div className="priceHelpIcon" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none">
-    <path d="M5 13V11C5 7.1 8.1 4 12 4C15.9 4 19 7.1 19 11V13" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M5 13.5C5 12.7 5.7 12 6.5 12H8V17H6.5C5.7 17 5 16.3 5 15.5V13.5Z" stroke="currentColor" strokeLinejoin="round" />
-    <path d="M16 12H17.5C18.3 12 19 12.7 19 13.5V15.5C19 16.3 18.3 17 17.5 17H16V12Z" stroke="currentColor" strokeLinejoin="round" />
-    <path d="M19 16.5C18.5 19.1 16.5 20.5 13.6 20.5H12" stroke="currentColor" strokeLinecap="round" />
-    <path d="M10 20.5H12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-    <path d="M9.2 10.2C10 9.4 11 9 12 9C13.1 9 14.1 9.4 14.8 10.2" stroke="currentColor" strokeLinecap="round" opacity=".65" />
-  </svg>
-</div>
-              <h3>¿Tienes dudas?</h3>
-              <p>Te ayudamos a elegir el plan correcto según tu negocio, cantidad de archivos y nivel de acompañamiento que necesitas.</p>
-              <a className="btn btnWhats" href={wa} target="_blank" rel="noreferrer">
-                Hablar por WhatsApp
-              </a>
-            </aside>
           </div>
         </div>
       </section>
@@ -3688,112 +2472,56 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
           </div>
 
           <div className="faqList">
-<details className="faqItem motion-left motion-delay-1">
-  <summary>¿Qué necesito para empezar?</summary>
-  <p>Solo necesitas un archivo CSV o Excel con ventas, inventario, productos o stock. Si el archivo tiene columnas claras, JasoDatos podrá ayudarte a revisar la información con mayor precisión.</p>
-</details>
-
-<details className="faqItem motion-right motion-delay-2">
-  <summary>¿Debo tener un formato especial?</summary>
-  <p>No necesariamente. Puedes trabajar con un archivo comercial común. JasoDatos te ayuda a relacionar las columnas principales antes de mostrar el tablero.</p>
-</details>
-
-<details className="faqItem motion-left motion-delay-3">
-  <summary>¿Sirve para bodegas, ferreterías y distribuidores?</summary>
-  <p>Claro que í. Está pensado para negocios comerciales que manejan ventas, inventario, productos, stock y reposición.</p>
-</details>
-
-<details className="faqItem motion-right motion-delay-4">
-  <summary>¿Puedo exportar reportes?</summary>
-  <p>Claro que Sí, Puedes generar reportes para revisar resultados, compartir información y tomar decisiones con tu equipo.</p>
-</details>
-
-<details className="faqItem motion-left motion-delay-2">
-  <summary>¿JasoDatos reemplaza Excel?</summary>
-  <p>No lo reemplaza, JasoDatos usa tus archivos de Excel o CSV como punto de partida y los convierte en información más clara para tomar decisiones comerciales.</p>
-</details>
+            <details className="faqItem motion-left motion-delay-1">
+              <summary>¿Qué necesito para empezar?</summary>
+              <p>Un archivo CSV o Excel con ventas, inventario, productos o stock. Mientras más claro esté el archivo, mejor será el análisis.</p>
+            </details>
+            <details className="faqItem motion-right motion-delay-2">
+              <summary>¿Debo tener un formato especial?</summary>
+              <p>No necesariamente. JasoDatos está pensado para ayudarte a mapear columnas comerciales comunes y validar la información antes del dashboard.</p>
+            </details>
+            <details className="faqItem motion-left motion-delay-3">
+              <summary>¿Sirve para bodegas, ferreterías y distribuidores?</summary>
+              <p>Sí. El enfoque actual es comercial: ventas, inventario, stock, productos lentos, alertas y acciones recomendadas.</p>
+            </details>
+            <details className="faqItem motion-right motion-delay-4">
+              <summary>¿Puedo exportar reportes?</summary>
+              <p>Sí. La propuesta considera reportes para revisar resultados y compartir decisiones con tu equipo.</p>
+            </details>
+            <details className="faqItem motion-left motion-delay-2">
+              <summary>¿JasoDatos reemplaza Excel?</summary>
+              <p>No busca eliminar Excel de inmediato. Lo convierte en una fuente de datos más útil para tomar decisiones comerciales.</p>
+            </details>
           </div>
         </div>
       </section>
 
-<section className="bottomCta">
-  <div className="container bottomGrid">
-    <div className="cloud" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M8 17.5H7.2C4.9 17.5 3 15.7 3 13.5C3 11.5 4.5 9.8 6.5 9.5C7.2 6.6 9.6 4.5 12.5 4.5C15.7 4.5 18.3 6.9 18.8 10C20.6 10.3 22 11.8 22 13.7C22 15.8 20.3 17.5 18.1 17.5H16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M12 19.5V11.5" stroke="currentColor" strokeLinecap="round" />
-        <path d="M8.8 14.7L12 11.5L15.2 14.7" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    </div>
-
-    <div>
-      <h2>Empieza hoy a tomar mejores decisiones con tus datos reales.</h2>
-      <p>Sube tu archivo y recibe una lectura clara de ventas, inventario y productos que requieren atención.</p>
-    </div>
-
-    <div className="bottomActions">
-      <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">
-        Probar con mi archivo
-        <span className="btnIcon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M8 17.5H7.2C4.9 17.5 3 15.7 3 13.5C3 11.5 4.5 9.8 6.5 9.5C7.2 6.6 9.6 4.5 12.5 4.5C15.7 4.5 18.3 6.9 18.8 10C20.6 10.3 22 11.8 22 13.7C22 15.8 20.3 17.5 18.1 17.5H16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M12 19.5V11.5" stroke="currentColor" strokeLinecap="round" />
-            <path d="M8.8 14.7L12 11.5L15.2 14.7" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </span>
-      </a>
-
-      <a className="btn btnWhats" href={wa} target="_blank" rel="noreferrer">
-        Hablar por WhatsApp
-<span className="btnIcon whatsappIcon" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none">
-    <path
-      d="M6.6 18.2L4.5 19L5.2 16.9C4.4 15.6 4 14.1 4 12.5C4 8.1 7.6 4.5 12 4.5C16.4 4.5 20 8.1 20 12.5C20 16.9 16.4 20.5 12 20.5C10 20.5 8.1 19.7 6.6 18.2Z"
-      stroke="currentColor"
-      strokeWidth="1.9"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M9.2 9.4C9.5 12.2 11.7 14.4 14.5 14.8"
-      stroke="currentColor"
-      strokeWidth="1.9"
-      strokeLinecap="round"
-    />
-    <path
-      d="M9.2 9.4L10.3 8.8L11.2 10.5L10.5 11.2"
-      stroke="currentColor"
-      strokeWidth="1.9"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M13.4 13.7L14.1 13L15.8 13.9L15.2 15"
-      stroke="currentColor"
-      strokeWidth="1.9"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-</span>
-      </a>
-    </div>
-  </div>
-</section>
+      <section className="bottomCta">
+        <div className="container bottomGrid">
+          <div className="cloud">☁</div>
+          <div>
+            <h2>Empieza hoy a tomar decisiones basadas en datos reales.</h2>
+            <p>Sube tu archivo y obtén un dashboard en minutos.</p>
+          </div>
+          <div className="bottomActions">
+            <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">
+              Probar con mi archivo ☁
+            </a>
+            <a className="btn btnWhats" href={wa} target="_blank" rel="noreferrer">
+              Hablar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
 
       <footer className="footer">
         <div className="container footerGrid">
           <div>
-<a className="footerBrandLogo" href="#inicio" aria-label="JasoDatos">
-  <img
-    src="/images/jasodatos-logo-negativo-transparente.png"
-    alt="JasoDatos"
-  />
-</a>
-
-<p className="footerTagline">
-  Convierte tus datos en decisiones.
-</p>
+            <a className="logo" href="#inicio">
+              <BarsIcon />
+              <span>JASODATOS</span>
+            </a>
+            <p>La plataforma que convierte tus ventas e inventario en decisiones claras.</p>
           </div>
 
           <div>
