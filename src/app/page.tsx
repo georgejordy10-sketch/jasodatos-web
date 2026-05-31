@@ -2967,6 +2967,311 @@ main{overflow:hidden}
     width:100%;
   }
 }
+ 
+/* ================================
+   BLOQUE DASHBOARD REAL
+================================ */
+
+.realDashboardPanel{
+  min-height:430px !important;
+  padding:24px !important;
+  place-items:center !important;
+  background:
+    radial-gradient(620px 260px at 50% 30%, rgba(124,58,237,.26), transparent 66%),
+    linear-gradient(180deg, rgba(18,21,41,.96), rgba(8,9,21,.98)) !important;
+  border:1px solid rgba(167,139,250,.24) !important;
+  box-shadow:
+    0 34px 100px rgba(0,0,0,.42),
+    0 0 0 1px rgba(124,58,237,.12) inset,
+    0 0 70px rgba(124,58,237,.18) !important;
+}
+
+.realDashboardFrame{
+  position:relative;
+  z-index:2;
+  width:100%;
+  border-radius:24px;
+  overflow:hidden;
+  background:rgba(8,9,21,.72);
+  border:1px solid rgba(167,139,250,.28);
+  box-shadow:
+    0 28px 90px rgba(0,0,0,.40),
+    0 0 42px rgba(124,58,237,.18),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.realDashboardHeader{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:14px 18px;
+  background:
+    linear-gradient(90deg, rgba(46,13,79,.88), rgba(61,44,141,.68));
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+
+.realDashboardHeader span{
+  color:#c4b5fd;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:.68rem;
+  font-weight:950;
+}
+
+.realDashboardHeader strong{
+  color:#ffffff;
+  font-size:.88rem;
+  font-weight:850;
+  text-align:right;
+}
+
+.realDashboardImage{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:cover;
+  transform:scale(1.01);
+}
+
+.realDashboardFrame:hover{
+  transform:translateY(-8px) scale(1.012);
+  border-color:rgba(196,181,253,.52);
+  box-shadow:
+    0 38px 110px rgba(0,0,0,.48),
+    0 0 70px rgba(124,58,237,.28),
+    inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+@media (max-width:900px){
+  .realDashboardPanel{
+    min-height:auto !important;
+    padding:16px !important;
+  }
+
+  .realDashboardHeader{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .realDashboardHeader strong{
+    text-align:left;
+  }
+}
+
+/* ================================
+   AJUSTE FINAL GRÁFICA HERO PREMIUM
+================================ */
+
+.dashboard .chartPanelUltra{
+  background:
+    radial-gradient(420px 180px at 72% 12%, rgba(124,58,237,.18), transparent 72%),
+    linear-gradient(180deg, rgba(14,18,38,.98), rgba(8,11,25,.96)) !important;
+  border:1px solid rgba(167,139,250,.18) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 22px 58px rgba(0,0,0,.36),
+    0 0 54px rgba(124,58,237,.12) !important;
+}
+
+.lineBoxUltra{
+  height:170px !important;
+  border-radius:16px !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  background:
+    radial-gradient(320px 120px at 76% 18%, rgba(127,178,255,.13), transparent 72%),
+    linear-gradient(180deg, rgba(17,20,42,.88), rgba(8,11,25,.92)) !important;
+}
+
+.heroChartUltra{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.ultraGrid line{
+  stroke:rgba(255,255,255,.07) !important;
+  stroke-width:1 !important;
+}
+
+.axisLabels text{
+  fill:rgba(203,213,225,.58);
+  font-size:10px;
+  font-weight:700;
+}
+
+.ultraLineGlow{
+  fill:none;
+  stroke:#8b5cf6;
+  stroke-width:9;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  opacity:.62;
+}
+
+.ultraLineMain{
+  fill:none;
+  stroke:url(#ultraLine);
+  stroke-width:3.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  filter:
+    drop-shadow(0 0 7px rgba(167,139,250,.68))
+    drop-shadow(0 0 16px rgba(124,58,237,.32));
+}
+
+.chartPoints circle{
+  fill:#a78bfa;
+  stroke:#dbeafe;
+  stroke-width:1.4;
+  filter:
+    drop-shadow(0 0 7px rgba(167,139,250,.65))
+    drop-shadow(0 0 14px rgba(124,58,237,.34));
+}
+
+.heroUploadBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-weight:600;
+  letter-spacing:-0.01em;
+}
+
+.heroUploadBtn span{
+  font-weight:600;
+}
+
+.heroUploadIcon{
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  opacity:.98;
+  filter:drop-shadow(0 0 10px rgba(167, 139, 250, .45));
+  transform:translateY(1px);
+}
+
+/* ================================
+   HERO BOTONES - AJUSTE FINAL
+================================ */
+
+.heroActions{
+  display:flex !important;
+  align-items:center !important;
+  gap:14px !important;
+  flex-wrap:wrap !important;
+}
+
+.heroUploadBtn{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:10px !important;
+  font-weight:500 !important;
+  letter-spacing:-.01em !important;
+}
+
+.heroUploadBtn span{
+  font-weight:500 !important;
+}
+
+.heroUploadIcon{
+  width:18px !important;
+  height:18px !important;
+  flex:0 0 18px !important;
+  color:#ffffff !important;
+  opacity:.96 !important;
+  transform:translateY(1px);
+  filter:
+    drop-shadow(0 0 8px rgba(255,255,255,.28))
+    drop-shadow(0 0 14px rgba(167,139,250,.26));
+}
+
+.heroHowBtn{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:9px !important;
+  font-weight:500 !important;
+  letter-spacing:-.01em !important;
+}
+
+.heroHowBtn span{
+  font-weight:500 !important;
+}
+
+.heroArrow{
+  display:inline-flex !important;
+  transform:translateY(-1px);
+  transition:transform .22s ease;
+}
+
+.heroHowBtn:hover .heroArrow{
+  transform:translate(4px,-1px);
+}
+
+/* ================================
+   PATCH FINAL DE LIMPIEZA CONTROLADA
+   No elimina bloques anteriores; consolida lo que debe mandar.
+================================ */
+
+section{
+  scroll-margin-top:86px;
+}
+
+.siteNav .navLinks a{
+  font-weight:400 !important;
+}
+
+.siteNav .btnPrimary,
+.heroUploadBtn,
+.heroHowBtn,
+.bottomCta .btn{
+  font-weight:500 !important;
+}
+
+.heroUploadBtn span,
+.heroHowBtn span{
+  font-weight:500 !important;
+}
+
+.faq .faqItem,
+.faq .faqItem:hover,
+.faq .faqItem:focus,
+.faq .faqItem:focus-within,
+.faq .faqItem[open],
+.faq .faqItem[open]:hover{
+  transform:none !important;
+  filter:none !important;
+  box-shadow:none !important;
+}
+
+.faq .faqItem summary{
+  cursor:pointer !important;
+}
+
+.realDashboardFrame,
+.realDashboardFrame:hover{
+  will-change:transform, border-color, box-shadow;
+}
+
+@media (max-width:900px){
+  section{
+    scroll-margin-top:104px;
+  }
+
+  .realDashboardImage{
+    max-height:360px;
+    object-fit:cover;
+    object-position:left top;
+  }
+
+  .dashboard .dashBodyPremium{
+    grid-template-columns:1fr !important;
+  }
+}
 `;
 
 function waLink() {
@@ -3090,14 +3395,46 @@ export default function Page() {
   qué productos se venden más, cuáles están en riesgo y qué acciones debes tomar primero.
 </p>
 
-            <div className="heroActions">
-              <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">
-                Probar con mi archivo ☁
-              </a>
-              <a className="btn btnGhost" href="#funciona">
-                Ver cómo funciona →
-              </a>
-            </div>
+<div className="heroActions">
+  <a className="btn btnPrimary heroUploadBtn" href="https://app.jasodatos.com/registro">
+    <span>Probar con mi archivo</span>
+
+    <svg
+      className="heroUploadIcon"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M7 18.5H6.5C4.01472 18.5 2 16.4853 2 14C2 11.6722 3.76769 9.75719 6.03426 9.52398C6.65515 6.93014 8.98742 5 11.75 5C14.5126 5 16.8448 6.93014 17.4657 9.52398C19.7323 9.75719 21.5 11.6722 21.5 14C21.5 16.4853 19.4853 18.5 17 18.5H16.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 20V11.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.75 14.75L12 11.5L15.25 14.75"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </a>
+
+  <a className="btn btnGhost heroHowBtn" href="#funciona">
+    <span>Ver cómo funciona</span>
+    <span className="heroArrow" aria-hidden="true">→</span>
+  </a>
+</div>
           </div>
 
           <div className="dashboard motion-right motion-delay-1">
@@ -3150,65 +3487,86 @@ export default function Page() {
     <div className="panelHead">
       Ventas por día <span>últimos 30 días</span>
     </div>
+         <div className="lineBox lineBoxUltra">
+  <svg className="heroChartUltra" viewBox="0 0 560 230" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="ultraArea" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="rgba(124,58,237,.48)" />
+        <stop offset="48%" stopColor="rgba(124,58,237,.18)" />
+        <stop offset="100%" stopColor="rgba(8,9,21,.02)" />
+      </linearGradient>
 
-    <div className="lineBox lineBoxUltra">
-      <svg className="heroChartUltra" viewBox="0 0 560 230" fill="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="ultraArea" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="rgba(167,139,250,.56)" />
-            <stop offset="52%" stopColor="rgba(124,58,237,.24)" />
-            <stop offset="100%" stopColor="rgba(124,58,237,.03)" />
-          </linearGradient>
+      <linearGradient id="ultraLine" x1="0" y1="0" x2="560" y2="0">
+        <stop offset="0%" stopColor="#7fb2ff" />
+        <stop offset="48%" stopColor="#8b5cf6" />
+        <stop offset="100%" stopColor="#c4b5fd" />
+      </linearGradient>
 
-          <linearGradient id="ultraLine" x1="0" y1="0" x2="560" y2="0">
-            <stop offset="0%" stopColor="#7c3aed" />
-            <stop offset="42%" stopColor="#a78bfa" />
-            <stop offset="74%" stopColor="#7fb2ff" />
-            <stop offset="100%" stopColor="#c4b5fd" />
-          </linearGradient>
+      <filter id="ultraGlow" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="5" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
 
-          <filter id="ultraGlow" x="-60%" y="-60%" width="220%" height="220%">
-            <feGaussianBlur stdDeviation="8" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
+    <g className="ultraGrid">
+      <line x1="54" y1="38" x2="548" y2="38" />
+      <line x1="54" y1="82" x2="548" y2="82" />
+      <line x1="54" y1="126" x2="548" y2="126" />
+      <line x1="54" y1="170" x2="548" y2="170" />
 
-        <g className="ultraGrid">
-          <line x1="0" y1="38" x2="560" y2="38" />
-          <line x1="0" y1="88" x2="560" y2="88" />
-          <line x1="0" y1="138" x2="560" y2="138" />
-          <line x1="0" y1="188" x2="560" y2="188" />
+      <line x1="112" y1="28" x2="112" y2="186" />
+      <line x1="190" y1="28" x2="190" y2="186" />
+      <line x1="268" y1="28" x2="268" y2="186" />
+      <line x1="346" y1="28" x2="346" y2="186" />
+      <line x1="424" y1="28" x2="424" y2="186" />
+      <line x1="502" y1="28" x2="502" y2="186" />
+    </g>
 
-          <line x1="70" y1="0" x2="70" y2="230" />
-          <line x1="160" y1="0" x2="160" y2="230" />
-          <line x1="250" y1="0" x2="250" y2="230" />
-          <line x1="340" y1="0" x2="340" y2="230" />
-          <line x1="430" y1="0" x2="430" y2="230" />
-        </g>
+    <g className="axisLabels">
+      <text x="20" y="174">$0</text>
+      <text x="14" y="130">$5K</text>
+      <text x="10" y="86">$10K</text>
+      <text x="10" y="42">$15K</text>
 
-        <path
-          d="M0 166 C32 138 58 95 95 119 C128 141 152 159 188 111 C222 66 255 84 288 124 C320 164 350 145 382 102 C413 60 452 78 485 116 C512 148 538 133 560 104 L560 230 L0 230 Z"
-          fill="url(#ultraArea)"
-        />
+      <text x="56" y="213">1 May</text>
+      <text x="170" y="213">8 May</text>
+      <text x="280" y="213">15 May</text>
+      <text x="394" y="213">22 May</text>
+      <text x="500" y="213">31 May</text>
+    </g>
 
-        <path
-          d="M0 166 C32 138 58 95 95 119 C128 141 152 159 188 111 C222 66 255 84 288 124 C320 164 350 145 382 102 C413 60 452 78 485 116 C512 148 538 133 560 104"
-          className="ultraLineGlow"
-          filter="url(#ultraGlow)"
-        />
+    <path
+      d="M54 152 C80 118 96 92 122 112 C146 130 156 112 178 86 C202 58 224 92 244 76 C268 56 284 132 314 92 C336 62 354 84 376 58 C402 26 420 104 448 82 C474 60 486 126 512 92 C532 68 544 54 552 44 L552 186 L54 186 Z"
+      fill="url(#ultraArea)"
+    />
 
-        <path
-          d="M0 166 C32 138 58 95 95 119 C128 141 152 159 188 111 C222 66 255 84 288 124 C320 164 350 145 382 102 C413 60 452 78 485 116 C512 148 538 133 560 104"
-          className="ultraLineMain"
-        />
+    <path
+      d="M54 152 C80 118 96 92 122 112 C146 130 156 112 178 86 C202 58 224 92 244 76 C268 56 284 132 314 92 C336 62 354 84 376 58 C402 26 420 104 448 82 C474 60 486 126 512 92 C532 68 544 54 552 44"
+      className="ultraLineGlow"
+      filter="url(#ultraGlow)"
+    />
 
-        <circle cx="560" cy="104" r="10" className="ultraDotOuter" />
-        <circle cx="560" cy="104" r="4.5" className="ultraDotInner" />
-      </svg>
-    </div>
+    <path
+      d="M54 152 C80 118 96 92 122 112 C146 130 156 112 178 86 C202 58 224 92 244 76 C268 56 284 132 314 92 C336 62 354 84 376 58 C402 26 420 104 448 82 C474 60 486 126 512 92 C532 68 544 54 552 44"
+      className="ultraLineMain"
+    />
+
+    <g className="chartPoints">
+      <circle cx="54" cy="152" r="4" />
+      <circle cx="122" cy="112" r="4" />
+      <circle cx="178" cy="86" r="4" />
+      <circle cx="244" cy="76" r="4" />
+      <circle cx="314" cy="92" r="4" />
+      <circle cx="376" cy="58" r="4" />
+      <circle cx="448" cy="82" r="4" />
+      <circle cx="512" cy="92" r="4" />
+      <circle cx="552" cy="44" r="5.5" />
+    </g>
+  </svg>
+</div>
   </article>
 
   <article className="panel donutPanelUltra">
@@ -3317,19 +3675,20 @@ export default function Page() {
 
       <section id="funciona" className="purpose">
         <div className="container purposeGrid">
-          <div className="videoPanel motion-left">
-            <div className="demoFrame motion-scale motion-delay-1">
-              <span className="demoBadge">Demo preparada</span>
-              <div className="play" aria-hidden="true" />
-              <h3>Espacio listo para tu video</h3>
-              <p>
-                Aquí podrás colocar una demo propia de JasoDatos mostrando cómo se carga un archivo,
-                cómo se validan las columnas y cómo aparece el dashboard comercial.
-              </p>
-              {/* Cuando tengas el video, reemplaza este contenido por:
-                  <video className="demoVideo" src="/videos/demo-jasodatos.mp4" controls /> */}
-            </div>
-          </div>
+<div className="videoPanel realDashboardPanel motion-left">
+  <div className="realDashboardFrame motion-scale motion-delay-1">
+    <div className="realDashboardHeader">
+      <span>Dashboard real</span>
+      <strong>Convierte tus datos en decisiones.</strong>
+    </div>
+
+    <img
+      src="/images/dashboard-real-jasodatos.png"
+      alt="Dashboard real de JasoDatos con ventas, productos, stock y canales"
+      className="realDashboardImage"
+    />
+  </div>
+</div>
 
           <div className="purposeText">
 <p className="sectionKicker motion-fade">Nuestro propósito</p>
@@ -3700,12 +4059,12 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
 
 <details className="faqItem motion-left motion-delay-3">
   <summary>¿Sirve para bodegas, ferreterías y distribuidores?</summary>
-  <p>Claro que í. Está pensado para negocios comerciales que manejan ventas, inventario, productos, stock y reposición.</p>
+  <p>Claro que sí. Está pensado para negocios comerciales que manejan ventas, inventario, productos, stock y reposición.</p>
 </details>
 
 <details className="faqItem motion-right motion-delay-4">
   <summary>¿Puedo exportar reportes?</summary>
-  <p>Claro que Sí, Puedes generar reportes para revisar resultados, compartir información y tomar decisiones con tu equipo.</p>
+  <p>Claro que sí. Puedes generar reportes para revisar resultados, compartir información y tomar decisiones con tu equipo.</p>
 </details>
 
 <details className="faqItem motion-left motion-delay-2">
