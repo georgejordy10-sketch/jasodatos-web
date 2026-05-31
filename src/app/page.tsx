@@ -3956,17 +3956,18 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
     <path d="M14.5 7.6H14.51" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
   </svg>
 </div>
-              <h3>Inicio</h3>
-              <div className="amount">$29 <small>/mes</small></div>
-              <p>Para empezar rápido por cuenta propia.</p>
-              <div className="priceDivider" />
-              <ul>
-<li>Subida de CSV o Excel + validación</li>
-<li>Indicadores básicos de ventas e inventario</li>
-<li>Plantilla estándar</li>
-<li>Exportables CSV/Excel</li>
-              </ul>
-              <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">Probar gratis</a>
+<h3>Inicio</h3>
+<div className="amount">$29 <small>/mes</small></div>
+<p>Para empezar a ordenar ventas e inventario.</p>
+<div className="priceDivider" />
+<ul>
+  <li>Carga de CSV o Excel</li>
+  <li>Dashboard básico de ventas e inventario</li>
+  <li>Indicadores principales</li>
+  <li>Alertas simples de stock bajo</li>
+  <li>Exportación CSV/Excel</li>
+</ul>
+<a className="btn btnPrimary" href="https://app.jasodatos.com/registro">Empezar con Inicio</a>
             </article>
 
             <article className="price pricePlan priceFeatured motion-up motion-delay-2">
@@ -3981,41 +3982,45 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
     <path d="M17.5 20.5V10.5" stroke="currentColor" strokeLinecap="round" />
   </svg>
 </div>
-              <h3>Crecimiento</h3>
-              <div className="amount">$89 <small>/mes</small></div>
-              <p>Para negocios que quieren acompañamiento real.</p>
-              <div className="priceDivider" />
-              <ul>
-<li>1 sucursal</li>
-<li>Tablero comercial completo</li>
-<li>Alertas de stock bajo y productos lentos</li>
-<li>Reporte semanal</li>
-<li>1 reunión mensual</li>
-              </ul>
-              <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">Empezar ahora</a>
-            </article>
+<h3>Crecimiento</h3>
+<div className="amount">$89 <small>/mes</small></div>
+<p>Para negocios que quieren seguimiento comercial real.</p>
+<div className="priceDivider" />
+<ul>
+  <li>Todo lo del plan Inicio</li>
+  <li>Acciones recomendadas</li>
+  <li>Alertas de stock bajo y productos lentos</li>
+  <li>Análisis por productos y canales</li>
+  <li>Resumen comercial para seguimiento semanal</li>
+  <li>1 reunión mensual</li>
+</ul>
+<a className="btn btnPrimary" href="https://app.jasodatos.com/registro">Empezar ahora</a>
+</article>
 
-            <article className="price pricePlan priceLight motion-up motion-delay-3">
-<div className="priceIcon priceIconControl" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none">
-    <path d="M12 3.5L19.5 7.4V12C19.5 16.5 16.6 19.7 12 20.7C7.4 19.7 4.5 16.5 4.5 12V7.4L12 3.5Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M8.4 12.2L10.8 14.6L15.8 9.6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M8 7.8H16" stroke="currentColor" strokeLinecap="round" opacity=".55" />
-    <path d="M9.2 17H14.8" stroke="currentColor" strokeLinecap="round" opacity=".55" />
-  </svg>
-</div>
-              <h3>Control</h3>
-              <div className="amount">$149 <small>/mes</small></div>
-              <p>Para equipos que necesitan más control y soporte.</p>
-              <div className="priceDivider" />
-              <ul>
-<li>Todo lo del plan Crecimiento</li>
-<li>Revisión mensual de resultados</li>
-<li>Soporte WhatsApp directo</li>
-<li>1 ajuste menor de configuración incluido</li>
-              </ul>
-              <a className="btn btnPrimary" href={wa} target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
-            </article>
+<article className="price pricePlan priceLight motion-up motion-delay-3">
+  <div className="priceIcon priceIconControl" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path d="M12 3.5L19.5 7.4V12C19.5 16.5 16.6 19.7 12 20.7C7.4 19.7 4.5 16.5 4.5 12V7.4L12 3.5Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8.4 12.2L10.8 14.6L15.8 9.6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8 7.8H16" stroke="currentColor" strokeLinecap="round" opacity=".55" />
+      <path d="M9.2 17H14.8" stroke="currentColor" strokeLinecap="round" opacity=".55" />
+    </svg>
+  </div>
+
+  <h3>Control</h3>
+  <div className="amount">$149 <small>/mes</small></div>
+  <p>Para negocios que necesitan más control y soporte.</p>
+  <div className="priceDivider" />
+  <ul>
+    <li>Todo lo del plan Crecimiento</li>
+    <li>Hasta 3 sucursales</li>
+    <li>Comparativo entre locales</li>
+    <li>Revisión mensual de resultados</li>
+    <li>Soporte WhatsApp prioritario</li>
+    <li>1 ajuste menor de configuración incluido</li>
+  </ul>
+  <a className="btn btnPrimary" href={wa} target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
+</article>
 
             <aside className="priceHelp motion-right motion-delay-4">
 <div className="priceHelpIcon" aria-hidden="true">
@@ -4029,7 +4034,7 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
   </svg>
 </div>
               <h3>¿Tienes dudas?</h3>
-              <p>Te ayudamos a elegir el plan correcto según tu negocio, cantidad de archivos y nivel de acompañamiento que necesitas.</p>
+              <p>Te ayudamos a elegir el plan según tu volumen de ventas, número de sucursales y nivel de acompañamiento que necesitas.</p>
               <a className="btn btnWhats" href={wa} target="_blank" rel="noreferrer">
                 Hablar por WhatsApp
               </a>
