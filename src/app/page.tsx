@@ -3272,6 +3272,197 @@ section{
     grid-template-columns:1fr !important;
   }
 }
+
+.pricing .container{
+  max-width:1520px !important;
+  width:98vw !important;
+}
+
+.pricingGridFinal{
+  grid-template-columns: 1.18fr 1.22fr 1.18fr .82fr !important;
+  gap:18px !important;
+}
+
+.pricing .pricePlan{
+  padding:36px 34px 28px !important;
+  min-height:680px !important;
+}
+
+.pricing .pricePlan h3{
+  font-size:25px !important;
+  line-height:1.12 !important;
+  margin-bottom:18px !important;
+}
+
+.pricing .amount{
+  display:flex !important;
+  align-items:baseline !important;
+  gap:8px !important;
+  white-space:nowrap !important;
+}
+
+.pricing .amount small{
+  font-size:16px !important;
+  line-height:1 !important;
+  white-space:nowrap !important;
+}
+
+.pricing .pricePlan p{
+  font-size:13.5px !important;
+  line-height:1.34 !important;
+  margin-bottom:16px !important;
+}
+
+.pricing .priceDivider{
+  margin:14px 0 14px !important;
+}
+
+.pricing .pricePlan ul{
+  gap:7px !important;
+}
+
+.pricing .pricePlan li{
+  font-size:13.5px !important;
+  line-height:1.14 !important;
+}
+
+.priceHelp{
+  padding:38px 28px 28px !important;
+}
+
+.priceHelp p{
+  font-size:14px !important;
+  line-height:1.42 !important;
+}
+
+/* ================================
+   PRECIOS - ENTRADA SECUENCIAL CONTROLADA
+   Orden: Crecimiento, Control, Inicio, Dudas
+================================ */
+
+.pricingSequence > .pricePlan,
+.pricingSequence > .priceHelp{
+  opacity:0 !important;
+  transform:translate3d(0,96px,0) scale(.96) !important;
+  filter:blur(10px) !important;
+  transition:
+    opacity 1.15s cubic-bezier(.13,.72,.08,1),
+    transform 1.15s cubic-bezier(.13,.72,.08,1),
+    filter 1.15s cubic-bezier(.13,.72,.08,1),
+    border-color .45s ease,
+    box-shadow .45s ease !important;
+}
+
+.pricingSequence.pricing-in-view > .pricePlan,
+.pricingSequence.pricing-in-view > .priceHelp{
+  opacity:1 !important;
+  transform:translate3d(0,0,0) scale(1) !important;
+  filter:blur(0) !important;
+}
+
+/* 1. Plan Crecimiento */
+.pricingSequence.pricing-in-view > article:nth-of-type(2){
+  transition-delay:.08s !important;
+}
+
+/* 2. Plan Control */
+.pricingSequence.pricing-in-view > article:nth-of-type(3){
+  transition-delay:.42s !important;
+}
+
+/* 3. Plan Inicio */
+.pricingSequence.pricing-in-view > article:nth-of-type(1){
+  transition-delay:.76s !important;
+}
+
+/* 4. ¿Tienes dudas? */
+.pricingSequence.pricing-in-view > .priceHelp{
+  transition-delay:1.1s !important;
+}
+
+/* Conserva hover premium después de entrar */
+.pricingSequence.pricing-in-view > .pricePlan:hover,
+.pricingSequence.pricing-in-view > .priceHelp:hover{
+  transform:translateY(-14px) scale(1.025) !important;
+}
+
+@media (max-width:900px){
+  .pricingSequence > .pricePlan,
+  .pricingSequence > .priceHelp{
+    transform:translate3d(0,44px,0) scale(.98) !important;
+    filter:none !important;
+  }
+
+  .pricingSequence.pricing-in-view > article:nth-of-type(2){
+    transition-delay:.05s !important;
+  }
+
+  .pricingSequence.pricing-in-view > article:nth-of-type(3){
+    transition-delay:.18s !important;
+  }
+
+  .pricingSequence.pricing-in-view > article:nth-of-type(1){
+    transition-delay:.31s !important;
+  }
+
+  .pricingSequence.pricing-in-view > .priceHelp{
+    transition-delay:.44s !important;
+  }
+}
+ 
+/* ================================
+   FAQ - ENTRADA LATERAL ALTERNADA
+   Derecha / izquierda / derecha / izquierda
+================================ */
+
+.faq .faqList .faqItem.motion-right:not(.is-in-view){
+  opacity:0 !important;
+  transform:translate3d(180px,0,0) scale(.96) !important;
+  filter:blur(10px) !important;
+}
+
+.faq .faqList .faqItem.motion-left:not(.is-in-view){
+  opacity:0 !important;
+  transform:translate3d(-180px,0,0) scale(.96) !important;
+  filter:blur(10px) !important;
+}
+
+.faq .faqList .faqItem.motion-right.is-in-view,
+.faq .faqList .faqItem.motion-left.is-in-view{
+  opacity:1 !important;
+  transform:translate3d(0,0,0) scale(1) !important;
+  filter:blur(0) !important;
+}
+
+.faq .faqList .faqItem.motion-right,
+.faq .faqList .faqItem.motion-left{
+  transition:
+    opacity 1.05s cubic-bezier(.13,.72,.08,1),
+    transform 1.05s cubic-bezier(.13,.72,.08,1),
+    filter 1.05s cubic-bezier(.13,.72,.08,1),
+    background .22s ease,
+    border-color .22s ease !important;
+}
+
+/* mantiene FAQ sin salto al hacer hover, pero no mata la animación */
+.faq .faqList .faqItem.motion-right.is-in-view:hover,
+.faq .faqList .faqItem.motion-left.is-in-view:hover{
+  transform:translate3d(0,0,0) scale(1) !important;
+  filter:none !important;
+  box-shadow:none !important;
+}
+
+@media (max-width:900px){
+  .faq .faqList .faqItem.motion-right:not(.is-in-view){
+    transform:translate3d(48px,0,0) scale(.98) !important;
+    filter:none !important;
+  }
+
+  .faq .faqList .faqItem.motion-left:not(.is-in-view){
+    transform:translate3d(-48px,0,0) scale(.98) !important;
+    filter:none !important;
+  }
+}
 `;
 
 function waLink() {
@@ -3301,13 +3492,46 @@ const motionScript = `
     '.motion-scale'
   ].join(',');
 
-  const runMotion = () => {
-    const items = Array.from(document.querySelectorAll(motionSelector));
+  const getMotionItems = () => Array.from(document.querySelectorAll(motionSelector));
 
-    if (!items.length) return;
+  const resetElementsOutsideViewport = () => {
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const items = getMotionItems();
+
+    items.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+
+      const isFarAbove = rect.bottom < -120;
+      const isFarBelow = rect.top > viewportHeight + 120;
+
+      if (isFarAbove || isFarBelow) {
+        el.classList.remove('is-in-view');
+      }
+    });
+
+    const pricingSequence = document.querySelector('.pricingSequence');
+
+    if (pricingSequence) {
+      const rect = pricingSequence.getBoundingClientRect();
+
+      const isFarAbove = rect.bottom < -160;
+      const isFarBelow = rect.top > viewportHeight + 160;
+
+      if (isFarAbove || isFarBelow) {
+        pricingSequence.classList.remove('pricing-in-view');
+      }
+    }
+  };
+
+  const runMotion = () => {
+    const items = getMotionItems();
+    const pricingSequence = document.querySelector('.pricingSequence');
+
+    if (!items.length && !pricingSequence) return;
 
     if (!('IntersectionObserver' in window)) {
       items.forEach((el) => el.classList.add('is-in-view'));
+      if (pricingSequence) pricingSequence.classList.add('pricing-in-view');
       return;
     }
 
@@ -3315,39 +3539,68 @@ const motionScript = `
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const el = entry.target;
+        if (!entry.isIntersecting) return;
 
-        if (entry.isIntersecting) {
-          el.classList.add('is-in-view');
-        } else {
-          el.classList.remove('is-in-view');
-        }
+        entry.target.classList.add('is-in-view');
       });
     }, {
-      threshold: isCompact ? 0.03 : 0.08,
-      rootMargin: isCompact ? '18% 0px 18% 0px' : '-4% 0px -6% 0px'
+      threshold: isCompact ? 0.08 : 0.14,
+      rootMargin: isCompact ? '0px 0px -8% 0px' : '0px 0px -18% 0px'
     });
 
-    items.forEach((el) => observer.observe(el));
+    items.forEach((el) => {
+      if (!el.closest('.pricingSequence')) {
+        observer.observe(el);
+      }
+    });
+
+    if (pricingSequence) {
+      const pricingObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          pricingSequence.classList.add('pricing-in-view');
+        });
+      }, {
+        threshold: isCompact ? 0.10 : 0.18,
+        rootMargin: isCompact ? '0px 0px -8% 0px' : '0px 0px -24% 0px'
+      });
+
+      pricingObserver.observe(pricingSequence);
+    }
+
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+
+      ticking = true;
+
+      window.requestAnimationFrame(() => {
+        resetElementsOutsideViewport();
+        ticking = false;
+      });
+    }, { passive: true });
+
+    window.addEventListener('resize', resetElementsOutsideViewport, { passive: true });
   };
 
-  const startAfterHydration = () => {
+  const startMotion = () => {
     window.requestAnimationFrame(() => {
       window.requestAnimationFrame(() => {
-        window.setTimeout(runMotion, 250);
+        window.setTimeout(runMotion, 120);
       });
     });
   };
 
   if (document.readyState === 'complete') {
-    startAfterHydration();
+    startMotion();
   } else {
-    window.addEventListener('load', startAfterHydration, { once: true });
+    window.addEventListener('load', startMotion, { once: true });
   }
 })();
 `;
-
-export default function Page() {
+export default function Home() {
   const wa = waLink();
 
   return (
@@ -3938,111 +4191,149 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
         </div>
       </section>
 
-      <section id="precios" className="pricing">
-        <div className="container">
-          <div className="pricingHead">
-            <p className="sectionKicker motion-fade">Planes para cada etapa de tu negocio</p>
-          </div>
+<section id="precios" className="pricing">
+  <div className="container">
+    <div className="pricingHead">
+      <p className="sectionKicker motion-fade">Planes para cada etapa de tu negocio</p>
+    </div>
 
-          <div className="pricingGrid pricingGridFinal">
-            <article className="price pricePlan priceLight motion-up motion-delay-1">
-<div className="priceIcon priceIconStart" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none">
-    <path d="M12.4 3.2C15.8 4.1 18.4 6.8 19.2 10.2L14.4 15L9 9.6L12.4 3.2Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M9 9.6L6.6 10.1C5.5 10.3 4.7 11.1 4.3 12.1L3.5 14.2L8.1 13.4" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M14.4 15L13.6 19.6L15.7 18.8C16.7 18.4 17.5 17.6 17.7 16.5L18.2 14.1" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M9.2 14.8L6.6 17.4" stroke="currentColor" strokeLinecap="round" />
-    <path d="M7.4 19.2L4.8 21.8" stroke="currentColor" strokeLinecap="round" />
-    <path d="M14.5 7.6H14.51" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-  </svg>
-</div>
-<h3>Inicio</h3>
-<div className="amount">$29 <small>/mes</small></div>
-<p>Para empezar a ordenar ventas e inventario.</p>
-<div className="priceDivider" />
-<ul>
-  <li>Carga de CSV o Excel</li>
-  <li>Dashboard básico de ventas e inventario</li>
-  <li>Indicadores principales</li>
-  <li>Alertas simples de stock bajo</li>
-  <li>Exportación CSV/Excel</li>
-</ul>
-<a className="btn btnPrimary" href="https://app.jasodatos.com/registro">Empezar con Inicio</a>
-            </article>
-
-            <article className="price pricePlan priceFeatured motion-up motion-delay-2">
-              <span className="planBadge">Más usado</span>
-<div className="priceIcon priceIconGrowth" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none">
-    <path d="M4 18.5H20" stroke="currentColor" strokeLinecap="round" />
-    <path d="M5 16L10 11L13.5 14.5L20 8" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M15.4 8H20V12.6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M6.5 20.5V16" stroke="currentColor" strokeLinecap="round" />
-    <path d="M12 20.5V13.5" stroke="currentColor" strokeLinecap="round" />
-    <path d="M17.5 20.5V10.5" stroke="currentColor" strokeLinecap="round" />
-  </svg>
-</div>
-<h3>Crecimiento</h3>
-<div className="amount">$89 <small>/mes</small></div>
-<p>Para negocios que quieren seguimiento comercial real.</p>
-<div className="priceDivider" />
-<ul>
-  <li>Todo lo del plan Inicio</li>
-  <li>Acciones recomendadas</li>
-  <li>Alertas de stock bajo y productos lentos</li>
-  <li>Análisis por productos y canales</li>
-  <li>Resumen comercial para seguimiento semanal</li>
-  <li>1 reunión mensual</li>
-</ul>
-<a className="btn btnPrimary" href="https://app.jasodatos.com/registro">Empezar ahora</a>
-</article>
-
-<article className="price pricePlan priceLight motion-up motion-delay-3">
-  <div className="priceIcon priceIconControl" aria-hidden="true">
-    <svg viewBox="0 0 24 24" fill="none">
-      <path d="M12 3.5L19.5 7.4V12C19.5 16.5 16.6 19.7 12 20.7C7.4 19.7 4.5 16.5 4.5 12V7.4L12 3.5Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M8.4 12.2L10.8 14.6L15.8 9.6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M8 7.8H16" stroke="currentColor" strokeLinecap="round" opacity=".55" />
-      <path d="M9.2 17H14.8" stroke="currentColor" strokeLinecap="round" opacity=".55" />
-    </svg>
-  </div>
-
-  <h3>Control</h3>
-  <div className="amount">$149 <small>/mes</small></div>
-  <p>Para negocios que necesitan más control y soporte.</p>
-  <div className="priceDivider" />
-  <ul>
-    <li>Todo lo del plan Crecimiento</li>
-    <li>Hasta 3 sucursales</li>
-    <li>Comparativo entre locales</li>
-    <li>Revisión mensual de resultados</li>
-    <li>Soporte WhatsApp prioritario</li>
-    <li>1 ajuste menor de configuración incluido</li>
-  </ul>
-  <a className="btn btnPrimary" href={wa} target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
-</article>
-
-            <aside className="priceHelp motion-right motion-delay-4">
-<div className="priceHelpIcon" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none">
-    <path d="M5 13V11C5 7.1 8.1 4 12 4C15.9 4 19 7.1 19 11V13" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M5 13.5C5 12.7 5.7 12 6.5 12H8V17H6.5C5.7 17 5 16.3 5 15.5V13.5Z" stroke="currentColor" strokeLinejoin="round" />
-    <path d="M16 12H17.5C18.3 12 19 12.7 19 13.5V15.5C19 16.3 18.3 17 17.5 17H16V12Z" stroke="currentColor" strokeLinejoin="round" />
-    <path d="M19 16.5C18.5 19.1 16.5 20.5 13.6 20.5H12" stroke="currentColor" strokeLinecap="round" />
-    <path d="M10 20.5H12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-    <path d="M9.2 10.2C10 9.4 11 9 12 9C13.1 9 14.1 9.4 14.8 10.2" stroke="currentColor" strokeLinecap="round" opacity=".65" />
-  </svg>
-</div>
-              <h3>¿Tienes dudas?</h3>
-              <p>Te ayudamos a elegir el plan según tu volumen de ventas, número de sucursales y nivel de acompañamiento que necesitas.</p>
-              <a className="btn btnWhats" href={wa} target="_blank" rel="noreferrer">
-                Hablar por WhatsApp
-              </a>
-            </aside>
-          </div>
+    <div className="pricingGrid pricingGridFinal pricingSequence">
+      <article className="price pricePlan priceLight motion-up motion-delay-3">
+        <div className="priceIcon priceIconStart" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12.4 3.2C15.8 4.1 18.4 6.8 19.2 10.2L14.4 15L9 9.6L12.4 3.2Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M9 9.6L6.6 10.1C5.5 10.3 4.7 11.1 4.3 12.1L3.5 14.2L8.1 13.4" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M14.4 15L13.6 19.6L15.7 18.8C16.7 18.4 17.5 17.6 17.7 16.5L18.2 14.1" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M9.2 14.8L6.6 17.4" stroke="currentColor" strokeLinecap="round" />
+            <path d="M7.4 19.2L4.8 21.8" stroke="currentColor" strokeLinecap="round" />
+            <path d="M14.5 7.6H14.51" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+          </svg>
         </div>
-      </section>
 
+        <h3>Plan Inicio</h3>
+        <div className="amount">$29 <small>/mes</small></div>
+
+        <p>
+          Ordena tus ventas e inventario en minutos. Mira qué vendiste, qué tienes y qué productos necesitan atención.
+        </p>
+
+        <div className="priceDivider" />
+
+        <ul>
+          <li>Carga de archivo CSV o Excel</li>
+          <li>Dashboard de ventas e inventario</li>
+          <li>KPIs: ventas, unidades, producto estrella</li>
+          <li>Alertas básicas de stock bajo</li>
+          <li>Exportación CSV y Excel</li>
+          <li>1 sucursal o local</li>
+          <li>JasoAlix no incluido</li>
+          <li>Sin acciones recomendadas</li>
+        </ul>
+
+        <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">
+          Empezar con Inicio
+        </a>
+      </article>
+
+      <article className="price pricePlan priceFeatured motion-up motion-delay-1">
+        <span className="planBadge">Más usado</span>
+
+        <div className="priceIcon priceIconGrowth" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 18.5H20" stroke="currentColor" strokeLinecap="round" />
+            <path d="M5 16L10 11L13.5 14.5L20 8" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M15.4 8H20V12.6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M6.5 20.5V16" stroke="currentColor" strokeLinecap="round" />
+            <path d="M12 20.5V13.5" stroke="currentColor" strokeLinecap="round" />
+            <path d="M17.5 20.5V10.5" stroke="currentColor" strokeLinecap="round" />
+          </svg>
+        </div>
+
+        <h3>Plan Crecimiento</h3>
+        <div className="amount">$89 <small>/mes</small></div>
+
+        <p>
+          Recibe acciones claras para vender mejor, reponer a tiempo y detectar productos con dinero atrapado.
+        </p>
+
+        <div className="priceDivider" />
+
+        <ul>
+          <li>Todo lo del plan Inicio</li>
+          <li>Acciones priorizadas: qué hacer primero hoy</li>
+          <li>Alertas completas: stock crítico y productos lentos</li>
+          <li>Comparativo de productos por ventas y margen</li>
+          <li>Análisis por canales: tienda, WhatsApp, web</li>
+          <li>JasoAlix: resumen comercial semanal</li>
+          <li>Exportación PDF lista para compartir</li>
+          <li>1 reunión mensual de seguimiento</li>
+        </ul>
+
+        <a className="btn btnPrimary" href="https://app.jasodatos.com/registro">
+          Empezar ahora
+        </a>
+      </article>
+
+      <article className="price pricePlan priceLight motion-up motion-delay-2">
+        <div className="priceIcon priceIconControl" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3.5L19.5 7.4V12C19.5 16.5 16.6 19.7 12 20.7C7.4 19.7 4.5 16.5 4.5 12V7.4L12 3.5Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M8.4 12.2L10.8 14.6L15.8 9.6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M8 7.8H16" stroke="currentColor" strokeLinecap="round" opacity=".55" />
+            <path d="M9.2 17H14.8" stroke="currentColor" strokeLinecap="round" opacity=".55" />
+          </svg>
+        </div>
+
+        <h3>Plan Control</h3>
+        <div className="amount"><small>desde</small> $149</div>
+
+        <p>
+          Para negocios con varias sucursales que necesitan comparar resultados y decidir con acompañamiento mensual.
+        </p>
+
+        <div className="priceDivider" />
+
+        <ul>
+          <li>Todo lo del plan Crecimiento</li>
+          <li>Hasta 3 sucursales con comparativo entre locales</li>
+          <li>JasoAlix: resumen comercial semanal, mensajes listos para proveedores y equipo</li>
+          <li>Informe mensual en PDF con comparativa</li>
+          <li>Revisión mensual de resultados incluida</li>
+          <li>Soporte WhatsApp prioritario</li>
+          <li>1 ajuste mensual de reglas comerciales</li>
+          <li>Configuración inicial incluida</li>
+        </ul>
+
+        <a className="btn btnPrimary" href={wa} target="_blank" rel="noreferrer">
+          Hablar por WhatsApp
+        </a>
+      </article>
+
+      <aside className="priceHelp motion-up motion-delay-4">
+        <div className="priceHelpIcon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M5 13V11C5 7.1 8.1 4 12 4C15.9 4 19 7.1 19 11V13" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M5 13.5C5 12.7 5.7 12 6.5 12H8V17H6.5C5.7 17 5 16.3 5 15.5V13.5Z" stroke="currentColor" strokeLinejoin="round" />
+            <path d="M16 12H17.5C18.3 12 19 12.7 19 13.5V15.5C19 16.3 18.3 17 17.5 17H16V12Z" stroke="currentColor" strokeLinejoin="round" />
+            <path d="M19 16.5C18.5 19.1 16.5 20.5 13.6 20.5H12" stroke="currentColor" strokeLinecap="round" />
+            <path d="M10 20.5H12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+            <path d="M9.2 10.2C10 9.4 11 9 12 9C13.1 9 14.1 9.4 14.8 10.2" stroke="currentColor" strokeLinecap="round" opacity=".65" />
+          </svg>
+        </div>
+
+        <h3>¿Tienes dudas?</h3>
+
+        <p>
+          Te ayudamos a elegir el plan según tu volumen de ventas, número de sucursales y nivel de acompañamiento que necesitas.
+        </p>
+
+        <a className="btn btnWhats" href={wa} target="_blank" rel="noreferrer">
+          Hablar por WhatsApp
+        </a>
+      </aside>
+    </div>
+  </div>
+</section>
       <section className="faq">
         <div className="container faqPanel">
           <div className="faqHead motion-left">
@@ -4052,33 +4343,34 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
           </div>
 
           <div className="faqList">
-<details className="faqItem motion-left motion-delay-1">
-  <summary>¿Qué necesito para empezar?</summary>
-  <p>Solo necesitas un archivo CSV o Excel con ventas, inventario, productos o stock. Si el archivo tiene columnas claras, JasoDatos podrá ayudarte a revisar la información con mayor precisión.</p>
-</details>
+            <details className="faqItem motion-right motion-delay-1">
+              <summary>¿Qué necesito para empezar?</summary>
+              <p>Solo necesitas un archivo CSV o Excel con ventas, inventario, productos o stock. Si el archivo tiene columnas claras, JasoDatos podrá ayudarte a revisar la información con mayor precisión.</p>
+            </details>
 
-<details className="faqItem motion-right motion-delay-2">
-  <summary>¿Debo tener un formato especial?</summary>
-  <p>No necesariamente. Puedes trabajar con un archivo comercial común. JasoDatos te ayuda a relacionar las columnas principales antes de mostrar el tablero.</p>
-</details>
+            <details className="faqItem motion-left motion-delay-2">
+              <summary>¿Debo tener un formato especial?</summary>
+              <p>No necesariamente. Puedes trabajar con un archivo comercial común. JasoDatos te ayuda a relacionar las columnas principales antes de mostrar el tablero.</p>
+            </details>
 
-<details className="faqItem motion-left motion-delay-3">
-  <summary>¿Sirve para bodegas, ferreterías y distribuidores?</summary>
-  <p>Claro que sí. Está pensado para negocios comerciales que manejan ventas, inventario, productos, stock y reposición.</p>
-</details>
+            <details className="faqItem motion-right motion-delay-3">
+              <summary>¿Sirve para bodegas, ferreterías y distribuidores?</summary>
+              <p>Claro que sí. Está pensado para negocios comerciales que manejan ventas, inventario, productos, stock y reposición.</p>
+            </details>
 
-<details className="faqItem motion-right motion-delay-4">
-  <summary>¿Puedo exportar reportes?</summary>
-  <p>Claro que sí. Puedes generar reportes para revisar resultados, compartir información y tomar decisiones con tu equipo.</p>
-</details>
+            <details className="faqItem motion-left motion-delay-4">
+              <summary>¿Puedo exportar reportes?</summary>
+              <p>Claro que sí. Puedes generar reportes para revisar resultados, compartir información y tomar decisiones con tu equipo.</p>
+            </details>
 
-<details className="faqItem motion-left motion-delay-2">
-  <summary>¿JasoDatos reemplaza Excel?</summary>
-  <p>No lo reemplaza, JasoDatos usa tus archivos de Excel o CSV como punto de partida y los convierte en información más clara para tomar decisiones comerciales.</p>
-</details>
+            <details className="faqItem motion-right motion-delay-2">
+              <summary>¿JasoDatos reemplaza Excel?</summary>
+              <p>No lo reemplaza, JasoDatos usa tus archivos de Excel o CSV como punto de partida y los convierte en información más clara para tomar decisiones comerciales.</p>
+            </details>
           </div>
         </div>
       </section>
+
 
 <section className="bottomCta">
   <div className="container bottomGrid">
