@@ -1922,59 +1922,7 @@ main{overflow:hidden}
 .pricePlan .btn{width:100%;min-height:56px;margin-top:auto;border-radius:10px;font-size:1rem}.priceLight .btnPrimary{color:#fff !important;background:linear-gradient(135deg,#2e0d4f,#3d2c8d) !important;box-shadow:0 18px 44px rgba(46,13,79,.18) !important}.priceFeatured .btnPrimary{color:#2e0d4f !important;background:#fff !important;box-shadow:0 20px 48px rgba(0,0,0,.18) !important}
 .priceHelp{min-height:560px;padding:38px 34px;border-radius:28px;display:flex;flex-direction:column;justify-content:center;color:#ffffff;background:radial-gradient(280px 180px at 40% 18%, rgba(167,139,250,.22), transparent 62%), linear-gradient(145deg,#2e0d4f 0%,#3d2c8d 100%);border:1px solid rgba(196,181,253,.22);box-shadow:0 36px 92px rgba(46,13,79,.36)}
 .priceHelpIcon{width:66px;height:66px;border-radius:20px;display:grid;place-items:center;margin-bottom:28px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);box-shadow:0 0 40px rgba(167,139,250,.22)}.priceHelpIcon svg{width:32px;height:32px}.priceHelp h3{margin:0 0 16px;font-size:1.35rem;letter-spacing:-.02em}.priceHelp p{margin:0 0 26px;color:rgba(255,255,255,.78);line-height:1.58}.priceHelp .btn{width:100%;min-height:52px;border-radius:10px;color:#fff;background:rgba(127,178,255,.12);border-color:rgba(127,178,255,.30)}
-/* Hover visible sin chocar con el título */
-.pricePlan:hover,
-.pricePlan.motion-up:hover,
-.priceHelp:hover{
-  transform:translateY(-14px) scale(1.025) !important;
-  filter:saturate(1.14) brightness(1.045) !important;
-}
 
-.pricePlan:hover{
-  border-color:rgba(124,58,237,.42) !important;
-  box-shadow:
-    0 34px 70px rgba(46,13,79,.28),
-    0 0 0 2px rgba(124,58,237,.16),
-    0 0 58px rgba(124,58,237,.20),
-    inset 0 1px 0 rgba(255,255,255,.95) !important;
-}
-
-.priceFeatured:hover{
-  border-color:rgba(255,255,255,.46) !important;
-  box-shadow:
-    0 40px 92px rgba(61,44,141,.48),
-    0 0 0 2px rgba(255,255,255,.18),
-    0 0 70px rgba(167,139,250,.32),
-    inset 0 1px 0 rgba(255,255,255,.12) !important;
-}
-
-.priceHelp:hover{
-  border-color:rgba(196,181,253,.52) !important;
-  box-shadow:
-    0 38px 88px rgba(46,13,79,.42),
-    0 0 0 2px rgba(167,139,250,.18),
-    0 0 70px rgba(124,58,237,.28) !important;
-}
-
-.pricePlan:hover .priceIcon,
-.priceHelp:hover .priceHelpIcon{
-  transform:translateY(-4px) scale(1.08);
-  box-shadow:
-    0 20px 48px rgba(124,58,237,.25),
-    0 0 38px rgba(124,58,237,.28) !important;
-}
-
-.pricePlan:hover .btn,
-.priceHelp:hover .btn{
-  transform:translateY(-2px);
-  box-shadow:0 22px 52px rgba(46,13,79,.28) !important;
-}
-
-.priceFeatured:hover .planBadge{
-  box-shadow:
-    0 18px 38px rgba(255,201,40,.34),
-    0 0 0 2px rgba(255,255,255,.22);
-}
 
 @media (max-width:1280px){.pricingGridFinal{grid-template-columns:repeat(2,minmax(0,1fr)) !important;max-width:900px !important}}
 @media (max-width:760px){.pricing{padding:68px 0 82px !important}.pricingHead{margin-bottom:52px !important}.pricingGridFinal{grid-template-columns:1fr !important;max-width:620px !important}.pricePlan,.priceHelp{min-height:auto !important;padding:34px 26px !important;border-radius:24px !important}.pricePlan .amount{font-size:3.2rem !important}}
@@ -2216,11 +2164,7 @@ main{overflow:hidden}
     inset 0 1px 0 rgba(255,255,255,.16) !important;
 }
 
-.pricePlan:hover .priceIcon,
-.priceHelp:hover .priceHelpIcon{
-  transform:translateY(-7px) scale(1.12) !important;
-  filter:saturate(1.22) brightness(1.08) !important;
-}
+
 /* ================================
    AJUSTE FINAL PREGUNTAS FRECUENTES
 ================================ */
@@ -2517,16 +2461,6 @@ main{overflow:hidden}
   position:relative !important;
   z-index:3 !important;
   background:#080915 !important;
-}
-
-/* reduce solo el glow exterior que se fugaba hacia abajo */
-.pricePlan:hover,
-.pricePlan.motion-up:hover,
-.priceHelp:hover{
-  box-shadow:
-    0 26px 58px rgba(46,13,79,.24),
-    0 0 0 2px rgba(124,58,237,.14),
-    0 0 38px rgba(124,58,237,.14) !important;
 }
 
 /* ================================
@@ -3291,63 +3225,6 @@ section{
   width:98vw !important;
 }
 
-.pricingGridFinal{
-  grid-template-columns: 1.18fr 1.22fr 1.18fr .82fr !important;
-  gap:18px !important;
-}
-
-.pricing .pricePlan{
-  padding:36px 34px 28px !important;
-  min-height:680px !important;
-}
-
-.pricing .pricePlan h3{
-  font-size:25px !important;
-  line-height:1.12 !important;
-  margin-bottom:18px !important;
-}
-
-.pricing .amount{
-  display:flex !important;
-  align-items:baseline !important;
-  gap:8px !important;
-  white-space:nowrap !important;
-}
-
-.pricing .amount small{
-  font-size:16px !important;
-  line-height:1 !important;
-  white-space:nowrap !important;
-}
-
-.pricing .pricePlan p{
-  font-size:13.5px !important;
-  line-height:1.34 !important;
-  margin-bottom:16px !important;
-}
-
-.pricing .priceDivider{
-  margin:14px 0 14px !important;
-}
-
-.pricing .pricePlan ul{
-  gap:7px !important;
-}
-
-.pricing .pricePlan li{
-  font-size:13.5px !important;
-  line-height:1.14 !important;
-}
-
-.priceHelp{
-  padding:38px 28px 28px !important;
-}
-
-.priceHelp p{
-  font-size:14px !important;
-  line-height:1.42 !important;
-}
-
 /* ================================
    PRECIOS - ENTRADA SECUENCIAL CONTROLADA
    Orden: Crecimiento, Control, Inicio, Dudas
@@ -3358,12 +3235,13 @@ section{
   opacity:0 !important;
   transform:translate3d(0,96px,0) scale(.96) !important;
   filter:blur(10px) !important;
+  pointer-events:none !important;
   transition:
-    opacity 1.15s cubic-bezier(.13,.72,.08,1),
-    transform 1.15s cubic-bezier(.13,.72,.08,1),
-    filter 1.15s cubic-bezier(.13,.72,.08,1),
-    border-color .45s ease,
-    box-shadow .45s ease !important;
+    opacity 1.05s cubic-bezier(.13,.72,.08,1),
+    transform 1.05s cubic-bezier(.13,.72,.08,1),
+    filter 1.05s cubic-bezier(.13,.72,.08,1),
+    border-color .28s ease,
+    box-shadow .28s ease !important;
 }
 
 .pricingSequence.pricing-in-view > .pricePlan,
@@ -3371,6 +3249,7 @@ section{
   opacity:1 !important;
   transform:translate3d(0,0,0) scale(1) !important;
   filter:blur(0) !important;
+  pointer-events:auto !important;
 }
 
 /* 1. Plan Crecimiento */
@@ -3380,23 +3259,17 @@ section{
 
 /* 2. Plan Control */
 .pricingSequence.pricing-in-view > article:nth-of-type(3){
-  transition-delay:.42s !important;
+  transition-delay:.30s !important;
 }
 
 /* 3. Plan Inicio */
 .pricingSequence.pricing-in-view > article:nth-of-type(1){
-  transition-delay:.76s !important;
+  transition-delay:.52s !important;
 }
 
 /* 4. ¿Tienes dudas? */
 .pricingSequence.pricing-in-view > .priceHelp{
-  transition-delay:1.1s !important;
-}
-
-/* Conserva hover premium después de entrar */
-.pricingSequence.pricing-in-view > .pricePlan:hover,
-.pricingSequence.pricing-in-view > .priceHelp:hover{
-  transform:translateY(-14px) scale(1.025) !important;
+  transition-delay:.74s !important;
 }
 
 @media (max-width:900px){
@@ -3411,17 +3284,18 @@ section{
   }
 
   .pricingSequence.pricing-in-view > article:nth-of-type(3){
-    transition-delay:.18s !important;
+    transition-delay:.16s !important;
   }
 
   .pricingSequence.pricing-in-view > article:nth-of-type(1){
-    transition-delay:.31s !important;
+    transition-delay:.27s !important;
   }
 
   .pricingSequence.pricing-in-view > .priceHelp{
-    transition-delay:.44s !important;
+    transition-delay:.38s !important;
   }
 }
+
  
 /* ================================
    FAQ - ENTRADA LATERAL ALTERNADA
@@ -3638,6 +3512,400 @@ section{
   .dashboardDisclaimer{
     text-align:left;
     font-size:.72rem;
+  }
+}
+/* ================================
+   PRECIOS DESKTOP FINAL LIMPIO
+   Más compacto + hover evidente
+================================ */
+
+@media (min-width: 901px){
+  .pricing{
+    overflow:visible !important;
+    padding:86px 0 96px !important;
+  }
+
+  .pricing .container{
+    width:min(1280px, calc(100% - 72px)) !important;
+    max-width:1280px !important;
+  }
+
+  .pricingHead{
+    margin-bottom:44px !important;
+  }
+
+  .pricingGridFinal,
+  .pricingGrid.pricingGridFinal,
+  .pricingGridFinal.pricingSequence{
+    grid-template-columns:1fr 1.04fr 1fr .78fr !important;
+    gap:18px !important;
+    align-items:stretch !important;
+    overflow:visible !important;
+  }
+
+  .pricingGridFinal > .pricePlan,
+  .pricingGridFinal > .priceHelp{
+    min-height:500px !important;
+    padding:28px 28px 24px !important;
+    border-radius:24px !important;
+    overflow:visible !important;
+    transition:
+      transform .32s cubic-bezier(.13,.72,.08,1),
+      border-color .32s ease,
+      box-shadow .32s ease,
+      filter .32s ease !important;
+  }
+
+  .pricing .priceIcon,
+  .pricing .priceHelpIcon{
+    width:66px !important;
+    height:66px !important;
+    border-radius:20px !important;
+    margin-bottom:20px !important;
+  }
+
+  .pricing .priceIcon svg,
+  .pricing .priceHelpIcon svg{
+    width:30px !important;
+    height:30px !important;
+  }
+
+  .pricing .pricePlan h3{
+    font-size:1.22rem !important;
+    line-height:1.12 !important;
+    letter-spacing:.08em !important;
+    margin-bottom:12px !important;
+  }
+
+  .pricing .pricePlan .amount{
+    font-size:3.05rem !important;
+    line-height:.94 !important;
+    margin-bottom:12px !important;
+  }
+
+  .pricing .pricePlan .amount small{
+    font-size:.9rem !important;
+  }
+
+  .pricing .pricePlan p{
+    font-size:.82rem !important;
+    line-height:1.38 !important;
+    margin-bottom:14px !important;
+  }
+
+  .pricing .priceDivider{
+    margin:10px 0 14px !important;
+  }
+
+  .pricing .pricePlan ul{
+    gap:7px !important;
+    margin-bottom:20px !important;
+  }
+
+  .pricing .pricePlan li{
+    font-size:.78rem !important;
+    line-height:1.22 !important;
+    padding-left:22px !important;
+  }
+
+  .pricing .pricePlan .btn,
+  .pricing .priceHelp .btn{
+    min-height:46px !important;
+    font-size:.84rem !important;
+  }
+
+  .pricing .priceHelp{
+    justify-content:center !important;
+    padding:30px 26px !important;
+  }
+
+  .pricing .priceHelp h3{
+    font-size:1.18rem !important;
+    line-height:1.18 !important;
+  }
+
+  .pricing .priceHelp p{
+    font-size:.82rem !important;
+    line-height:1.42 !important;
+  }
+
+  .pricingSequence.pricing-in-view > .pricePlan:hover,
+  .pricingSequence.pricing-in-view > .priceHelp:hover,
+  .pricingGridFinal > .pricePlan:hover,
+  .pricingGridFinal > .priceHelp:hover{
+    transform:translateY(-26px) scale(1.045) !important;
+    filter:saturate(1.28) brightness(1.12) !important;
+    border-color:rgba(196,181,253,.92) !important;
+    box-shadow:
+      0 48px 118px rgba(124,58,237,.48),
+      0 0 0 3px rgba(167,139,250,.34),
+      0 0 92px rgba(124,58,237,.34),
+      inset 0 1px 0 rgba(255,255,255,.20) !important;
+    z-index:20 !important;
+  }
+
+  .pricingSequence.pricing-in-view > .priceFeatured:hover,
+  .pricingGridFinal > .priceFeatured:hover{
+    transform:translateY(-30px) scale(1.055) !important;
+    box-shadow:
+      0 58px 135px rgba(124,58,237,.56),
+      0 0 0 3px rgba(255,255,255,.26),
+      0 0 110px rgba(167,139,250,.42),
+      inset 0 1px 0 rgba(255,255,255,.22) !important;
+    z-index:25 !important;
+  }
+
+  .pricingGridFinal > .pricePlan:hover .priceIcon,
+  .pricingGridFinal > .priceHelp:hover .priceHelpIcon{
+    transform:translateY(-8px) scale(1.14) !important;
+  }
+
+  .pricingGridFinal > .pricePlan:hover .btn,
+  .pricingGridFinal > .priceHelp:hover .btn{
+    transform:translateY(-4px) !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1180px){
+  .pricingGridFinal,
+  .pricingGrid.pricingGridFinal,
+  .pricingGridFinal.pricingSequence{
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+    max-width:860px !important;
+    margin:0 auto !important;
+  }
+
+  .pricingGridFinal > .pricePlan,
+  .pricingGridFinal > .priceHelp{
+    min-height:auto !important;
+  }
+}
+
+/* ================================
+   HOVER FINAL PRECIOS
+   Levantamiento visible al pasar mouse
+================================ */
+
+@media (min-width:901px){
+  .pricingGridFinal > .pricePlan,
+  .pricingGridFinal > .priceHelp{
+    position:relative !important;
+    transform-origin:center center !important;
+    cursor:pointer !important;
+  }
+
+  .pricingGridFinal.pricing-in-view > .pricePlan:hover,
+  .pricingGridFinal.pricing-in-view > .priceHelp:hover,
+  .pricingSequence.pricing-in-view > .pricePlan:hover,
+  .pricingSequence.pricing-in-view > .priceHelp:hover{
+    transform:translate3d(0,-32px,0) scale(1.055) !important;
+    filter:saturate(1.25) brightness(1.12) !important;
+    border-color:rgba(196,181,253,.95) !important;
+    box-shadow:
+      0 52px 120px rgba(124,58,237,.52),
+      0 0 0 3px rgba(167,139,250,.36),
+      0 0 96px rgba(124,58,237,.38),
+      inset 0 1px 0 rgba(255,255,255,.24) !important;
+    z-index:50 !important;
+  }
+
+  .pricingGridFinal.pricing-in-view > .priceFeatured:hover,
+  .pricingSequence.pricing-in-view > .priceFeatured:hover{
+    transform:translate3d(0,-36px,0) scale(1.065) !important;
+    box-shadow:
+      0 64px 140px rgba(124,58,237,.62),
+      0 0 0 3px rgba(255,255,255,.28),
+      0 0 120px rgba(167,139,250,.48),
+      inset 0 1px 0 rgba(255,255,255,.26) !important;
+    z-index:60 !important;
+  }
+
+  .pricingGridFinal.pricing-in-view > .pricePlan:hover .priceIcon,
+  .pricingGridFinal.pricing-in-view > .priceHelp:hover .priceHelpIcon,
+  .pricingSequence.pricing-in-view > .pricePlan:hover .priceIcon,
+  .pricingSequence.pricing-in-view > .priceHelp:hover .priceHelpIcon{
+    transform:translate3d(0,-8px,0) scale(1.16) !important;
+    filter:saturate(1.25) brightness(1.12) !important;
+  }
+
+  .pricingGridFinal.pricing-in-view > .pricePlan:hover .btn,
+  .pricingGridFinal.pricing-in-view > .priceHelp:hover .btn,
+  .pricingSequence.pricing-in-view > .pricePlan:hover .btn,
+  .pricingSequence.pricing-in-view > .priceHelp:hover .btn{
+    transform:translate3d(0,-4px,0) !important;
+  }
+}
+
+/* ================================
+   HOVER ÚNICO PRECIOS DESKTOP
+   Efecto visible de levantamiento
+================================ */
+
+@media (min-width:901px){
+  .pricingGridFinal > .pricePlan,
+  .pricingGridFinal > .priceHelp{
+    position:relative !important;
+    cursor:pointer !important;
+    transform-origin:center center !important;
+    will-change:transform, filter, box-shadow !important;
+    transition:
+      transform .28s cubic-bezier(.13,.72,.08,1),
+      filter .28s ease,
+      border-color .28s ease,
+      box-shadow .28s ease !important;
+  }
+
+  .pricingGridFinal > .pricePlan:hover,
+  .pricingGridFinal > .priceHelp:hover{
+    transform:translate3d(0,-30px,0) scale(1.05) !important;
+    filter:saturate(1.24) brightness(1.12) !important;
+    border-color:rgba(196,181,253,.95) !important;
+    box-shadow:
+      0 58px 130px rgba(124,58,237,.52),
+      0 0 0 3px rgba(167,139,250,.34),
+      0 0 110px rgba(124,58,237,.38),
+      inset 0 1px 0 rgba(255,255,255,.22) !important;
+    z-index:50 !important;
+  }
+
+  .pricingGridFinal > .priceFeatured:hover{
+    transform:translate3d(0,-36px,0) scale(1.06) !important;
+    box-shadow:
+      0 68px 150px rgba(124,58,237,.62),
+      0 0 0 3px rgba(255,255,255,.28),
+      0 0 130px rgba(167,139,250,.46),
+      inset 0 1px 0 rgba(255,255,255,.24) !important;
+    z-index:60 !important;
+  }
+
+  .pricingGridFinal > .pricePlan .priceIcon,
+  .pricingGridFinal > .priceHelp .priceHelpIcon,
+  .pricingGridFinal > .pricePlan .btn,
+  .pricingGridFinal > .priceHelp .btn{
+    transition:
+      transform .28s cubic-bezier(.13,.72,.08,1),
+      filter .28s ease,
+      box-shadow .28s ease !important;
+  }
+
+  .pricingGridFinal > .pricePlan:hover .priceIcon,
+  .pricingGridFinal > .priceHelp:hover .priceHelpIcon{
+    transform:translate3d(0,-8px,0) scale(1.14) !important;
+    filter:saturate(1.25) brightness(1.15) !important;
+  }
+
+  .pricingGridFinal > .pricePlan:hover .btn,
+  .pricingGridFinal > .priceHelp:hover .btn{
+    transform:translate3d(0,-4px,0) !important;
+  }
+}
+
+/* ================================
+   FIX POINTER PRECIOS
+   Permite hover en tarjetas animadas por pricingSequence
+================================ */
+
+.pricingSequence.pricing-in-view > .pricePlan,
+.pricingSequence.pricing-in-view > .priceHelp{
+  pointer-events:auto !important;
+}
+
+/* ================================
+   FIX HOVER INMEDIATO PRECIOS
+   Mantiene entrada secuencial, pero elimina retardo al pasar mouse
+================================ */
+
+@media (min-width:901px){
+  .pricingSequence.pricing-in-view > .pricePlan,
+  .pricingSequence.pricing-in-view > .priceHelp{
+    pointer-events:auto !important;
+  }
+
+  .pricingSequence.pricing-in-view > .pricePlan:hover,
+  .pricingSequence.pricing-in-view > .priceHelp:hover,
+  .pricingSequence.pricing-in-view > article:nth-of-type(1):hover,
+  .pricingSequence.pricing-in-view > article:nth-of-type(2):hover,
+  .pricingSequence.pricing-in-view > article:nth-of-type(3):hover{
+    transition-delay:0s !important;
+  }
+}
+
+/* ================================
+   AJUSTE FINAL PRECIOS
+   Evita que el hover tape el título y mejora legibilidad
+================================ */
+
+@media (min-width:901px){
+  .pricingHead{
+    margin-bottom:86px !important;
+  }
+
+  .pricingGridFinal,
+  .pricingGrid.pricingGridFinal,
+  .pricingGridFinal.pricingSequence{
+    margin-top:18px !important;
+  }
+
+  .pricingGridFinal > .pricePlan:hover,
+  .pricingGridFinal > .priceHelp:hover,
+  .pricingSequence.pricing-in-view > .pricePlan:hover,
+  .pricingSequence.pricing-in-view > .priceHelp:hover{
+    transform:translate3d(0,-18px,0) scale(1.035) !important;
+  }
+
+  .pricingGridFinal > .priceFeatured:hover,
+  .pricingSequence.pricing-in-view > .priceFeatured:hover{
+    transform:translate3d(0,-20px,0) scale(1.04) !important;
+  }
+
+  .pricing .pricePlan h3{
+    font-size:1.48rem !important;
+    font-weight:760 !important;
+    letter-spacing:.075em !important;
+  }
+
+  .pricing .pricePlan .amount{
+    font-size:3.55rem !important;
+    font-weight:760 !important;
+    letter-spacing:-.055em !important;
+  }
+
+  .pricing .pricePlan .amount small{
+    font-size:1rem !important;
+    font-weight:650 !important;
+  }
+
+  .pricing .pricePlan p{
+    font-size:.96rem !important;
+    font-weight:430 !important;
+    line-height:1.52 !important;
+  }
+
+  .pricing .pricePlan li{
+    font-size:.94rem !important;
+    font-weight:430 !important;
+    line-height:1.42 !important;
+  }
+
+  .pricing .pricePlan li::before{
+    font-weight:760 !important;
+  }
+
+  .pricing .pricePlan .btn,
+  .pricing .priceHelp .btn{
+    font-size:.94rem !important;
+    font-weight:760 !important;
+  }
+
+  .pricing .priceHelp h3{
+    font-size:1.28rem !important;
+    font-weight:680 !important;
+  }
+
+  .pricing .priceHelp p{
+    font-size:.96rem !important;
+    font-weight:430 !important;
+    line-height:1.52 !important;
   }
 }
 `;
