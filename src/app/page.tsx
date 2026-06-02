@@ -1,7 +1,17 @@
 ﻿export const metadata = {
+  metadataBase: new URL("https://www.jasodatos.com"),
   title: "JasoDatos | Ventas e inventario en decisiones claras",
   description:
-    "JasoDatos analiza ventas, inventario y stock para mostrar qué vender, qué reponer y qué corregir en tu negocio.",
+    "Sube tu archivo de ventas o inventario y JasoDatos te muestra qué vender, qué reponer y qué corregir en tu negocio.",
+  openGraph: {
+    title: "JasoDatos | Ventas e inventario en decisiones claras",
+    description:
+      "Sube tu archivo de ventas o inventario y JasoDatos te muestra qué vender, qué reponer y qué corregir en tu negocio.",
+    url: "https://www.jasodatos.com",
+    siteName: "JasoDatos",
+    locale: "es_EC",
+    type: "website",
+  },
 };
 export const viewport = {
   width: "device-width",
@@ -3751,6 +3761,21 @@ const motionScript = `
     window.addEventListener('load', startMotion, { once: true });
   }
 })();
+
+.dashboardDisclaimer{
+  margin:14px 0 0;
+  color:rgba(203,213,225,.72);
+  font-size:.68rem;
+  font-weight:700;
+  text-align:right;
+}
+
+@media (max-width:900px){
+  .dashboardDisclaimer{
+    text-align:left;
+    font-size:.72rem;
+  }
+}
 `;
 export default function Home() {
   const wa = waLink();
@@ -3998,6 +4023,9 @@ export default function Home() {
     </div>
   </article>
 </div>
+<p className="dashboardDisclaimer">
+  Datos de ejemplo. Tu tablero mostrará tu información real.
+</p>
             </section>
           </div>
         </div>
@@ -4303,7 +4331,7 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
               <div>
 <h3>Análisis de ventas</h3>
 <p>Identifica qué productos venden más, cuándo se mueven mejor y dónde están tus oportunidades.</p>
-                <span>Ver solución →</span>
+                <span>Disponible en JasoDatos →</span>
               </div>
             </article>
 
@@ -4314,7 +4342,7 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
               <div>
 <h3>Control de inventario</h3>
 <p>Revisa existencias, productos acumulados y niveles de stock para comprar con más criterio.</p>
-                <span>Ver solución →</span>
+                <span>Disponible en JasoDatos →</span>
               </div>
             </article>
 
@@ -4325,7 +4353,7 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
               <div>
 <h3>Stock crítico</h3>
 <p>Detecta productos con bajo stock antes de perder ventas por falta de inventario.</p>
-                <span>Ver solución →</span>
+                <span>Disponible en JasoDatos →</span>
               </div>
             </article>
 
@@ -4336,7 +4364,7 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
               <div>
 <h3>Acciones recomendadas</h3>
 <p>Recibe acciones simples para reponer, revisar productos lentos y priorizar decisiones.</p>
-                <span>Ver solución →</span>
+                <span>Disponible en JasoDatos →</span>
               </div>
             </article>
           </div>
@@ -4366,7 +4394,7 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
         <div className="amount">$29 <small>/mes</small></div>
 
         <p>
-          Ordena tus ventas e inventario en minutos. Mira qué vendiste, qué tienes y qué productos necesitan atención.
+          Deja de manejar tu negocio a ciegas. En minutos sabes qué vendiste, qué tienes y qué se está quedando dormido.
         </p>
 
         <div className="priceDivider" />
@@ -4440,7 +4468,7 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
         <div className="amount"><small>desde</small> $149</div>
 
         <p>
-          Para negocios con varias sucursales que necesitan comparar resultados y decidir con acompañamiento mensual.
+          Maneja todas tus sucursales desde un solo lugar. Cada mes revisas qué mejoró, qué empeoró y qué decisiones tomar para vender mejor.
         </p>
 
         <div className="priceDivider" />
@@ -4507,12 +4535,12 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
 
             <details className="faqItem motion-right motion-delay-3">
               <summary>¿Sirve para bodegas, ferreterías y distribuidores?</summary>
-              <p>Claro que sí. Está pensado para negocios comerciales que manejan ventas, inventario, productos, stock y reposición.</p>
+              <p>Sí. Está pensado para negocios comerciales que manejan productos, ventas, inventario, stock y reposición.</p>
             </details>
 
             <details className="faqItem motion-left motion-delay-4">
               <summary>¿Puedo exportar reportes?</summary>
-              <p>Claro que sí. Puedes generar reportes para revisar resultados, compartir información y tomar decisiones con tu equipo.</p>
+              <p>Sí. Puedes generar reportes para revisar resultados, compartir información y tomar decisiones con tu equipo.</p>
             </details>
 
             <details className="faqItem motion-right motion-delay-2">
@@ -4634,3 +4662,4 @@ reponer a tiempo y reducir productos lentos sin complicarte con herramientas pes
     </main>
   );
 }
+
