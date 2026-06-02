@@ -3625,6 +3625,21 @@ section{
     max-width:100% !important;
   }
 }
+
+.dashboardDisclaimer{
+  margin:14px 0 0;
+  color:rgba(203,213,225,.72);
+  font-size:.68rem;
+  font-weight:700;
+  text-align:right;
+}
+
+@media (max-width:900px){
+  .dashboardDisclaimer{
+    text-align:left;
+    font-size:.72rem;
+  }
+}
 `;
 
 function waLink() {
@@ -3643,7 +3658,6 @@ function BarsIcon() {
     </span>
   );
 }
-
 const motionScript = `
 (() => {
   const motionSelector = [
@@ -3761,21 +3775,6 @@ const motionScript = `
     window.addEventListener('load', startMotion, { once: true });
   }
 })();
-
-.dashboardDisclaimer{
-  margin:14px 0 0;
-  color:rgba(203,213,225,.72);
-  font-size:.68rem;
-  font-weight:700;
-  text-align:right;
-}
-
-@media (max-width:900px){
-  .dashboardDisclaimer{
-    text-align:left;
-    font-size:.72rem;
-  }
-}
 `;
 export default function Home() {
   const wa = waLink();
