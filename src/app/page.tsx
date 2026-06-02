@@ -3,7 +3,10 @@
   description:
     "JasoDatos analiza ventas, inventario y stock para mostrar qué vender, qué reponer y qué corregir en tu negocio.",
 };
-
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 const css = `
 :root{
   --principal:#2e0d4f;
