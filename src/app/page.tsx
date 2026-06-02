@@ -3539,6 +3539,82 @@ section{
     padding:30px 22px !important;
   }
 }
+
+/* ================================
+   FIX MOBILE EN MODO SITIO WEB / DESKTOP
+   Para celulares que fuerzan viewport ancho
+================================ */
+
+@media (max-width: 1100px) and (pointer: coarse){
+  .container{
+    width:100% !important;
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .navInner{
+    height:auto !important;
+    padding:14px 0 !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:12px !important;
+  }
+
+  .navLinks{
+    display:none !important;
+  }
+
+  .navActions{
+    width:100% !important;
+    display:grid !important;
+    grid-template-columns:1fr !important;
+  }
+
+  .modeDot{
+    display:none !important;
+  }
+
+  .pricing .container{
+    width:100% !important;
+    max-width:none !important;
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .pricingGridFinal,
+  .pricingGrid.pricingGridFinal,
+  .pricingGridFinal.pricingSequence{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    width:100% !important;
+    max-width:560px !important;
+    margin:0 auto !important;
+    gap:22px !important;
+    overflow:visible !important;
+  }
+
+  .pricingGridFinal > .pricePlan,
+  .pricingGridFinal > .priceHelp{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    min-height:auto !important;
+    padding:34px 26px !important;
+    border-radius:24px !important;
+  }
+
+  .pricing .amount{
+    white-space:normal !important;
+    flex-wrap:wrap !important;
+    font-size:3.1rem !important;
+  }
+
+  .faq .container,
+  .faqPanel{
+    width:100% !important;
+    max-width:100% !important;
+  }
+}
 `;
 
 function waLink() {
