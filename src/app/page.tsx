@@ -510,9 +510,14 @@ main{overflow:hidden}
 
 .actionCard{
   position:relative;
-  min-height:270px;
-  padding:34px 30px;
-  border-radius:22px;
+  min-height:320px;
+  padding:38px 30px 34px;
+  border-radius:24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  justify-content:flex-start;
   background:
     radial-gradient(220px 120px at 50% 0%, rgba(124,58,237,.24), transparent 64%),
     linear-gradient(180deg, rgba(46,13,79,.72), rgba(17,20,37,.88));
@@ -544,34 +549,52 @@ main{overflow:hidden}
 }
 
 .actionCard:hover{
-  transform:translateY(-8px);
-  border-color:rgba(167,139,250,.46);
+  transform:translateY(-12px) scale(1.02);
+  border-color:rgba(196,181,253,.58);
   box-shadow:
-    0 28px 70px rgba(124,58,237,.18),
-    inset 0 1px 0 rgba(255,255,255,.08);
+    0 34px 86px rgba(124,58,237,.26),
+    0 0 0 1px rgba(167,139,250,.20),
+    0 0 64px rgba(124,58,237,.18),
+    inset 0 1px 0 rgba(255,255,255,.10);
 }
 
 .actionIcon{
   position:relative;
   z-index:1;
-  width:64px;
-  height:64px;
+  width:96px;
+  height:96px;
   display:grid;
   place-items:center;
-  margin-bottom:34px;
-  border-radius:16px;
-  background:rgba(124,58,237,.18);
-  color:#c4b5fd;
-  font-size:2rem;
-  border:1px solid rgba(167,139,250,.22);
+  margin:0 auto 28px;
+  border-radius:26px;
+  color:#f5f3ff;
+  background:
+    radial-gradient(circle at 32% 24%, rgba(255,255,255,.24), transparent 24%),
+    radial-gradient(circle at 50% 50%, rgba(139,92,246,.58), rgba(46,13,79,.96) 68%);
+  border:1px solid rgba(196,181,253,.52);
+  box-shadow:
+    0 0 0 1px rgba(124,58,237,.20),
+    0 0 34px rgba(124,58,237,.56),
+    0 0 86px rgba(124,58,237,.22),
+    inset 0 1px 0 rgba(255,255,255,.20);
+}
+
+.actionIcon svg{
+  width:42px;
+  height:42px;
+  stroke-width:1.9;
+  filter:drop-shadow(0 0 14px rgba(196,181,253,.68));
 }
 
 .actionCard h3{
   position:relative;
   z-index:1;
-  margin:0 0 12px;
-  font-size:1.15rem;
+  margin:0 0 14px;
+  font-size:1.25rem;
+  line-height:1.2;
+  font-weight:760;
   color:#ffffff;
+  text-align:center;
 }
 
 .actionCard p{
@@ -579,17 +602,19 @@ main{overflow:hidden}
   z-index:1;
   margin:0;
   color:#dbe4ff;
-  font-size:.92rem;
+  font-size:1rem;
   line-height:1.62;
+  font-weight:430;
+  text-align:center;
 }
 
 .cardLine{
   position:relative;
   z-index:1;
-  width:44px;
+  width:54px;
   height:2px;
-  background:linear-gradient(90deg,#a78bfa,transparent);
-  margin-top:22px;
+  background:linear-gradient(90deg, transparent, #a78bfa, transparent);
+  margin:24px auto 0;
 }
 
 .purpose{
@@ -770,47 +795,62 @@ main{overflow:hidden}
   color:#cbd5e1;
   line-height:1.68;
 }
-.metricsGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.metricsGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+
 .metric{
   position:relative;
-  min-height:224px;
-  padding:26px 24px;
+  min-height:244px;
+  padding:28px 24px 26px;
   border-radius:22px;
   background:linear-gradient(180deg,rgba(40,53,147,.50),rgba(17,20,37,.78));
   border:1px solid rgba(127,178,255,.16);
   overflow:hidden;
+  display:flex;
+  flex-direction:column;
 }
+
 .metric::before{
   content:"";
   position:absolute;
   inset:auto 0 0 0;
-  height:68px;
+  height:72px;
   background:linear-gradient(180deg,transparent,rgba(124,58,237,.18));
 }
-.metricIcon{
-  position:relative;
-  width:48px;height:48px;border-radius:999px;
-  display:grid;place-items:center;
-  margin-bottom:22px;
-  color:#86efac;
-  background:rgba(34,197,94,.10);
-  border:1px solid rgba(34,197,94,.30);
-  box-shadow:0 0 34px rgba(34,197,94,.16);
-}
-.metric:nth-child(2) .metricIcon{color:#7fb2ff;background:rgba(37,99,235,.12);border-color:rgba(127,178,255,.30)}
-.metric:nth-child(3) .metricIcon{color:#f87171;background:rgba(239,68,68,.10);border-color:rgba(248,113,113,.30)}
-.metric:nth-child(4) .metricIcon{color:#d8b4fe;background:rgba(168,85,247,.12);border-color:rgba(216,180,254,.30)}
+
 .metric strong{
   position:relative;
   display:block;
-  font-size:2.25rem;
+  font-size:1.85rem;
+  line-height:1.02;
   color:#fff;
-  font-weight:950;
-  margin-bottom:8px;
-  letter-spacing:-.04em;
+  font-weight:820;
+  margin:0 0 12px;
+  letter-spacing:-.035em;
 }
-.metric span{position:relative;display:block;color:#e5e7eb;font-size:.9rem;line-height:1.36;font-weight:800}
-.metric small{position:relative;display:block;margin-top:12px;color:#86efac;font-size:.78rem;font-weight:900;line-height:1.35}
+
+.metric span{
+  position:relative;
+  display:block;
+  color:#e5e7eb;
+  font-size:1.02rem;
+  line-height:1.34;
+  font-weight:700;
+}
+
+.metric small{
+  position:relative;
+  display:block;
+  margin-top:14px;
+  color:#86efac;
+  font-size:.92rem;
+  font-weight:760;
+  line-height:1.36;
+}
+
 .metric:nth-child(3) small{color:#f87171}
 .metric:nth-child(4) small{color:#f0abfc}
 
@@ -940,30 +980,79 @@ main{overflow:hidden}
   font-size:.74rem;
   font-weight:950;
 }
-.solutionGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.solutionCard{
+.solutionGrid{
   display:grid;
-  grid-template-columns:72px 1fr;
-  gap:16px;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:28px;
+}
+
+.solutionCard{
+  display:flex;
+  flex-direction:column;
   align-items:center;
-  min-height:186px;
-  padding:30px 26px;
-  border-radius:22px;
+  justify-content:center;
+  text-align:center;
+  min-height:320px;
+  padding:46px 42px;
+  border-radius:28px;
   background:linear-gradient(180deg,rgba(46,13,79,.44),rgba(17,20,37,.68));
   border:1px solid rgba(124,58,237,.18);
-  transition:.8s cubic-bezier(.13,.72,.08,1);
+  transition:
+    transform .8s cubic-bezier(.13,.72,.08,1),
+    border-color .8s ease,
+    box-shadow .8s ease,
+    filter .8s ease;
 }
-.solutionCard:hover{transform:translateY(-28px) scale(1.04);border-color:rgba(196,181,253,.72);box-shadow:0 42px 100px rgba(124,58,237,.30)}
+
+.solutionCard:hover{
+  transform:translateY(-16px) scale(1.025) !important;
+  border-color:rgba(196,181,253,.72);
+  box-shadow:0 42px 100px rgba(124,58,237,.30);
+}
+
 .solutionIcon{
-  width:72px;height:72px;border-radius:999px;
-  display:grid;place-items:center;
+  width:104px;
+  height:104px;
+  border-radius:30px;
+  display:grid;
+  place-items:center;
+  margin:0 auto 34px;
   background:radial-gradient(circle,#7c3aed,#321a70);
   color:#fff;
-  box-shadow:0 0 24px rgba(124,58,237,.26);
+  box-shadow:
+    0 0 32px rgba(124,58,237,.34),
+    inset 0 1px 0 rgba(255,255,255,.16);
 }
-.solutionCard h3{margin:0 0 6px;font-size:1.06rem;color:#c4b5fd}
-.solutionCard p{margin:0;color:#dbe4ff;font-size:.86rem;line-height:1.56}
-.solutionCard span{display:inline-flex;margin-top:12px;color:#a78bfa;font-weight:950;font-size:.77rem}
+
+.solutionIcon svg{
+  width:50px;
+  height:50px;
+  stroke-width:1.9;
+}
+
+.solutionCard h3{
+  margin:0 0 18px;
+  font-size:1.55rem;
+  line-height:1.18;
+  font-weight:720;
+  color:#c4b5fd;
+}
+
+.solutionCard p{
+  margin:0;
+  color:#dbe4ff;
+  font-size:1.12rem;
+  line-height:1.58;
+  font-weight:430;
+}
+
+.solutionCard span{
+  display:inline-flex;
+  margin-top:26px;
+  color:#a78bfa;
+  font-weight:760;
+  font-size:1rem;
+}
 
 .faq{
   padding:82px 0 94px;
@@ -1077,10 +1166,10 @@ main{overflow:hidden}
 }
 
 .actionIcon{
-  width:76px;
-  height:76px;
-  border-radius:22px;
-  margin-bottom:36px;
+  width:96px;
+  height:96px;
+  border-radius:26px;
+  margin:0 auto 28px;
 }
 
 .actionIcon svg,
@@ -1093,6 +1182,13 @@ main{overflow:hidden}
   filter:drop-shadow(0 0 12px rgba(196,181,253,.62));
 }
 
+.metricIcon svg{
+  width:40px;
+  height:40px;
+  stroke-width:2;
+  filter:drop-shadow(0 0 18px rgba(196,181,253,.78));
+}
+
 .bullet{grid-template-columns:56px 1fr;gap:16px}
 .bulletIcon{
   width:56px;
@@ -1102,15 +1198,45 @@ main{overflow:hidden}
 .bulletIcon svg{width:28px;height:28px}
 
 .metricIcon{
-  width:64px;
-  height:64px;
-  border-radius:22px;
-  margin-bottom:28px;
+  position:relative;
+  z-index:1;
+  width:86px;
+  height:86px;
+  display:grid;
+  place-items:center;
+  margin:0 auto 26px;
+  border-radius:24px;
+  color:#f5f3ff;
+  box-shadow:
+    0 0 0 1px rgba(124,58,237,.22),
+    0 0 38px rgba(124,58,237,.56),
+    0 0 92px rgba(124,58,237,.24),
+    inset 0 1px 0 rgba(255,255,255,.20);
 }
-.metric:nth-child(1) .metricIcon{color:#86efac;background:radial-gradient(circle at 35% 28%, rgba(134,239,172,.34), rgba(13,95,62,.28) 42%, rgba(13,18,36,.92) 76%)}
-.metric:nth-child(2) .metricIcon{color:#93c5fd;background:radial-gradient(circle at 35% 28%, rgba(147,197,253,.34), rgba(37,99,235,.26) 42%, rgba(13,18,36,.92) 76%)}
-.metric:nth-child(3) .metricIcon{color:#fca5a5;background:radial-gradient(circle at 35% 28%, rgba(252,165,165,.34), rgba(239,68,68,.24) 42%, rgba(13,18,36,.92) 76%)}
-.metric:nth-child(4) .metricIcon{color:#f0abfc;background:radial-gradient(circle at 35% 28%, rgba(240,171,252,.34), rgba(168,85,247,.26) 42%, rgba(13,18,36,.92) 76%)}
+
+.metric:nth-child(1) .metricIcon{
+  color:#86efac;
+  background:
+    radial-gradient(circle at 35% 28%, rgba(134,239,172,.34), rgba(13,95,62,.28) 42%, rgba(13,18,36,.92) 76%);
+}
+
+.metric:nth-child(2) .metricIcon{
+  color:#93c5fd;
+  background:
+    radial-gradient(circle at 35% 28%, rgba(147,197,253,.34), rgba(37,99,235,.26) 42%, rgba(13,18,36,.92) 76%);
+}
+
+.metric:nth-child(3) .metricIcon{
+  color:#fca5a5;
+  background:
+    radial-gradient(circle at 35% 28%, rgba(252,165,165,.34), rgba(239,68,68,.24) 42%, rgba(13,18,36,.92) 76%);
+}
+
+.metric:nth-child(4) .metricIcon{
+  color:#f0abfc;
+  background:
+    radial-gradient(circle at 35% 28%, rgba(240,171,252,.34), rgba(168,85,247,.26) 42%, rgba(13,18,36,.92) 76%);
+}
 
 .solutionIcon{
   width:82px;
@@ -1888,44 +2014,30 @@ main{overflow:hidden}
     letter-spacing:.12em;
   }
 
-  .solutionCard{
-    grid-template-columns:1fr;
-    text-align:left;
-  }
+.solutionCard{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
 
-  .solutionIcon{
-    width:74px;
-    height:74px;
-  }
+.solutionIcon{
+  width:86px;
+  height:86px;
+  border-radius:24px;
+  margin-bottom:26px;
+}
+.solutionIcon{
+  width:82px;
+  height:82px;
+  border-radius:24px;
+}
 
   .receiveItem{align-items:flex-start}
   .faqItem{padding:18px 18px}
 }
 
-/* ================================
-   PRICING FINAL AJUSTADO
-   3 planes + contenedor dudas a la derecha
-   Sin choque con el título al hacer hover
-================================ */
-.pricing{padding:104px 0 112px !important;background:radial-gradient(760px 360px at 50% 12%, rgba(124,58,237,.14), transparent 64%),linear-gradient(180deg,#080915 0%,#0b0c17 100%) !important}
-.pricingHead{text-align:center !important;margin-bottom:64px !important}
-.pricingGridFinal{display:grid !important;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr) minmax(0,1fr) minmax(260px,.82fr) !important;gap:26px !important;align-items:stretch !important;max-width:1480px !important;margin:0 auto !important}
-.pricePlan{position:relative !important;min-height:560px !important;padding:46px 42px !important;border-radius:28px !important;display:flex !important;flex-direction:column !important;overflow:visible !important}
-.priceLight{color:#160c2f !important;background:radial-gradient(520px 220px at 50% -8%, rgba(124,58,237,.08), transparent 62%),linear-gradient(180deg,#ffffff 0%,#f8f5ff 100%) !important;border:1px solid rgba(46,13,79,.12) !important;box-shadow:0 34px 90px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.95) !important}
-.priceFeatured{color:#ffffff !important;background:radial-gradient(540px 260px at 50% -12%, rgba(167,139,250,.28), transparent 62%),linear-gradient(180deg,#3b1672 0%,#302a91 100%) !important;border:1px solid rgba(196,181,253,.34) !important;box-shadow:0 42px 110px rgba(61,44,141,.42), 0 0 0 1px rgba(255,255,255,.08) inset !important}
-.planBadge{position:absolute;top:-18px;left:50%;transform:translateX(-50%);min-height:34px;padding:0 28px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;color:#2e0d4f;background:#ffc928;box-shadow:0 16px 34px rgba(255,201,40,.28);font-size:.78rem;font-weight:950;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;z-index:2}
-.priceIcon{width:68px !important;height:68px !important;border-radius:20px !important;display:grid !important;place-items:center !important;margin-bottom:28px !important;color:#2e0d4f !important;background:rgba(124,58,237,.08) !important;border:1px solid rgba(124,58,237,.10) !important;box-shadow:0 18px 40px rgba(46,13,79,.08) !important}
-.priceIcon svg{width:32px;height:32px;stroke-width:1.9}.priceFeatured .priceIcon{color:#fff !important;background:rgba(255,255,255,.12) !important;border-color:rgba(255,255,255,.18) !important;box-shadow:0 0 42px rgba(167,139,250,.28) !important}
-.pricePlan h3{margin:0 0 12px !important;color:inherit !important;font-size:1.58rem !important;font-weight:950 !important;letter-spacing:.08em !important;text-transform:uppercase !important}.pricePlan .amount{margin:0 0 14px !important;color:inherit !important;font-size:3.9rem !important;line-height:.95 !important;font-weight:950 !important;letter-spacing:-.07em !important}.pricePlan .amount small{font-size:1.08rem !important;color:rgba(46,13,79,.82) !important;letter-spacing:0 !important}.priceFeatured .amount small{color:rgba(255,255,255,.72) !important}
-.pricePlan p{margin:0 0 28px !important;color:rgba(46,13,79,.72) !important;font-size:1.02rem !important;line-height:1.45 !important}.priceFeatured p{color:rgba(255,255,255,.74) !important}.priceDivider{height:1px;width:100%;margin:0 0 26px;background:rgba(46,13,79,.12)}.priceFeatured .priceDivider{background:rgba(255,255,255,.18)}
-.pricePlan ul{list-style:none !important;padding:0 !important;margin:0 0 32px !important;display:grid !important;gap:15px !important}.pricePlan li{position:relative !important;padding-left:28px !important;color:#160c2f !important;font-size:1.02rem !important;line-height:1.35 !important}.pricePlan li::before{content:"✓";position:absolute;left:0;top:0;color:#2e0d4f;font-weight:950}.priceFeatured li{color:rgba(255,255,255,.86) !important}.priceFeatured li::before{color:#86efac}
-.pricePlan .btn{width:100%;min-height:56px;margin-top:auto;border-radius:10px;font-size:1rem}.priceLight .btnPrimary{color:#fff !important;background:linear-gradient(135deg,#2e0d4f,#3d2c8d) !important;box-shadow:0 18px 44px rgba(46,13,79,.18) !important}.priceFeatured .btnPrimary{color:#2e0d4f !important;background:#fff !important;box-shadow:0 20px 48px rgba(0,0,0,.18) !important}
-.priceHelp{min-height:560px;padding:38px 34px;border-radius:28px;display:flex;flex-direction:column;justify-content:center;color:#ffffff;background:radial-gradient(280px 180px at 40% 18%, rgba(167,139,250,.22), transparent 62%), linear-gradient(145deg,#2e0d4f 0%,#3d2c8d 100%);border:1px solid rgba(196,181,253,.22);box-shadow:0 36px 92px rgba(46,13,79,.36)}
-.priceHelpIcon{width:66px;height:66px;border-radius:20px;display:grid;place-items:center;margin-bottom:28px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);box-shadow:0 0 40px rgba(167,139,250,.22)}.priceHelpIcon svg{width:32px;height:32px}.priceHelp h3{margin:0 0 16px;font-size:1.35rem;letter-spacing:-.02em}.priceHelp p{margin:0 0 26px;color:rgba(255,255,255,.78);line-height:1.58}.priceHelp .btn{width:100%;min-height:52px;border-radius:10px;color:#fff;background:rgba(127,178,255,.12);border-color:rgba(127,178,255,.30)}
 
-
-@media (max-width:1280px){.pricingGridFinal{grid-template-columns:repeat(2,minmax(0,1fr)) !important;max-width:900px !important}}
-@media (max-width:760px){.pricing{padding:68px 0 82px !important}.pricingHead{margin-bottom:52px !important}.pricingGridFinal{grid-template-columns:1fr !important;max-width:620px !important}.pricePlan,.priceHelp{min-height:auto !important;padding:34px 26px !important;border-radius:24px !important}.pricePlan .amount{font-size:3.2rem !important}}
 /* ================================
    AJUSTE FINAL JASODATOS EN NÚMEROS
 ================================ */
@@ -2025,143 +2137,6 @@ main{overflow:hidden}
   text-shadow:
     0 0 18px rgba(139,92,246,.55),
     0 0 34px rgba(167,139,250,.22) !important;
-}
-
-/* ================================
-   AJUSTE FINAL ICONOS PLANES TOP
-================================ */
-
-.pricing .priceIcon,
-.pricing .priceHelpIcon{
-  position: relative !important;
-  isolation: isolate !important;
-  overflow: hidden !important;
-  width: 104px !important;
-  height: 104px !important;
-  border-radius: 28px !important;
-  margin: 0 auto 30px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  transition:
-    transform .45s cubic-bezier(.13,.72,.08,1),
-    box-shadow .45s ease,
-    border-color .45s ease,
-    filter .45s ease !important;
-}
-
-.pricing .priceIcon svg,
-.pricing .priceHelpIcon svg{
-  width: 50px !important;
-  height: 50px !important;
-  stroke-width: 2.1 !important;
-  filter: drop-shadow(0 0 14px rgba(139,92,246,.55));
-}
-
-.pricing .priceIcon::before,
-.pricing .priceHelpIcon::before{
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border-radius: 22px;
-  background: linear-gradient(
-    135deg,
-    rgba(255,255,255,.32),
-    transparent 42%,
-    rgba(167,139,250,.24)
-  );
-  opacity: .9;
-  z-index: -1;
-}
-
-.pricing .priceIcon::after,
-.pricing .priceHelpIcon::after{
-  content: "";
-  position: absolute;
-  inset: -42%;
-  border-radius: inherit;
-  background: conic-gradient(
-    from 180deg,
-    transparent,
-    rgba(167,139,250,.42),
-    transparent,
-    rgba(127,178,255,.34),
-    transparent
-  );
-  opacity: .42;
-  z-index: -2;
-  animation: priceIconSpin 10s linear infinite;
-}
-
-.pricePlan.priceFeatured .priceIcon{
-  width: 112px !important;
-  height: 112px !important;
-}
-
-.pricePlan.priceFeatured .priceIcon svg{
-  width: 54px !important;
-  height: 54px !important;
-}
-
-@keyframes priceIconSpin{
-  to{transform:rotate(360deg)}
-}
-
-.pricing .priceIcon svg,
-.pricing .priceHelpIcon svg{
-  width:40px !important;
-  height:40px !important;
-  stroke-width:1.9 !important;
-  filter:drop-shadow(0 0 14px rgba(139,92,246,.56));
-}
-
-.pricing .priceIconStart{
-  color:#6d28d9 !important;
-  background:
-    radial-gradient(circle at 34% 26%, rgba(255,255,255,.96), transparent 20%),
-    radial-gradient(circle at 50% 52%, rgba(167,139,250,.26), rgba(255,255,255,.86) 68%) !important;
-  border:1px solid rgba(124,58,237,.20) !important;
-  box-shadow:
-    0 22px 52px rgba(46,13,79,.12),
-    0 0 34px rgba(124,58,237,.20),
-    inset 0 1px 0 rgba(255,255,255,.98) !important;
-}
-
-.pricing .priceIconGrowth{
-  color:#ffffff !important;
-  background:
-    radial-gradient(circle at 34% 26%, rgba(255,255,255,.22), transparent 22%),
-    radial-gradient(circle at 50% 52%, rgba(167,139,250,.40), rgba(46,13,79,.82) 68%) !important;
-  border:1px solid rgba(255,255,255,.24) !important;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.06),
-    0 0 44px rgba(167,139,250,.34),
-    inset 0 1px 0 rgba(255,255,255,.16) !important;
-}
-
-.pricing .priceIconControl{
-  color:#3d2c8d !important;
-  background:
-    radial-gradient(circle at 34% 26%, rgba(255,255,255,.96), transparent 20%),
-    radial-gradient(circle at 50% 52%, rgba(127,178,255,.22), rgba(255,255,255,.88) 68%) !important;
-  border:1px solid rgba(61,44,141,.20) !important;
-  box-shadow:
-    0 22px 52px rgba(46,13,79,.12),
-    0 0 34px rgba(127,178,255,.18),
-    inset 0 1px 0 rgba(255,255,255,.98) !important;
-}
-
-.pricing .priceHelpIcon{
-  color:#ffffff !important;
-  background:
-    radial-gradient(circle at 34% 26%, rgba(255,255,255,.18), transparent 20%),
-    radial-gradient(circle at 50% 52%, rgba(34,197,94,.18), rgba(61,44,141,.92) 70%) !important;
-  border:1px solid rgba(134,239,172,.26) !important;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.08),
-    0 0 46px rgba(134,239,172,.16),
-    0 0 58px rgba(167,139,250,.20),
-    inset 0 1px 0 rgba(255,255,255,.16) !important;
 }
 
 
@@ -2977,8 +2952,9 @@ main{overflow:hidden}
   display:block;
   width:100%;
   height:auto;
-  object-fit:cover;
-  transform:scale(1.01);
+  object-fit:contain;
+  object-position:center center;
+  transform:none;
 }
 
 .realDashboardFrame:hover{
@@ -3209,94 +3185,16 @@ section{
     scroll-margin-top:104px;
   }
 
-  .realDashboardImage{
-    max-height:360px;
-    object-fit:cover;
-    object-position:left top;
-  }
-
+.realDashboardImage{
+  max-height:none;
+  object-fit:contain;
+  object-position:center center;
+}
   .dashboard .dashBodyPremium{
     grid-template-columns:1fr !important;
   }
 }
 
-.pricing .container{
-  max-width:1520px !important;
-  width:98vw !important;
-}
-
-/* ================================
-   PRECIOS - ENTRADA SECUENCIAL CONTROLADA
-   Orden: Crecimiento, Control, Inicio, Dudas
-================================ */
-
-.pricingSequence > .pricePlan,
-.pricingSequence > .priceHelp{
-  opacity:0 !important;
-  transform:translate3d(0,96px,0) scale(.96) !important;
-  filter:blur(10px) !important;
-  pointer-events:none !important;
-  transition:
-    opacity 1.05s cubic-bezier(.13,.72,.08,1),
-    transform 1.05s cubic-bezier(.13,.72,.08,1),
-    filter 1.05s cubic-bezier(.13,.72,.08,1),
-    border-color .28s ease,
-    box-shadow .28s ease !important;
-}
-
-.pricingSequence.pricing-in-view > .pricePlan,
-.pricingSequence.pricing-in-view > .priceHelp{
-  opacity:1 !important;
-  transform:translate3d(0,0,0) scale(1) !important;
-  filter:blur(0) !important;
-  pointer-events:auto !important;
-}
-
-/* 1. Plan Crecimiento */
-.pricingSequence.pricing-in-view > article:nth-of-type(2){
-  transition-delay:.08s !important;
-}
-
-/* 2. Plan Control */
-.pricingSequence.pricing-in-view > article:nth-of-type(3){
-  transition-delay:.30s !important;
-}
-
-/* 3. Plan Inicio */
-.pricingSequence.pricing-in-view > article:nth-of-type(1){
-  transition-delay:.52s !important;
-}
-
-/* 4. ¿Tienes dudas? */
-.pricingSequence.pricing-in-view > .priceHelp{
-  transition-delay:.74s !important;
-}
-
-@media (max-width:900px){
-  .pricingSequence > .pricePlan,
-  .pricingSequence > .priceHelp{
-    transform:translate3d(0,44px,0) scale(.98) !important;
-    filter:none !important;
-  }
-
-  .pricingSequence.pricing-in-view > article:nth-of-type(2){
-    transition-delay:.05s !important;
-  }
-
-  .pricingSequence.pricing-in-view > article:nth-of-type(3){
-    transition-delay:.16s !important;
-  }
-
-  .pricingSequence.pricing-in-view > article:nth-of-type(1){
-    transition-delay:.27s !important;
-  }
-
-  .pricingSequence.pricing-in-view > .priceHelp{
-    transition-delay:.38s !important;
-  }
-}
-
- 
 /* ================================
    FAQ - ENTRADA LATERAL ALTERNADA
    Derecha / izquierda / derecha / izquierda
@@ -3351,78 +3249,6 @@ section{
   }
 }
 
-/* ================================
-   FIX MOBILE FINAL - PRECIOS
-   Fuerza tarjetas apiladas en celular
-================================ */
-
-@media (max-width: 900px){
-  .pricing .container{
-    width:100% !important;
-    max-width:none !important;
-    padding-left:18px !important;
-    padding-right:18px !important;
-  }
-
-  .pricingGridFinal,
-  .pricingGrid.pricingGridFinal,
-  .pricingGridFinal.pricingSequence{
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    width:100% !important;
-    max-width:560px !important;
-    margin:0 auto !important;
-    gap:22px !important;
-    overflow:visible !important;
-  }
-
-  .pricingGridFinal > .pricePlan,
-  .pricingGridFinal > .priceHelp{
-    width:100% !important;
-    max-width:100% !important;
-    min-width:0 !important;
-    min-height:auto !important;
-    padding:34px 26px !important;
-    border-radius:24px !important;
-  }
-
-  .pricing .pricePlan h3{
-    font-size:1.45rem !important;
-    letter-spacing:.06em !important;
-  }
-
-  .pricing .amount{
-    white-space:normal !important;
-    flex-wrap:wrap !important;
-    font-size:3.1rem !important;
-  }
-
-  .pricing .amount small{
-    font-size:1rem !important;
-  }
-
-  .priceHelp{
-    justify-content:flex-start !important;
-  }
-}
-
-@media (max-width: 430px){
-  .pricing .container{
-    padding-left:16px !important;
-    padding-right:16px !important;
-  }
-
-  .pricingGridFinal,
-  .pricingGrid.pricingGridFinal,
-  .pricingGridFinal.pricingSequence{
-    max-width:100% !important;
-  }
-
-  .pricingGridFinal > .pricePlan,
-  .pricingGridFinal > .priceHelp{
-    padding:30px 22px !important;
-  }
-}
 
 /* ================================
    FIX MOBILE EN MODO SITIO WEB / DESKTOP
@@ -3514,165 +3340,449 @@ section{
     font-size:.72rem;
   }
 }
+
+
+
+
+
+
+
 /* ================================
-   PRECIOS DESKTOP FINAL LIMPIO
-   Más compacto + hover evidente
+   PRECIOS CONSOLIDADO FINAL
+   Una sola fuente de verdad para layout, entrada, hover y legibilidad
 ================================ */
 
-@media (min-width: 901px){
-  .pricing{
-    overflow:visible !important;
-    padding:86px 0 96px !important;
-  }
-
-  .pricing .container{
-    width:min(1280px, calc(100% - 72px)) !important;
-    max-width:1280px !important;
-  }
-
-  .pricingHead{
-    margin-bottom:44px !important;
-  }
-
-  .pricingGridFinal,
-  .pricingGrid.pricingGridFinal,
-  .pricingGridFinal.pricingSequence{
-    grid-template-columns:1fr 1.04fr 1fr .78fr !important;
-    gap:18px !important;
-    align-items:stretch !important;
-    overflow:visible !important;
-  }
-
-  .pricingGridFinal > .pricePlan,
-  .pricingGridFinal > .priceHelp{
-    min-height:500px !important;
-    padding:28px 28px 24px !important;
-    border-radius:24px !important;
-    overflow:visible !important;
-    transition:
-      transform .32s cubic-bezier(.13,.72,.08,1),
-      border-color .32s ease,
-      box-shadow .32s ease,
-      filter .32s ease !important;
-  }
-
-  .pricing .priceIcon,
-  .pricing .priceHelpIcon{
-    width:66px !important;
-    height:66px !important;
-    border-radius:20px !important;
-    margin-bottom:20px !important;
-  }
-
-  .pricing .priceIcon svg,
-  .pricing .priceHelpIcon svg{
-    width:30px !important;
-    height:30px !important;
-  }
-
-  .pricing .pricePlan h3{
-    font-size:1.22rem !important;
-    line-height:1.12 !important;
-    letter-spacing:.08em !important;
-    margin-bottom:12px !important;
-  }
-
-  .pricing .pricePlan .amount{
-    font-size:3.05rem !important;
-    line-height:.94 !important;
-    margin-bottom:12px !important;
-  }
-
-  .pricing .pricePlan .amount small{
-    font-size:.9rem !important;
-  }
-
-  .pricing .pricePlan p{
-    font-size:.82rem !important;
-    line-height:1.38 !important;
-    margin-bottom:14px !important;
-  }
-
-  .pricing .priceDivider{
-    margin:10px 0 14px !important;
-  }
-
-  .pricing .pricePlan ul{
-    gap:7px !important;
-    margin-bottom:20px !important;
-  }
-
-  .pricing .pricePlan li{
-    font-size:.78rem !important;
-    line-height:1.22 !important;
-    padding-left:22px !important;
-  }
-
-  .pricing .pricePlan .btn,
-  .pricing .priceHelp .btn{
-    min-height:46px !important;
-    font-size:.84rem !important;
-  }
-
-  .pricing .priceHelp{
-    justify-content:center !important;
-    padding:30px 26px !important;
-  }
-
-  .pricing .priceHelp h3{
-    font-size:1.18rem !important;
-    line-height:1.18 !important;
-  }
-
-  .pricing .priceHelp p{
-    font-size:.82rem !important;
-    line-height:1.42 !important;
-  }
-
-  .pricingSequence.pricing-in-view > .pricePlan:hover,
-  .pricingSequence.pricing-in-view > .priceHelp:hover,
-  .pricingGridFinal > .pricePlan:hover,
-  .pricingGridFinal > .priceHelp:hover{
-    transform:translateY(-26px) scale(1.045) !important;
-    filter:saturate(1.28) brightness(1.12) !important;
-    border-color:rgba(196,181,253,.92) !important;
-    box-shadow:
-      0 48px 118px rgba(124,58,237,.48),
-      0 0 0 3px rgba(167,139,250,.34),
-      0 0 92px rgba(124,58,237,.34),
-      inset 0 1px 0 rgba(255,255,255,.20) !important;
-    z-index:20 !important;
-  }
-
-  .pricingSequence.pricing-in-view > .priceFeatured:hover,
-  .pricingGridFinal > .priceFeatured:hover{
-    transform:translateY(-30px) scale(1.055) !important;
-    box-shadow:
-      0 58px 135px rgba(124,58,237,.56),
-      0 0 0 3px rgba(255,255,255,.26),
-      0 0 110px rgba(167,139,250,.42),
-      inset 0 1px 0 rgba(255,255,255,.22) !important;
-    z-index:25 !important;
-  }
-
-  .pricingGridFinal > .pricePlan:hover .priceIcon,
-  .pricingGridFinal > .priceHelp:hover .priceHelpIcon{
-    transform:translateY(-8px) scale(1.14) !important;
-  }
-
-  .pricingGridFinal > .pricePlan:hover .btn,
-  .pricingGridFinal > .priceHelp:hover .btn{
-    transform:translateY(-4px) !important;
-  }
+.pricing{
+  position:relative !important;
+  overflow:visible !important;
+  padding:92px 0 104px !important;
+  background:
+    radial-gradient(760px 360px at 50% 12%, rgba(124,58,237,.14), transparent 64%),
+    linear-gradient(180deg,#080915 0%,#0b0c17 100%) !important;
 }
 
-@media (min-width: 901px) and (max-width: 1180px){
+.pricing .container{
+  width:min(1960px, 99vw) !important;
+  max-width:1960px !important;
+}
+
+.pricingHead{
+  text-align:center !important;
+  margin-bottom:78px !important;
+}
+
+.pricingGridFinal,
+.pricingGrid.pricingGridFinal,
+.pricingGridFinal.pricingSequence{
+  width:min(1760px, 96vw) !important;
+  max-width:1760px !important;
+  margin:0 auto !important;
+  display:grid !important;
+  grid-template-columns:1.08fr 1.18fr 1.08fr .90fr !important;
+  gap:24px !important;
+  align-items:stretch !important;
+  overflow:visible !important;
+}
+
+.pricingGridFinal > .pricePlan,
+.pricingGridFinal > .priceHelp{
+  width:100% !important;
+  min-width:0 !important;
+  min-height:560px !important;
+  padding:38px 40px 34px !important;
+  border-radius:26px !important;
+  overflow:visible !important;
+}
+
+.pricingSequence > .pricePlan,
+.pricingSequence > .priceHelp{
+  opacity:0 !important;
+  transform:translate3d(0,96px,0) scale(.96) !important;
+  filter:blur(10px) !important;
+  pointer-events:none !important;
+}
+
+.pricingSequence.pricing-in-view > .pricePlan,
+.pricingSequence.pricing-in-view > .priceHelp{
+  opacity:1 !important;
+  transform:translate3d(0,0,0) scale(1) !important;
+  filter:blur(0) !important;
+  pointer-events:auto !important;
+}
+
+/* Entrada: Crecimiento, Control, Inicio, Dudas */
+.pricingSequence.pricing-in-view > article:nth-of-type(2){
+  transition-delay:.08s !important;
+}
+
+.pricingSequence.pricing-in-view > article:nth-of-type(3){
+  transition-delay:.30s !important;
+}
+
+.pricingSequence.pricing-in-view > article:nth-of-type(1){
+  transition-delay:.52s !important;
+}
+
+.pricingSequence.pricing-in-view > .priceHelp{
+  transition-delay:.74s !important;
+}
+
+/* Hover sin retardo al entrar con mouse */
+.pricingSequence.pricing-in-view > .pricePlan:hover,
+.pricingSequence.pricing-in-view > .priceHelp:hover,
+.pricingSequence.pricing-in-view > article:nth-of-type(1):hover,
+.pricingSequence.pricing-in-view > article:nth-of-type(2):hover,
+.pricingSequence.pricing-in-view > article:nth-of-type(3):hover{
+  transition-delay:0s !important;
+}
+
+.priceLight{
+  color:#160c2f !important;
+  background:
+    radial-gradient(520px 220px at 50% -8%, rgba(124,58,237,.08), transparent 62%),
+    linear-gradient(180deg,#ffffff 0%,#f8f5ff 100%) !important;
+  border:1px solid rgba(46,13,79,.12) !important;
+  box-shadow:
+    0 34px 90px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.95) !important;
+}
+
+.priceFeatured{
+  color:#ffffff !important;
+  background:
+    radial-gradient(540px 260px at 50% -12%, rgba(167,139,250,.28), transparent 62%),
+    linear-gradient(180deg,#3b1672 0%,#302a91 100%) !important;
+  border:1px solid rgba(196,181,253,.34) !important;
+  box-shadow:
+    0 42px 110px rgba(61,44,141,.42),
+    0 0 0 1px rgba(255,255,255,.08) inset !important;
+}
+
+.planBadge{
+  position:absolute;
+  top:-18px;
+  left:50%;
+  transform:translateX(-50%);
+  min-height:34px;
+  padding:0 28px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  color:#2e0d4f;
+  background:#ffc928;
+  box-shadow:0 16px 34px rgba(255,201,40,.28);
+  font-size:.78rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  white-space:nowrap;
+  z-index:2;
+}
+
+.pricing .priceIcon,
+.pricing .priceHelpIcon{
+  position:relative !important;
+  isolation:isolate !important;
+  overflow:hidden !important;
+  width:76px !important;
+  height:76px !important;
+  border-radius:22px !important;
+  margin:0 auto 24px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  transition:
+    transform .30s cubic-bezier(.13,.72,.08,1),
+    box-shadow .30s ease,
+    border-color .30s ease,
+    filter .30s ease !important;
+}
+
+.pricing .priceIcon svg,
+.pricing .priceHelpIcon svg{
+  width:34px !important;
+  height:34px !important;
+  stroke-width:1.9 !important;
+  filter:drop-shadow(0 0 12px rgba(139,92,246,.52));
+}
+
+.pricing .priceIcon::before,
+.pricing .priceHelpIcon::before{
+  content:"";
+  position:absolute;
+  inset:9px;
+  border-radius:18px;
+  background:linear-gradient(135deg, rgba(255,255,255,.26), transparent 42%, rgba(167,139,250,.20));
+  opacity:.9;
+  z-index:-1;
+}
+
+.pricing .priceIcon::after,
+.pricing .priceHelpIcon::after{
+  content:"";
+  position:absolute;
+  inset:-42%;
+  border-radius:inherit;
+  background:conic-gradient(from 180deg, transparent, rgba(167,139,250,.38), transparent, rgba(127,178,255,.30), transparent);
+  opacity:.34;
+  z-index:-2;
+  animation:priceIconSpin 10s linear infinite;
+}
+
+@keyframes priceIconSpin{
+  to{transform:rotate(360deg)}
+}
+
+.pricing .priceIconStart{
+  color:#6d28d9 !important;
+  background:
+    radial-gradient(circle at 34% 26%, rgba(255,255,255,.96), transparent 20%),
+    radial-gradient(circle at 50% 52%, rgba(167,139,250,.26), rgba(255,255,255,.86) 68%) !important;
+  border:1px solid rgba(124,58,237,.20) !important;
+  box-shadow:
+    0 22px 52px rgba(46,13,79,.12),
+    0 0 34px rgba(124,58,237,.20),
+    inset 0 1px 0 rgba(255,255,255,.98) !important;
+}
+
+.pricing .priceIconGrowth{
+  color:#ffffff !important;
+  background:
+    radial-gradient(circle at 34% 26%, rgba(255,255,255,.22), transparent 22%),
+    radial-gradient(circle at 50% 52%, rgba(167,139,250,.40), rgba(46,13,79,.82) 68%) !important;
+  border:1px solid rgba(255,255,255,.24) !important;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06),
+    0 0 44px rgba(167,139,250,.34),
+    inset 0 1px 0 rgba(255,255,255,.16) !important;
+}
+
+.pricing .priceIconControl{
+  color:#3d2c8d !important;
+  background:
+    radial-gradient(circle at 34% 26%, rgba(255,255,255,.96), transparent 20%),
+    radial-gradient(circle at 50% 52%, rgba(127,178,255,.22), rgba(255,255,255,.88) 68%) !important;
+  border:1px solid rgba(61,44,141,.20) !important;
+  box-shadow:
+    0 22px 52px rgba(46,13,79,.12),
+    0 0 34px rgba(127,178,255,.18),
+    inset 0 1px 0 rgba(255,255,255,.98) !important;
+}
+
+.pricing .priceHelpIcon{
+  color:#ffffff !important;
+  background:
+    radial-gradient(circle at 34% 26%, rgba(255,255,255,.18), transparent 20%),
+    radial-gradient(circle at 50% 52%, rgba(34,197,94,.18), rgba(61,44,141,.92) 70%) !important;
+  border:1px solid rgba(134,239,172,.26) !important;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.08),
+    0 0 46px rgba(134,239,172,.16),
+    0 0 58px rgba(167,139,250,.20),
+    inset 0 1px 0 rgba(255,255,255,.16) !important;
+}
+
+.pricing .pricePlan h3{
+  margin:0 0 14px !important;
+  color:inherit !important;
+  font-size:1.55rem !important;
+  line-height:1.12 !important;
+  font-weight:680 !important;
+  letter-spacing:.055em !important;
+  text-transform:uppercase !important;
+}
+
+.pricing .pricePlan .amount{
+  margin:0 0 16px !important;
+  color:inherit !important;
+  font-size:3.65rem !important;
+  line-height:.95 !important;
+  font-weight:740 !important;
+  letter-spacing:-.055em !important;
+}
+
+.pricing .pricePlan .amount small{
+  font-size:1.02rem !important;
+  color:rgba(46,13,79,.82) !important;
+  font-weight:520 !important;
+  letter-spacing:0 !important;
+}
+
+.pricing .priceFeatured .amount small{
+  color:rgba(255,255,255,.72) !important;
+}
+
+.pricing .pricePlan p{
+  margin:0 0 22px !important;
+  color:rgba(46,13,79,.74) !important;
+  font-size:1rem !important;
+  line-height:1.52 !important;
+  font-weight:400 !important;
+}
+
+.pricing .priceFeatured p{
+  color:rgba(255,255,255,.78) !important;
+}
+
+.pricing .priceDivider{
+  height:1px;
+  width:100%;
+  margin:0 0 22px !important;
+  background:rgba(46,13,79,.12);
+}
+
+.pricing .priceFeatured .priceDivider{
+  background:rgba(255,255,255,.18);
+}
+
+.pricing .pricePlan ul{
+  list-style:none !important;
+  padding:0 !important;
+  margin:0 0 26px !important;
+  display:grid !important;
+  gap:10px !important;
+}
+
+.pricing .pricePlan li{
+  position:relative !important;
+  padding-left:26px !important;
+  color:#160c2f !important;
+  font-size:.98rem !important;
+  line-height:1.36 !important;
+  font-weight:400 !important;
+}
+
+.pricing .pricePlan li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  top:0;
+  color:#2e0d4f;
+  font-weight:760 !important;
+}
+
+.pricing .priceFeatured li{
+  color:rgba(255,255,255,.88) !important;
+}
+
+.pricing .priceFeatured li::before{
+  color:#86efac;
+}
+
+.pricing .pricePlan .btn,
+.pricing .priceHelp .btn{
+  width:100%;
+  min-height:52px !important;
+  margin-top:auto;
+  border-radius:10px;
+  font-size:.98rem !important;
+  font-weight:650 !important;
+}
+
+.pricing .priceLight .btnPrimary{
+  color:#fff !important;
+  background:linear-gradient(135deg,#2e0d4f,#3d2c8d) !important;
+  box-shadow:0 18px 44px rgba(46,13,79,.18) !important;
+}
+
+.pricing .priceFeatured .btnPrimary{
+  color:#2e0d4f !important;
+  background:#fff !important;
+  box-shadow:0 20px 48px rgba(0,0,0,.18) !important;
+}
+
+.priceHelp{
+  justify-content:center !important;
+  color:#ffffff;
+  background:
+    radial-gradient(280px 180px at 40% 18%, rgba(167,139,250,.22), transparent 62%),
+    linear-gradient(145deg,#2e0d4f 0%,#3d2c8d 100%) !important;
+  border:1px solid rgba(196,181,253,.22) !important;
+  box-shadow:0 36px 92px rgba(46,13,79,.36) !important;
+}
+
+.pricing .priceHelp h3{
+  margin:0 0 16px;
+  font-size:1.34rem !important;
+  line-height:1.2 !important;
+  font-weight:620 !important;
+  letter-spacing:-.02em;
+}
+
+.pricing .priceHelp p{
+  margin:0 0 26px;
+  color:rgba(255,255,255,.80);
+  font-size:1rem !important;
+  line-height:1.55 !important;
+  font-weight:400 !important;
+}
+
+.pricingGridFinal > .pricePlan:hover,
+.pricingGridFinal > .priceHelp:hover,
+.pricingSequence.pricing-in-view > .pricePlan:hover,
+.pricingSequence.pricing-in-view > .priceHelp:hover{
+  transform:translate3d(0,-18px,0) scale(1.035) !important;
+  filter:saturate(1.18) brightness(1.08) !important;
+  border-color:rgba(196,181,253,.88) !important;
+  box-shadow:
+    0 44px 108px rgba(124,58,237,.42),
+    0 0 0 2px rgba(167,139,250,.28),
+    0 0 86px rgba(124,58,237,.30),
+    inset 0 1px 0 rgba(255,255,255,.18) !important;
+  z-index:20 !important;
+}
+
+.pricingGridFinal > .priceFeatured:hover,
+.pricingSequence.pricing-in-view > .priceFeatured:hover{
+  transform:translate3d(0,-20px,0) scale(1.04) !important;
+  box-shadow:
+    0 54px 124px rgba(124,58,237,.50),
+    0 0 0 2px rgba(255,255,255,.24),
+    0 0 104px rgba(167,139,250,.38),
+    inset 0 1px 0 rgba(255,255,255,.20) !important;
+  z-index:24 !important;
+}
+
+.pricingGridFinal > .pricePlan:hover .priceIcon,
+.pricingGridFinal > .priceHelp:hover .priceHelpIcon{
+  transform:translate3d(0,-6px,0) scale(1.10) !important;
+}
+
+.pricingGridFinal > .pricePlan:hover .btn,
+.pricingGridFinal > .priceHelp:hover .btn{
+  transform:translate3d(0,-3px,0) !important;
+}
+
+.pricing::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:90px;
+  pointer-events:none;
+  background:linear-gradient(180deg, rgba(8,9,21,0) 0%, rgba(8,9,21,.72) 64%, #080915 100%);
+  z-index:0;
+}
+
+.pricingGridFinal{
+  position:relative !important;
+  z-index:1 !important;
+}
+
+.faq{
+  position:relative !important;
+  z-index:3 !important;
+  background:#080915 !important;
+}
+
+@media (min-width:901px) and (max-width:1180px){
   .pricingGridFinal,
   .pricingGrid.pricingGridFinal,
   .pricingGridFinal.pricingSequence{
     grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
     max-width:860px !important;
-    margin:0 auto !important;
   }
 
   .pricingGridFinal > .pricePlan,
@@ -3681,233 +3791,466 @@ section{
   }
 }
 
-/* ================================
-   HOVER FINAL PRECIOS
-   Levantamiento visible al pasar mouse
-================================ */
-
-@media (min-width:901px){
-  .pricingGridFinal > .pricePlan,
-  .pricingGridFinal > .priceHelp{
-    position:relative !important;
-    transform-origin:center center !important;
-    cursor:pointer !important;
+@media (max-width:900px){
+  .pricing{
+    overflow:hidden !important;
+    padding:68px 0 82px !important;
   }
 
-  .pricingGridFinal.pricing-in-view > .pricePlan:hover,
-  .pricingGridFinal.pricing-in-view > .priceHelp:hover,
-  .pricingSequence.pricing-in-view > .pricePlan:hover,
-  .pricingSequence.pricing-in-view > .priceHelp:hover{
-    transform:translate3d(0,-32px,0) scale(1.055) !important;
-    filter:saturate(1.25) brightness(1.12) !important;
-    border-color:rgba(196,181,253,.95) !important;
-    box-shadow:
-      0 52px 120px rgba(124,58,237,.52),
-      0 0 0 3px rgba(167,139,250,.36),
-      0 0 96px rgba(124,58,237,.38),
-      inset 0 1px 0 rgba(255,255,255,.24) !important;
-    z-index:50 !important;
+  .pricing .container{
+    width:100% !important;
+    max-width:none !important;
+    padding-left:18px !important;
+    padding-right:18px !important;
   }
 
-  .pricingGridFinal.pricing-in-view > .priceFeatured:hover,
-  .pricingSequence.pricing-in-view > .priceFeatured:hover{
-    transform:translate3d(0,-36px,0) scale(1.065) !important;
-    box-shadow:
-      0 64px 140px rgba(124,58,237,.62),
-      0 0 0 3px rgba(255,255,255,.28),
-      0 0 120px rgba(167,139,250,.48),
-      inset 0 1px 0 rgba(255,255,255,.26) !important;
-    z-index:60 !important;
-  }
-
-  .pricingGridFinal.pricing-in-view > .pricePlan:hover .priceIcon,
-  .pricingGridFinal.pricing-in-view > .priceHelp:hover .priceHelpIcon,
-  .pricingSequence.pricing-in-view > .pricePlan:hover .priceIcon,
-  .pricingSequence.pricing-in-view > .priceHelp:hover .priceHelpIcon{
-    transform:translate3d(0,-8px,0) scale(1.16) !important;
-    filter:saturate(1.25) brightness(1.12) !important;
-  }
-
-  .pricingGridFinal.pricing-in-view > .pricePlan:hover .btn,
-  .pricingGridFinal.pricing-in-view > .priceHelp:hover .btn,
-  .pricingSequence.pricing-in-view > .pricePlan:hover .btn,
-  .pricingSequence.pricing-in-view > .priceHelp:hover .btn{
-    transform:translate3d(0,-4px,0) !important;
-  }
-}
-
-/* ================================
-   HOVER ÚNICO PRECIOS DESKTOP
-   Efecto visible de levantamiento
-================================ */
-
-@media (min-width:901px){
-  .pricingGridFinal > .pricePlan,
-  .pricingGridFinal > .priceHelp{
-    position:relative !important;
-    cursor:pointer !important;
-    transform-origin:center center !important;
-    will-change:transform, filter, box-shadow !important;
-    transition:
-      transform .28s cubic-bezier(.13,.72,.08,1),
-      filter .28s ease,
-      border-color .28s ease,
-      box-shadow .28s ease !important;
-  }
-
-  .pricingGridFinal > .pricePlan:hover,
-  .pricingGridFinal > .priceHelp:hover{
-    transform:translate3d(0,-30px,0) scale(1.05) !important;
-    filter:saturate(1.24) brightness(1.12) !important;
-    border-color:rgba(196,181,253,.95) !important;
-    box-shadow:
-      0 58px 130px rgba(124,58,237,.52),
-      0 0 0 3px rgba(167,139,250,.34),
-      0 0 110px rgba(124,58,237,.38),
-      inset 0 1px 0 rgba(255,255,255,.22) !important;
-    z-index:50 !important;
-  }
-
-  .pricingGridFinal > .priceFeatured:hover{
-    transform:translate3d(0,-36px,0) scale(1.06) !important;
-    box-shadow:
-      0 68px 150px rgba(124,58,237,.62),
-      0 0 0 3px rgba(255,255,255,.28),
-      0 0 130px rgba(167,139,250,.46),
-      inset 0 1px 0 rgba(255,255,255,.24) !important;
-    z-index:60 !important;
-  }
-
-  .pricingGridFinal > .pricePlan .priceIcon,
-  .pricingGridFinal > .priceHelp .priceHelpIcon,
-  .pricingGridFinal > .pricePlan .btn,
-  .pricingGridFinal > .priceHelp .btn{
-    transition:
-      transform .28s cubic-bezier(.13,.72,.08,1),
-      filter .28s ease,
-      box-shadow .28s ease !important;
-  }
-
-  .pricingGridFinal > .pricePlan:hover .priceIcon,
-  .pricingGridFinal > .priceHelp:hover .priceHelpIcon{
-    transform:translate3d(0,-8px,0) scale(1.14) !important;
-    filter:saturate(1.25) brightness(1.15) !important;
-  }
-
-  .pricingGridFinal > .pricePlan:hover .btn,
-  .pricingGridFinal > .priceHelp:hover .btn{
-    transform:translate3d(0,-4px,0) !important;
-  }
-}
-
-/* ================================
-   FIX POINTER PRECIOS
-   Permite hover en tarjetas animadas por pricingSequence
-================================ */
-
-.pricingSequence.pricing-in-view > .pricePlan,
-.pricingSequence.pricing-in-view > .priceHelp{
-  pointer-events:auto !important;
-}
-
-/* ================================
-   FIX HOVER INMEDIATO PRECIOS
-   Mantiene entrada secuencial, pero elimina retardo al pasar mouse
-================================ */
-
-@media (min-width:901px){
-  .pricingSequence.pricing-in-view > .pricePlan,
-  .pricingSequence.pricing-in-view > .priceHelp{
-    pointer-events:auto !important;
-  }
-
-  .pricingSequence.pricing-in-view > .pricePlan:hover,
-  .pricingSequence.pricing-in-view > .priceHelp:hover,
-  .pricingSequence.pricing-in-view > article:nth-of-type(1):hover,
-  .pricingSequence.pricing-in-view > article:nth-of-type(2):hover,
-  .pricingSequence.pricing-in-view > article:nth-of-type(3):hover{
-    transition-delay:0s !important;
-  }
-}
-
-/* ================================
-   AJUSTE FINAL PRECIOS
-   Evita que el hover tape el título y mejora legibilidad
-================================ */
-
-@media (min-width:901px){
   .pricingHead{
-    margin-bottom:86px !important;
+    margin-bottom:52px !important;
   }
 
   .pricingGridFinal,
   .pricingGrid.pricingGridFinal,
   .pricingGridFinal.pricingSequence{
-    margin-top:18px !important;
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    width:100% !important;
+    max-width:560px !important;
+    margin:0 auto !important;
+    gap:22px !important;
+    overflow:visible !important;
   }
 
-  .pricingGridFinal > .pricePlan:hover,
-  .pricingGridFinal > .priceHelp:hover,
-  .pricingSequence.pricing-in-view > .pricePlan:hover,
-  .pricingSequence.pricing-in-view > .priceHelp:hover{
-    transform:translate3d(0,-18px,0) scale(1.035) !important;
+  .pricingGridFinal > .pricePlan,
+  .pricingGridFinal > .priceHelp{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    min-height:auto !important;
+    padding:34px 26px !important;
+    border-radius:24px !important;
   }
 
-  .pricingGridFinal > .priceFeatured:hover,
-  .pricingSequence.pricing-in-view > .priceFeatured:hover{
-    transform:translate3d(0,-20px,0) scale(1.04) !important;
+  .pricingSequence > .pricePlan,
+  .pricingSequence > .priceHelp{
+    transform:translate3d(0,44px,0) scale(.98) !important;
+    filter:none !important;
+  }
+
+  .pricingSequence.pricing-in-view > article:nth-of-type(2){
+    transition-delay:.05s !important;
+  }
+
+  .pricingSequence.pricing-in-view > article:nth-of-type(3){
+    transition-delay:.16s !important;
+  }
+
+  .pricingSequence.pricing-in-view > article:nth-of-type(1){
+    transition-delay:.27s !important;
+  }
+
+  .pricingSequence.pricing-in-view > .priceHelp{
+    transition-delay:.38s !important;
   }
 
   .pricing .pricePlan h3{
-    font-size:1.48rem !important;
-    font-weight:760 !important;
-    letter-spacing:.075em !important;
+    font-size:1.42rem !important;
+    letter-spacing:.055em !important;
   }
 
   .pricing .pricePlan .amount{
-    font-size:3.55rem !important;
-    font-weight:760 !important;
-    letter-spacing:-.055em !important;
+    white-space:normal !important;
+    flex-wrap:wrap !important;
+    font-size:3.1rem !important;
   }
 
   .pricing .pricePlan .amount small{
     font-size:1rem !important;
+  }
+
+  .pricing .pricePlan p,
+  .pricing .pricePlan li,
+  .pricing .priceHelp p{
+    font-size:.98rem !important;
+    line-height:1.48 !important;
+  }
+
+  .priceHelp{
+    justify-content:flex-start !important;
+  }
+
+  .pricingGridFinal > .pricePlan:hover,
+  .pricingGridFinal > .priceHelp:hover{
+    transform:translateY(-6px) scale(1.01) !important;
+  }
+}
+
+@media (max-width:430px){
+  .pricing .container{
+    padding-left:16px !important;
+    padding-right:16px !important;
+  }
+
+  .pricingGridFinal,
+  .pricingGrid.pricingGridFinal,
+  .pricingGridFinal.pricingSequence{
+    max-width:100% !important;
+  }
+
+  .pricingGridFinal > .pricePlan,
+  .pricingGridFinal > .priceHelp{
+    padding:30px 22px !important;
+  }
+}
+
+
+/* ================================
+   TIPOGRAFÍA GLOBAL FINAL
+   Toda la landing con letra más grande, liviana y legible
+================================ */
+
+@media (min-width:901px){
+  body{
+    font-size:18px !important;
+  }
+
+  .container{
+    width:min(1360px, calc(100% - 64px)) !important;
+  }
+
+  .siteNav .navLinks a{
+    font-size:.98rem !important;
+    font-weight:430 !important;
+    letter-spacing:.01em !important;
+  }
+
+  .siteNav .btnPrimary,
+  .btn{
+    font-size:1rem !important;
     font-weight:650 !important;
   }
 
-  .pricing .pricePlan p{
-    font-size:.96rem !important;
-    font-weight:430 !important;
-    line-height:1.52 !important;
+  .hero h1{
+    font-size:clamp(3.8rem,5.8vw,6.2rem) !important;
+    line-height:.98 !important;
+    font-weight:560 !important;
+    letter-spacing:-.065em !important;
   }
 
-  .pricing .pricePlan li{
-    font-size:.94rem !important;
-    font-weight:430 !important;
-    line-height:1.42 !important;
+  .hero h1 strong{
+    font-weight:560 !important;
   }
 
-  .pricing .pricePlan li::before{
+  .heroLead{
+    max-width:620px !important;
+    font-size:1.28rem !important;
+    line-height:1.62 !important;
+    font-weight:430 !important;
+  }
+
+  .sectionKicker,
+  .metricsTitle,
+  .solutionsTitle{
+    font-size:.9rem !important;
     font-weight:760 !important;
+    letter-spacing:.18em !important;
+  }
+
+  .sectionTitle,
+  .benefitIntro h2,
+  .receiveHead h2,
+  .howHead h2,
+  .faqHead h2,
+  .metricsIntro h2{
+    font-size:clamp(2.75rem,4.2vw,4.7rem) !important;
+    line-height:1.03 !important;
+    font-weight:620 !important;
+    letter-spacing:-.055em !important;
+  }
+
+  .sectionLead,
+  .benefitIntro p,
+  .receiveHead p,
+  .howHead p,
+  .faqHead p,
+  .metricsIntro p{
+    font-size:1.18rem !important;
+    line-height:1.68 !important;
+    font-weight:420 !important;
+  }
+
+  .textLink{
+    font-size:1.08rem !important;
+    font-weight:720 !important;
+  }
+
+  .actionCard h3,
+  .benefitCard h3,
+  .stepCard h3,
+  .solutionCard h3,
+  .bullet strong{
+    font-size:1.32rem !important;
+    line-height:1.28 !important;
+    font-weight:680 !important;
+  }
+
+  .actionCard p,
+  .benefitCard p,
+  .stepCard p,
+  .solutionCard p,
+  .bullet span,
+  .receiveItem,
+  .faqItem p{
+    font-size:1.08rem !important;
+    line-height:1.62 !important;
+    font-weight:420 !important;
+  }
+
+  .faqItem summary{
+    font-size:1.14rem !important;
+    line-height:1.32 !important;
+    font-weight:680 !important;
+  }
+
+.metric strong{
+  font-size:1.85rem !important;
+  line-height:1.02 !important;
+  font-weight:820 !important;
+  letter-spacing:-.035em !important;
+}
+
+  .metric span{
+    font-size:1.02rem !important;
+    line-height:1.38 !important;
+    font-weight:650 !important;
+  }
+
+  .metric small{
+    font-size:.92rem !important;
+    line-height:1.38 !important;
+    font-weight:650 !important;
+  }
+
+  .dashboard .dashHeader strong{
+    font-size:1.08rem !important;
+  }
+
+  .dashNavItem{
+    font-size:.78rem !important;
+  }
+
+  .kpi span{
+    font-size:.78rem !important;
+  }
+
+  .kpi strong{
+    font-size:1.45rem !important;
+  }
+
+  .kpi small,
+  .dateBadge,
+  .dashboard .panelHead,
+  .legendUltra div,
+  .axisLabels text{
+    font-size:.78rem !important;
+  }
+
+  .pricingHead{
+    margin-bottom:86px !important;
+  }
+
+.pricingGridFinal,
+.pricingGrid.pricingGridFinal,
+.pricingGridFinal.pricingSequence{
+  width:100% !important;
+  max-width:1760px !important;
+  grid-template-columns:1.12fr 1.22fr 1.12fr .96fr !important;
+  gap:30px !important;
+}
+
+.pricingGridFinal > .pricePlan,
+.pricingGridFinal > .priceHelp{
+  min-height:560px !important;
+  padding:38px 44px 34px !important;
+}
+
+
+  .pricing .pricePlan h3{
+    font-size:1.62rem !important;
+    line-height:1.16 !important;
+    font-weight:680 !important;
+    letter-spacing:.06em !important;
+  }
+
+  .pricing .pricePlan .amount{
+    font-size:3.75rem !important;
+    line-height:.96 !important;
+    font-weight:760 !important;
+  }
+
+  .pricing .pricePlan .amount small{
+    font-size:1.08rem !important;
+    font-weight:560 !important;
+  }
+
+  .pricing .pricePlan p,
+  .pricing .pricePlan li,
+  .pricing .priceHelp p{
+    font-size:1.06rem !important;
+    line-height:1.5 !important;
+    font-weight:420 !important;
+  }
+
+  .pricing .pricePlan ul{
+    gap:10px !important;
   }
 
   .pricing .pricePlan .btn,
   .pricing .priceHelp .btn{
-    font-size:.94rem !important;
-    font-weight:760 !important;
+    font-size:1.02rem !important;
+    font-weight:680 !important;
+    min-height:50px !important;
   }
 
   .pricing .priceHelp h3{
-    font-size:1.28rem !important;
+    font-size:1.42rem !important;
+    line-height:1.22 !important;
+    font-weight:640 !important;
+  }
+
+  .bottomGrid h2{
+    font-size:1.9rem !important;
+    line-height:1.16 !important;
     font-weight:680 !important;
   }
 
-  .pricing .priceHelp p{
-    font-size:.96rem !important;
-    font-weight:430 !important;
-    line-height:1.52 !important;
+  .bottomGrid p{
+    font-size:1.08rem !important;
+    line-height:1.55 !important;
+    font-weight:420 !important;
+  }
+
+  .footer p,
+  .footer a{
+    font-size:.98rem !important;
+    line-height:1.62 !important;
+    font-weight:420 !important;
+  }
+
+  .footer h4{
+    font-size:1rem !important;
+    font-weight:700 !important;
+  }
+
+  .footerTagline{
+    font-size:1.08rem !important;
+    line-height:1.62 !important;
+    font-weight:560 !important;
   }
 }
+
+@media (max-width:900px){
+  body{
+    font-size:17px !important;
+  }
+
+  .hero h1{
+    font-size:clamp(3rem,12.5vw,4.35rem) !important;
+    line-height:1 !important;
+    font-weight:560 !important;
+  }
+
+  .heroLead{
+    font-size:1.1rem !important;
+    line-height:1.6 !important;
+    font-weight:420 !important;
+  }
+
+  .sectionKicker,
+  .metricsTitle,
+  .solutionsTitle{
+    font-size:.82rem !important;
+    font-weight:760 !important;
+  }
+
+  .sectionTitle,
+  .benefitIntro h2,
+  .receiveHead h2,
+  .howHead h2,
+  .faqHead h2,
+  .metricsIntro h2{
+    font-size:clamp(2.25rem,9.5vw,3.35rem) !important;
+    line-height:1.06 !important;
+    font-weight:620 !important;
+  }
+
+  .sectionLead,
+  .benefitIntro p,
+  .receiveHead p,
+  .howHead p,
+  .faqHead p,
+  .metricsIntro p,
+  .actionCard p,
+  .benefitCard p,
+  .stepCard p,
+  .solutionCard p,
+  .bullet span,
+  .receiveItem,
+  .faqItem p{
+    font-size:1.04rem !important;
+    line-height:1.58 !important;
+    font-weight:420 !important;
+  }
+
+  .actionCard h3,
+  .benefitCard h3,
+  .stepCard h3,
+  .solutionCard h3,
+  .bullet strong,
+  .faqItem summary{
+    font-size:1.18rem !important;
+    line-height:1.3 !important;
+    font-weight:680 !important;
+  }
+
+.metric strong{
+  font-size:1.85rem !important;
+}
+  .metric span{
+    font-size:1rem !important;
+  }
+
+  .pricing .pricePlan h3{
+    font-size:1.52rem !important;
+    font-weight:680 !important;
+    letter-spacing:.055em !important;
+  }
+
+  .pricing .pricePlan .amount{
+    font-size:3.35rem !important;
+    font-weight:760 !important;
+  }
+
+  .pricing .pricePlan p,
+  .pricing .pricePlan li,
+  .pricing .priceHelp p{
+    font-size:1.04rem !important;
+    line-height:1.52 !important;
+    font-weight:420 !important;
+  }
+
+  .pricing .pricePlan .btn,
+  .pricing .priceHelp .btn,
+  .btn{
+    font-size:1rem !important;
+    font-weight:680 !important;
+  }
+
+  .footer p,
+  .footer a{
+    font-size:.96rem !important;
+  }
+}
+
 `;
 
 function waLink() {
@@ -4416,15 +4759,15 @@ export default function Home() {
 
               <div className="bullet motion-right motion-delay-2">
                 <span className="bulletIcon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M12 4V7" stroke="currentColor" strokeLinecap="round" />
-                      <path d="M12 17V20" stroke="currentColor" strokeLinecap="round" />
-                      <path d="M4 12H7" stroke="currentColor" strokeLinecap="round" />
-                      <path d="M17 12H20" stroke="currentColor" strokeLinecap="round" />
-                      <path d="M8.5 8.5L6.5 6.5" stroke="currentColor" strokeLinecap="round" />
-                      <path d="M15.5 15.5L17.5 17.5" stroke="currentColor" strokeLinecap="round" />
-                      <circle cx="12" cy="12" r="4" stroke="currentColor" />
-                    </svg>
+<svg viewBox="0 0 24 24" fill="none">
+  <path d="M4 19V5" stroke="currentColor" strokeLinecap="round" />
+  <path d="M4 19H20" stroke="currentColor" strokeLinecap="round" />
+  <path d="M7 15.5V12" stroke="currentColor" strokeLinecap="round" />
+  <path d="M11 15.5V8.5" stroke="currentColor" strokeLinecap="round" />
+  <path d="M15 15.5V10.5" stroke="currentColor" strokeLinecap="round" />
+  <path d="M19 15.5V7" stroke="currentColor" strokeLinecap="round" />
+  <path d="M7 11.5L11 8.5L15 10.5L19 7" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
                   </span>
                 <div>
                   <strong>Análisis inteligente</strong>
