@@ -3466,6 +3466,79 @@ section{
     filter:none !important;
   }
 }
+
+/* ================================
+   FIX MOBILE FINAL - PRECIOS
+   Fuerza tarjetas apiladas en celular
+================================ */
+
+@media (max-width: 900px){
+  .pricing .container{
+    width:100% !important;
+    max-width:none !important;
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .pricingGridFinal,
+  .pricingGrid.pricingGridFinal,
+  .pricingGridFinal.pricingSequence{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    width:100% !important;
+    max-width:560px !important;
+    margin:0 auto !important;
+    gap:22px !important;
+    overflow:visible !important;
+  }
+
+  .pricingGridFinal > .pricePlan,
+  .pricingGridFinal > .priceHelp{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    min-height:auto !important;
+    padding:34px 26px !important;
+    border-radius:24px !important;
+  }
+
+  .pricing .pricePlan h3{
+    font-size:1.45rem !important;
+    letter-spacing:.06em !important;
+  }
+
+  .pricing .amount{
+    white-space:normal !important;
+    flex-wrap:wrap !important;
+    font-size:3.1rem !important;
+  }
+
+  .pricing .amount small{
+    font-size:1rem !important;
+  }
+
+  .priceHelp{
+    justify-content:flex-start !important;
+  }
+}
+
+@media (max-width: 430px){
+  .pricing .container{
+    padding-left:16px !important;
+    padding-right:16px !important;
+  }
+
+  .pricingGridFinal,
+  .pricingGrid.pricingGridFinal,
+  .pricingGridFinal.pricingSequence{
+    max-width:100% !important;
+  }
+
+  .pricingGridFinal > .pricePlan,
+  .pricingGridFinal > .priceHelp{
+    padding:30px 22px !important;
+  }
+}
 `;
 
 function waLink() {
