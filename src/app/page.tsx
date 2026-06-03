@@ -3255,7 +3255,7 @@ section{
    Para celulares que fuerzan viewport ancho
 ================================ */
 
-@media (max-width: 1100px) and (pointer: coarse){
+@media (pointer: coarse){
   .container{
     width:100% !important;
     padding-left:18px !important;
@@ -3670,11 +3670,10 @@ section{
   color:#86efac;
 }
 
-.pricing .pricePlan .btn,
 .pricing .priceHelp .btn{
-  width:100%;
+  width:min(100%, 260px) !important;
   min-height:52px !important;
-  margin-top:auto;
+  margin:26px auto 0 !important;
   border-radius:10px;
   font-size:.98rem !important;
   font-weight:650 !important;
@@ -3693,10 +3692,14 @@ section{
 }
 
 .priceHelp{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
   justify-content:center !important;
+  text-align:center !important;
   color:#ffffff;
   background:
-    radial-gradient(280px 180px at 40% 18%, rgba(167,139,250,.22), transparent 62%),
+    radial-gradient(280px 180px at 50% 18%, rgba(167,139,250,.22), transparent 62%),
     linear-gradient(145deg,#2e0d4f 0%,#3d2c8d 100%) !important;
   border:1px solid rgba(196,181,253,.22) !important;
   box-shadow:0 36px 92px rgba(46,13,79,.36) !important;
@@ -3874,9 +3877,11 @@ section{
     line-height:1.48 !important;
   }
 
-  .priceHelp{
-    justify-content:flex-start !important;
-  }
+.priceHelp{
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+}
 
   .pricingGridFinal > .pricePlan:hover,
   .pricingGridFinal > .priceHelp:hover{
@@ -3908,7 +3913,7 @@ section{
    Toda la landing con letra más grande, liviana y legible
 ================================ */
 
-@media (min-width:901px){
+@media (min-width:901px) and (pointer:fine){
   body{
     font-size:18px !important;
   }
